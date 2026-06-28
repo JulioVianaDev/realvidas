@@ -7,7 +7,6 @@ COPY package.json package-lock.json nx.json ./
 COPY apps/backend/package.json ./apps/backend/
 COPY packages/types/package.json ./packages/types/
 COPY packages/email-templates/package.json ./packages/email-templates/
-COPY apps/backend/.tanstack-fork-tarballs ./apps/backend/.tanstack-fork-tarballs/
 
 RUN npm ci
 
@@ -32,7 +31,6 @@ COPY package.json package-lock.json nx.json ./
 COPY apps/backend/package.json ./apps/backend/
 COPY packages/types/package.json ./packages/types/
 COPY packages/email-templates/package.json ./packages/email-templates/
-COPY apps/backend/.tanstack-fork-tarballs ./apps/backend/.tanstack-fork-tarballs/
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/packages/types/dist ./packages/types/dist

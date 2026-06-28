@@ -62,6 +62,12 @@ export const API_ROUTES = {
         GET_BY_USER: (userId: string) => `profiles/user/${userId}`,
         ASSIGN: "profiles/assign",
     },
+    TENANT_USER: {
+        GET_ALL: "tenant-users",
+        CREATE: "tenant-users",
+        UPDATE: (userId: string) => `tenant-users/${userId}`,
+        DELETE: (userId: string) => `tenant-users/${userId}`,
+    },
     ENTERPRISE_INVITATION: {
         CREATE: (enterpriseId: string) =>
             `enterprise-invitations/${enterpriseId}`,

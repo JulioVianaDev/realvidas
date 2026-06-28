@@ -75,7 +75,51 @@
         "adminSaasUsers": "Users",
         "adminSaasPlans": "Plans",
         "adminSaasAnalytics": "Analytics",
-        "profiles": "Profiles"
+        "profiles": "Profiles",
+        "users": "Users"
+    },
+    "tenantUser": {
+        "title": "Users",
+        "subtitle": "Create accounts for your employees and link them to profiles.",
+        "form": {
+            "createTitle": "Create user",
+            "editTitle": "Edit user",
+            "name": "Name",
+            "namePlaceholder": "Full name",
+            "email": "Email",
+            "emailPlaceholder": "user@email.com",
+            "password": "Password",
+            "passwordPlaceholder": "Initial password",
+            "cpf": "CPF",
+            "cpfPlaceholder": "Optional",
+            "profiles": "Profiles",
+            "noProfiles": "Create a profile first.",
+            "create": "Create user",
+            "save": "Save changes",
+            "saving": "Saving..."
+        },
+        "list": {
+            "empty": "No users in this workspace yet.",
+            "edit": "Edit",
+            "delete": "Remove",
+            "columns": {
+                "name": "Name",
+                "email": "Email",
+                "profiles": "Profiles",
+                "actions": "Actions"
+            }
+        },
+        "toast": {
+            "createSuccess": "User created",
+            "createError": "Could not create user",
+            "createErrorDescription": "Something went wrong while creating the user.",
+            "updateSuccess": "User updated",
+            "updateError": "Could not update user",
+            "updateErrorDescription": "Something went wrong while updating the user.",
+            "deleteSuccess": "User removed",
+            "deleteError": "Could not remove user",
+            "deleteErrorDescription": "Something went wrong while removing the user."
+        }
     },
     "profile": {
         "title": "Permission profiles",

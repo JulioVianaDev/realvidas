@@ -75,7 +75,51 @@
         "adminSaasUsers": "Usuários",
         "adminSaasPlans": "Planos",
         "adminSaasAnalytics": "Analytics",
-        "profiles": "Perfis"
+        "profiles": "Perfis",
+        "users": "Usuários"
+    },
+    "tenantUser": {
+        "title": "Usuários",
+        "subtitle": "Crie contas para seus colaboradores e vincule-os a perfis.",
+        "form": {
+            "createTitle": "Criar usuário",
+            "editTitle": "Editar usuário",
+            "name": "Nome",
+            "namePlaceholder": "Nome completo",
+            "email": "E-mail",
+            "emailPlaceholder": "usuario@email.com",
+            "password": "Senha",
+            "passwordPlaceholder": "Senha inicial",
+            "cpf": "CPF",
+            "cpfPlaceholder": "Opcional",
+            "profiles": "Perfis",
+            "noProfiles": "Crie um perfil primeiro.",
+            "create": "Criar usuário",
+            "save": "Salvar alterações",
+            "saving": "Salvando..."
+        },
+        "list": {
+            "empty": "Nenhum usuário neste espaço de trabalho ainda.",
+            "edit": "Editar",
+            "delete": "Remover",
+            "columns": {
+                "name": "Nome",
+                "email": "E-mail",
+                "profiles": "Perfis",
+                "actions": "Ações"
+            }
+        },
+        "toast": {
+            "createSuccess": "Usuário criado",
+            "createError": "Não foi possível criar o usuário",
+            "createErrorDescription": "Ocorreu um erro ao criar o usuário.",
+            "updateSuccess": "Usuário atualizado",
+            "updateError": "Não foi possível atualizar o usuário",
+            "updateErrorDescription": "Ocorreu um erro ao atualizar o usuário.",
+            "deleteSuccess": "Usuário removido",
+            "deleteError": "Não foi possível remover o usuário",
+            "deleteErrorDescription": "Ocorreu um erro ao remover o usuário."
+        }
     },
     "profile": {
         "title": "Perfis de permissão",

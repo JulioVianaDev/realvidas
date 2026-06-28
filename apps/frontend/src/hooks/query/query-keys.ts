@@ -3,6 +3,7 @@ import type { GetUsersParams } from "@global-types/params/user.params";
 import type { IGetEnterprisesParams, IGetMyEnterprisesParams } from "@global-types/params/enterprise.params";
 import type { IGetEnterpriseMembersParams } from "@global-types/params/enterprise-member.params";
 import type { IGetProfilesParams } from "@global-types/params/profile.params";
+import type { IGetTenantUsersParams } from "@global-types/params/tenant-user.params";
 import type { IGetAllAiRalphsParams } from "@global-types/params/ai-ralph.params";
 import type { IGetAllAiToolsParams } from "@global-types/params/ai-tool.params";
 import type { IGetAllAssistantsParams } from "@global-types/params/assistant.params";
@@ -58,6 +59,11 @@ export const queryKeys = {
         detail: (id: string) => [API_ROUTES.PROFILE.GET_ALL, "detail", id] as const,
         mine: () => [API_ROUTES.PROFILE.GET_MINE] as const,
         byUser: (userId: string) => [API_ROUTES.PROFILE.GET_ALL, "by-user", userId] as const,
+    },
+
+    tenantUser: {
+        all: () => [API_ROUTES.TENANT_USER.GET_ALL] as const,
+        list: (p: IGetTenantUsersParams) => [API_ROUTES.TENANT_USER.GET_ALL, "list", p] as const,
     },
 
     aiRalph: {

@@ -42,6 +42,28 @@ export function NavMain({
             ) : null}
             <SidebarMenu>
                 {items.map((item) => {
+                    // Leaf item (no sub-items) → render as a direct link.
+                    if (!item.items?.length) {
+                        return (
+                            <SidebarMenuItem key={item.title}>
+                                <SidebarMenuButton
+                                    asChild
+                                    tooltip={item.title}
+                                    className={
+                                        item.url === pathname
+                                            ? "bg-secondary text-white"
+                                            : ""
+                                    }
+                                >
+                                    <a href={item.url}>
+                                        {item.icon && <item.icon />}
+                                        <span>{item.title}</span>
+                                    </a>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        );
+                    }
+
                     const isOpen = item.items?.some(
                         (subItem) => subItem.url === pathname,
                     );

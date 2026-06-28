@@ -86,6 +86,18 @@ const getNavigationData = (
     canManageProfiles: boolean,
 ) => ({
     navMain: [
+        // Top-level Users entry (outside Settings) for tenant admins.
+        ...(canManageProfiles
+            ? [
+                  {
+                      title: t("sidebar.users"),
+                      url: "/users",
+                      icon: Users,
+                      allowedRoles: ["ADMIN", "USER"] as RoleType[],
+                  },
+              ]
+            : []),
+
         // {
         //     title: "Escolas",
         //     url: "schools",

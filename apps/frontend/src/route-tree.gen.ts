@@ -21,6 +21,7 @@ import { Route as PublicLoginIndexRouteImport } from './pages/_public/login/inde
 import { Route as PublicEmailsViewsIndexRouteImport } from './pages/_public/emails-views/index'
 import { Route as AuthenticatedStartupIndexRouteImport } from './pages/_authenticated/startup/index'
 import { Route as AuthenticatedInicioIndexRouteImport } from './pages/_authenticated/inicio/index'
+import { Route as AuthenticatedVerifiedUsersIndexRouteImport } from './pages/_authenticated/_verified/users/index'
 import { Route as PublicAuthGoogleCallbackIndexRouteImport } from './pages/_public/auth/google/callback/index'
 import { Route as AuthenticatedVerifiedConfigurationProfilesIndexRouteImport } from './pages/_authenticated/_verified/configuration/profiles/index'
 import { Route as AuthenticatedVerifiedConfigurationEnterpriseIndexRouteImport } from './pages/_authenticated/_verified/configuration/enterprise/index'
@@ -86,6 +87,12 @@ const AuthenticatedInicioIndexRoute =
     path: '/inicio/',
     getParentRoute: () => AuthenticatedRoute,
   } as any)
+const AuthenticatedVerifiedUsersIndexRoute =
+  AuthenticatedVerifiedUsersIndexRouteImport.update({
+    id: '/_verified/users/',
+    path: '/users/',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 const PublicAuthGoogleCallbackIndexRoute =
   PublicAuthGoogleCallbackIndexRouteImport.update({
     id: '/auth/google/callback/',
@@ -129,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/register/': typeof PublicRegisterIndexRoute
   '/verify-email/': typeof PublicVerifyEmailIndexRoute
   '/welcome/': typeof PublicWelcomeIndexRoute
+  '/users/': typeof AuthenticatedVerifiedUsersIndexRoute
   '/admin/users/': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/configuration/enterprise/': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   '/configuration/profiles/': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
@@ -145,6 +153,7 @@ export interface FileRoutesByTo {
   '/register': typeof PublicRegisterIndexRoute
   '/verify-email': typeof PublicVerifyEmailIndexRoute
   '/welcome': typeof PublicWelcomeIndexRoute
+  '/users': typeof AuthenticatedVerifiedUsersIndexRoute
   '/admin/users': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/configuration/enterprise': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   '/configuration/profiles': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
@@ -165,6 +174,7 @@ export interface FileRoutesById {
   '/_public/register/': typeof PublicRegisterIndexRoute
   '/_public/verify-email/': typeof PublicVerifyEmailIndexRoute
   '/_public/welcome/': typeof PublicWelcomeIndexRoute
+  '/_authenticated/_verified/users/': typeof AuthenticatedVerifiedUsersIndexRoute
   '/_authenticated/_admin/admin/users/': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/_authenticated/_verified/configuration/enterprise/': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   '/_authenticated/_verified/configuration/profiles/': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/register/'
     | '/verify-email/'
     | '/welcome/'
+    | '/users/'
     | '/admin/users/'
     | '/configuration/enterprise/'
     | '/configuration/profiles/'
@@ -199,6 +210,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/verify-email'
     | '/welcome'
+    | '/users'
     | '/admin/users'
     | '/configuration/enterprise'
     | '/configuration/profiles'
@@ -218,6 +230,7 @@ export interface FileRouteTypes {
     | '/_public/register/'
     | '/_public/verify-email/'
     | '/_public/welcome/'
+    | '/_authenticated/_verified/users/'
     | '/_authenticated/_admin/admin/users/'
     | '/_authenticated/_verified/configuration/enterprise/'
     | '/_authenticated/_verified/configuration/profiles/'
@@ -316,6 +329,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedInicioIndexRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
+    '/_authenticated/_verified/users/': {
+      id: '/_authenticated/_verified/users/'
+      path: '/users'
+      fullPath: '/users/'
+      preLoaderRoute: typeof AuthenticatedVerifiedUsersIndexRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/_public/auth/google/callback/': {
       id: '/_public/auth/google/callback/'
       path: '/auth/google/callback'
@@ -370,6 +390,7 @@ interface AuthenticatedRouteChildren {
   AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
   AuthenticatedInicioIndexRoute: typeof AuthenticatedInicioIndexRoute
   AuthenticatedStartupIndexRoute: typeof AuthenticatedStartupIndexRoute
+  AuthenticatedVerifiedUsersIndexRoute: typeof AuthenticatedVerifiedUsersIndexRoute
   AuthenticatedVerifiedConfigurationEnterpriseIndexRoute: typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   AuthenticatedVerifiedConfigurationProfilesIndexRoute: typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
   AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute: typeof AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute
@@ -379,6 +400,7 @@ const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
   AuthenticatedInicioIndexRoute: AuthenticatedInicioIndexRoute,
   AuthenticatedStartupIndexRoute: AuthenticatedStartupIndexRoute,
+  AuthenticatedVerifiedUsersIndexRoute: AuthenticatedVerifiedUsersIndexRoute,
   AuthenticatedVerifiedConfigurationEnterpriseIndexRoute:
     AuthenticatedVerifiedConfigurationEnterpriseIndexRoute,
   AuthenticatedVerifiedConfigurationProfilesIndexRoute:

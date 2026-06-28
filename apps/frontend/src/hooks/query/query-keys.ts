@@ -142,7 +142,7 @@ export const queryKeys = {
     customer: {
         all: () => [API_ROUTES.CUSTOMER.GET_ALL] as const,
         list: (p: IGetAllCustomersParams) => [API_ROUTES.CUSTOMER.GET_ALL, "list", p] as const,
-        detail: (id: string, enterpriseId: string) => [API_ROUTES.CUSTOMER.GET_ALL, "detail", id, enterpriseId] as const,
+        detail: (id: string) => [API_ROUTES.CUSTOMER.GET_ALL, "detail", id] as const,
     },
 
     campaign: {

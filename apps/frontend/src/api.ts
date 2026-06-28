@@ -286,7 +286,6 @@ export const API_ROUTES = {
     },
     CUSTOMER: {
         CREATE: "customers",
-        MERGE: "customers/merge",
         GET_ALL: "customers",
         GET_BY_ID: (id: string) => `customers/${id}`,
         UPDATE: (id: string) => `customers/${id}`,

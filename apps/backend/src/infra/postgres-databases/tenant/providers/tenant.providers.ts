@@ -6,6 +6,7 @@ import { EnterpriseMemberTypeOrmRepository } from '../repositories/enterprise-me
 import { EnterpriseTypeOrmRepository } from '../repositories/enterprise/enterprise.typeorm.repository';
 import { FileTypeOrmRepository } from '../repositories/file/file.typeorm.repository';
 import { ProfileTypeOrmRepository } from '../repositories/profile/profile.typeorm.repository';
+import { CustomerTypeOrmRepository } from '../repositories/customer/customer.typeorm.repository';
 /**
  * TypeORM repository providers - use TENANT_CONNECTION (EntityManager) for tenant-scoped queries.
  * Request-scoped because TENANT_CONNECTION is per-request.
@@ -25,6 +26,11 @@ export const typeOrmRepositoryTenantProviders: Provider[] = [
   {
     provide: REPOSITORY_TOKENS_TENANT.PROFILE_REPOSITORY,
     useClass: ProfileTypeOrmRepository,
+    scope: Scope.REQUEST,
+  },
+  {
+    provide: REPOSITORY_TOKENS_TENANT.CUSTOMER_REPOSITORY,
+    useClass: CustomerTypeOrmRepository,
     scope: Scope.REQUEST,
   },
   {

@@ -1,4 +1,4 @@
-import type { ContactChannel, IContactIdentifierEntity } from './customer.entity-type';
+import type { ContactChannel, IContactIdentifierEntity } from './contact-identifier.entity-type';
 
 export enum ConversationLifecycleModeType {
     AI = "AI",

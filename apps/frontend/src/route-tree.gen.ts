@@ -22,10 +22,13 @@ import { Route as PublicEmailsViewsIndexRouteImport } from './pages/_public/emai
 import { Route as AuthenticatedStartupIndexRouteImport } from './pages/_authenticated/startup/index'
 import { Route as AuthenticatedInicioIndexRouteImport } from './pages/_authenticated/inicio/index'
 import { Route as AuthenticatedVerifiedUsersIndexRouteImport } from './pages/_authenticated/_verified/users/index'
+import { Route as AuthenticatedVerifiedCustomersIndexRouteImport } from './pages/_authenticated/_verified/customers/index'
+import { Route as AuthenticatedVerifiedCustomersCreateRouteImport } from './pages/_authenticated/_verified/customers/create'
 import { Route as PublicAuthGoogleCallbackIndexRouteImport } from './pages/_public/auth/google/callback/index'
 import { Route as AuthenticatedVerifiedConfigurationProfilesIndexRouteImport } from './pages/_authenticated/_verified/configuration/profiles/index'
 import { Route as AuthenticatedVerifiedConfigurationEnterpriseIndexRouteImport } from './pages/_authenticated/_verified/configuration/enterprise/index'
 import { Route as AuthenticatedAdminAdminUsersIndexRouteImport } from './pages/_authenticated/_admin/admin/users/index'
+import { Route as AuthenticatedVerifiedCustomersEditCustomerIdRouteImport } from './pages/_authenticated/_verified/customers/edit.$customerId'
 import { Route as AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRouteImport } from './pages/_authenticated/_verified/configuration/enterprise/edit.$enterpriseId'
 
 const PublicRoute = PublicRouteImport.update({
@@ -93,6 +96,18 @@ const AuthenticatedVerifiedUsersIndexRoute =
     path: '/users/',
     getParentRoute: () => AuthenticatedRoute,
   } as any)
+const AuthenticatedVerifiedCustomersIndexRoute =
+  AuthenticatedVerifiedCustomersIndexRouteImport.update({
+    id: '/_verified/customers/',
+    path: '/customers/',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
+const AuthenticatedVerifiedCustomersCreateRoute =
+  AuthenticatedVerifiedCustomersCreateRouteImport.update({
+    id: '/_verified/customers/create',
+    path: '/customers/create',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 const PublicAuthGoogleCallbackIndexRoute =
   PublicAuthGoogleCallbackIndexRouteImport.update({
     id: '/auth/google/callback/',
@@ -117,6 +132,12 @@ const AuthenticatedAdminAdminUsersIndexRoute =
     path: '/admin/users/',
     getParentRoute: () => AuthenticatedAdminRoute,
   } as any)
+const AuthenticatedVerifiedCustomersEditCustomerIdRoute =
+  AuthenticatedVerifiedCustomersEditCustomerIdRouteImport.update({
+    id: '/_verified/customers/edit/$customerId',
+    path: '/customers/edit/$customerId',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 const AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute =
   AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRouteImport.update(
     {
@@ -136,7 +157,10 @@ export interface FileRoutesByFullPath {
   '/register/': typeof PublicRegisterIndexRoute
   '/verify-email/': typeof PublicVerifyEmailIndexRoute
   '/welcome/': typeof PublicWelcomeIndexRoute
+  '/customers/create': typeof AuthenticatedVerifiedCustomersCreateRoute
+  '/customers/': typeof AuthenticatedVerifiedCustomersIndexRoute
   '/users/': typeof AuthenticatedVerifiedUsersIndexRoute
+  '/customers/edit/$customerId': typeof AuthenticatedVerifiedCustomersEditCustomerIdRoute
   '/admin/users/': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/configuration/enterprise/': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   '/configuration/profiles/': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
@@ -153,7 +177,10 @@ export interface FileRoutesByTo {
   '/register': typeof PublicRegisterIndexRoute
   '/verify-email': typeof PublicVerifyEmailIndexRoute
   '/welcome': typeof PublicWelcomeIndexRoute
+  '/customers/create': typeof AuthenticatedVerifiedCustomersCreateRoute
+  '/customers': typeof AuthenticatedVerifiedCustomersIndexRoute
   '/users': typeof AuthenticatedVerifiedUsersIndexRoute
+  '/customers/edit/$customerId': typeof AuthenticatedVerifiedCustomersEditCustomerIdRoute
   '/admin/users': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/configuration/enterprise': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   '/configuration/profiles': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
@@ -174,7 +201,10 @@ export interface FileRoutesById {
   '/_public/register/': typeof PublicRegisterIndexRoute
   '/_public/verify-email/': typeof PublicVerifyEmailIndexRoute
   '/_public/welcome/': typeof PublicWelcomeIndexRoute
+  '/_authenticated/_verified/customers/create': typeof AuthenticatedVerifiedCustomersCreateRoute
+  '/_authenticated/_verified/customers/': typeof AuthenticatedVerifiedCustomersIndexRoute
   '/_authenticated/_verified/users/': typeof AuthenticatedVerifiedUsersIndexRoute
+  '/_authenticated/_verified/customers/edit/$customerId': typeof AuthenticatedVerifiedCustomersEditCustomerIdRoute
   '/_authenticated/_admin/admin/users/': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/_authenticated/_verified/configuration/enterprise/': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   '/_authenticated/_verified/configuration/profiles/': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
@@ -193,7 +223,10 @@ export interface FileRouteTypes {
     | '/register/'
     | '/verify-email/'
     | '/welcome/'
+    | '/customers/create'
+    | '/customers/'
     | '/users/'
+    | '/customers/edit/$customerId'
     | '/admin/users/'
     | '/configuration/enterprise/'
     | '/configuration/profiles/'
@@ -210,7 +243,10 @@ export interface FileRouteTypes {
     | '/register'
     | '/verify-email'
     | '/welcome'
+    | '/customers/create'
+    | '/customers'
     | '/users'
+    | '/customers/edit/$customerId'
     | '/admin/users'
     | '/configuration/enterprise'
     | '/configuration/profiles'
@@ -230,7 +266,10 @@ export interface FileRouteTypes {
     | '/_public/register/'
     | '/_public/verify-email/'
     | '/_public/welcome/'
+    | '/_authenticated/_verified/customers/create'
+    | '/_authenticated/_verified/customers/'
     | '/_authenticated/_verified/users/'
+    | '/_authenticated/_verified/customers/edit/$customerId'
     | '/_authenticated/_admin/admin/users/'
     | '/_authenticated/_verified/configuration/enterprise/'
     | '/_authenticated/_verified/configuration/profiles/'
@@ -336,6 +375,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedVerifiedUsersIndexRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
+    '/_authenticated/_verified/customers/': {
+      id: '/_authenticated/_verified/customers/'
+      path: '/customers'
+      fullPath: '/customers/'
+      preLoaderRoute: typeof AuthenticatedVerifiedCustomersIndexRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/_verified/customers/create': {
+      id: '/_authenticated/_verified/customers/create'
+      path: '/customers/create'
+      fullPath: '/customers/create'
+      preLoaderRoute: typeof AuthenticatedVerifiedCustomersCreateRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/_public/auth/google/callback/': {
       id: '/_public/auth/google/callback/'
       path: '/auth/google/callback'
@@ -364,6 +417,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminAdminUsersIndexRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
     }
+    '/_authenticated/_verified/customers/edit/$customerId': {
+      id: '/_authenticated/_verified/customers/edit/$customerId'
+      path: '/customers/edit/$customerId'
+      fullPath: '/customers/edit/$customerId'
+      preLoaderRoute: typeof AuthenticatedVerifiedCustomersEditCustomerIdRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/_authenticated/_verified/configuration/enterprise/edit/$enterpriseId': {
       id: '/_authenticated/_verified/configuration/enterprise/edit/$enterpriseId'
       path: '/configuration/enterprise/edit/$enterpriseId'
@@ -390,7 +450,10 @@ interface AuthenticatedRouteChildren {
   AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
   AuthenticatedInicioIndexRoute: typeof AuthenticatedInicioIndexRoute
   AuthenticatedStartupIndexRoute: typeof AuthenticatedStartupIndexRoute
+  AuthenticatedVerifiedCustomersCreateRoute: typeof AuthenticatedVerifiedCustomersCreateRoute
+  AuthenticatedVerifiedCustomersIndexRoute: typeof AuthenticatedVerifiedCustomersIndexRoute
   AuthenticatedVerifiedUsersIndexRoute: typeof AuthenticatedVerifiedUsersIndexRoute
+  AuthenticatedVerifiedCustomersEditCustomerIdRoute: typeof AuthenticatedVerifiedCustomersEditCustomerIdRoute
   AuthenticatedVerifiedConfigurationEnterpriseIndexRoute: typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
   AuthenticatedVerifiedConfigurationProfilesIndexRoute: typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
   AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute: typeof AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute
@@ -400,7 +463,13 @@ const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
   AuthenticatedInicioIndexRoute: AuthenticatedInicioIndexRoute,
   AuthenticatedStartupIndexRoute: AuthenticatedStartupIndexRoute,
+  AuthenticatedVerifiedCustomersCreateRoute:
+    AuthenticatedVerifiedCustomersCreateRoute,
+  AuthenticatedVerifiedCustomersIndexRoute:
+    AuthenticatedVerifiedCustomersIndexRoute,
   AuthenticatedVerifiedUsersIndexRoute: AuthenticatedVerifiedUsersIndexRoute,
+  AuthenticatedVerifiedCustomersEditCustomerIdRoute:
+    AuthenticatedVerifiedCustomersEditCustomerIdRoute,
   AuthenticatedVerifiedConfigurationEnterpriseIndexRoute:
     AuthenticatedVerifiedConfigurationEnterpriseIndexRoute,
   AuthenticatedVerifiedConfigurationProfilesIndexRoute:

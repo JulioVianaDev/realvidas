@@ -26,6 +26,7 @@ import { EnterpriseModule } from './modules/enterprise/enterprise.module';
 import { EnterpriseMemberModule } from './modules/enterprise-member/enterprise-member.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { TenantUserModule } from './modules/tenant-user/tenant-user.module';
+import { CustomerModule } from './modules/customer/customer.module';
 import { PublicResolverModule } from './modules/public-resolver/public-resolver.module';
 
 @Module({
@@ -64,6 +65,7 @@ import { PublicResolverModule } from './modules/public-resolver/public-resolver.
     EnterpriseMemberModule,
     ProfileModule,
     TenantUserModule,
+    CustomerModule,
 
     PublicResolverModule,
 

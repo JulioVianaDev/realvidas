@@ -13,6 +13,7 @@ import { EnterpriseInvitationEntity } from './entities/enterprise-invitation.ent
 import { FileEntity } from './entities/file.entity';
 import { ProfileEntity } from './entities/profile.entity';
 import { UserProfilePivotEntity } from './entities/pivot/user-profile.pivot.entity';
+import { CustomerEntity } from './entities/customer.entity';
 
 /** Inject this token to get the current tenant's EntityManager (null if no tenant in context). */
 export const TENANT_CONNECTION = Symbol('TENANT_CONNECTION');
@@ -52,6 +53,7 @@ const connectionFactory = {
       FileEntity,
       ProfileEntity,
       UserProfilePivotEntity,
+      CustomerEntity,
     ]),
   ],
   providers: [

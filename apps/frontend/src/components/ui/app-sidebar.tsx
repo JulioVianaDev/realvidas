@@ -98,6 +98,14 @@ const getNavigationData = (
               ]
             : []),
 
+        {
+            title: t("sidebar.customers"),
+            url: "/customers",
+            icon: Building2,
+            allowedRoles: ["ADMIN", "USER"] as RoleType[],
+            module: "CLIENTES" as AppModule,
+        },
+
         // {
         //     title: "Escolas",
         //     url: "schools",

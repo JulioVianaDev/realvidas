@@ -76,7 +76,68 @@
         "adminSaasPlans": "Planos",
         "adminSaasAnalytics": "Analytics",
         "profiles": "Perfis",
-        "users": "Usuários"
+        "users": "Usuários",
+        "customers": "Clientes"
+    },
+    "customer": {
+        "title": "Clientes",
+        "subtitle": "Cadastre e gerencie seus clientes.",
+        "newButton": "Novo cliente",
+        "searchPlaceholder": "Buscar por nome ou documento...",
+        "list": {
+            "empty": "Nenhum cliente cadastrado ainda.",
+            "edit": "Editar",
+            "delete": "Excluir",
+            "columns": {
+                "razaoSocial": "Razão Social",
+                "nomeFantasia": "Nome Fantasia",
+                "cnpjCpf": "CNPJ/CPF",
+                "cidade": "Cidade",
+                "estado": "Estado",
+                "actions": "Ações"
+            }
+        },
+        "create": {
+            "title": "Novo cliente",
+            "subtitle": "Preencha as informações do cliente."
+        },
+        "edit": {
+            "title": "Editar cliente",
+            "notFound": "Cliente não encontrado."
+        },
+        "form": {
+            "razaoSocial": "Razão Social",
+            "limiteTolerancia": "Limite Tolerância",
+            "nomeFantasia": "Nome Fantasia",
+            "cnpjCpf": "CNPJ/CPF",
+            "responsavel": "Responsável",
+            "email": "E-mail",
+            "telefone": "Telefone",
+            "celular": "Celular",
+            "endereco": "Endereço",
+            "complemento": "Complemento",
+            "bairro": "Bairro",
+            "cidade": "Cidade",
+            "cep": "CEP",
+            "estado": "Estado",
+            "estadoPlaceholder": "-- SELECIONE --",
+            "save": "Salvar",
+            "saving": "Salvando...",
+            "validation": {
+                "razaoSocialRequired": "Razão Social é obrigatória"
+            }
+        },
+        "toast": {
+            "createSuccess": "Cliente criado",
+            "createError": "Não foi possível criar o cliente",
+            "createErrorDescription": "Ocorreu um erro ao criar o cliente.",
+            "updateSuccess": "Cliente atualizado",
+            "updateError": "Não foi possível atualizar o cliente",
+            "updateErrorDescription": "Ocorreu um erro ao atualizar o cliente.",
+            "deleteSuccess": "Cliente removido",
+            "deleteError": "Não foi possível remover o cliente",
+            "deleteErrorDescription": "Ocorreu um erro ao remover o cliente."
+        }
     },
     "tenantUser": {
         "title": "Usuários",

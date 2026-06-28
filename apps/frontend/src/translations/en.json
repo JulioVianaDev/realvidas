@@ -76,7 +76,68 @@
         "adminSaasPlans": "Plans",
         "adminSaasAnalytics": "Analytics",
         "profiles": "Profiles",
-        "users": "Users"
+        "users": "Users",
+        "customers": "Customers"
+    },
+    "customer": {
+        "title": "Customers",
+        "subtitle": "Register and manage your customers.",
+        "newButton": "New customer",
+        "searchPlaceholder": "Search by name or document...",
+        "list": {
+            "empty": "No customers registered yet.",
+            "edit": "Edit",
+            "delete": "Delete",
+            "columns": {
+                "razaoSocial": "Company name",
+                "nomeFantasia": "Trade name",
+                "cnpjCpf": "CNPJ/CPF",
+                "cidade": "City",
+                "estado": "State",
+                "actions": "Actions"
+            }
+        },
+        "create": {
+            "title": "New customer",
+            "subtitle": "Fill in the customer information."
+        },
+        "edit": {
+            "title": "Edit customer",
+            "notFound": "Customer not found."
+        },
+        "form": {
+            "razaoSocial": "Company name",
+            "limiteTolerancia": "Tolerance limit",
+            "nomeFantasia": "Trade name",
+            "cnpjCpf": "CNPJ/CPF",
+            "responsavel": "Contact person",
+            "email": "E-mail",
+            "telefone": "Phone",
+            "celular": "Mobile",
+            "endereco": "Address",
+            "complemento": "Complement",
+            "bairro": "District",
+            "cidade": "City",
+            "cep": "ZIP code",
+            "estado": "State",
+            "estadoPlaceholder": "-- SELECT --",
+            "save": "Save",
+            "saving": "Saving...",
+            "validation": {
+                "razaoSocialRequired": "Company name is required"
+            }
+        },
+        "toast": {
+            "createSuccess": "Customer created",
+            "createError": "Could not create customer",
+            "createErrorDescription": "Something went wrong while creating the customer.",
+            "updateSuccess": "Customer updated",
+            "updateError": "Could not update customer",
+            "updateErrorDescription": "Something went wrong while updating the customer.",
+            "deleteSuccess": "Customer removed",
+            "deleteError": "Could not remove customer",
+            "deleteErrorDescription": "Something went wrong while removing the customer."
+        }
     },
     "tenantUser": {
         "title": "Users",

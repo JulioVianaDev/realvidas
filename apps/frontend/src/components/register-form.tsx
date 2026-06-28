@@ -467,7 +467,7 @@ export function RegisterForm() {
                     <button
                         type="button"
                         onClick={() => navigate({ to: "/login" })}
-                        className="text-primary hover:text-primary/20 underline underline-offset-4"
+                        className="cursor-pointer text-primary/90 hover:text-primary underline underline-offset-4"
                     >
                         {t("auth.register.loginHere")}
                     </button>

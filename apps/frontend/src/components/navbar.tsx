@@ -97,20 +97,17 @@ export default function Navbar() {
     };
     return (
         <header
-            className={`sticky top-0 z-4 flex justify-between h-20 w-full items-center px-4 md:px-6 border-b-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-primary`}
+            className={`sticky top-0 z-4 flex justify-between h-24 w-full items-center px-4 md:px-6 border-b-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-primary`}
         >
             <div
                 className="flex  items-center  gap-2 cursor-pointer hover:opacity-80 transition-opacity"
                 onClick={() => navigate({ to: "/" })}
             >
                 <img
-                    src="/dalia.png"
+                    src="/logo2.webp"
                     alt="realvidas"
-                    className="w-9 h-9"
+                    className="w-90 h-20"
                 />
-                <span className="font-baskerville font-bold text-md text-gradient-primary">
-                    realvidas
-                </span>
             </div>
             <div className="flex items-center">
                 <div className="flex items-center gap-4">

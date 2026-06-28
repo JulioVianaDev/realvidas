@@ -1,4 +1,11 @@
-import { Column, Img, Link, Row, Section, Text } from "@react-email/components";
+import {
+    Column,
+    Img,
+    Link,
+    Row,
+    Section,
+    Text,
+} from "@react-email/components";
 import { themes, type Theme } from "../theme";
 import { DEFAULT_APP_BASE_URL } from "../constants";
 import { getHeaderFooterMessages } from "./header-footer.messages";
@@ -29,15 +36,29 @@ export function Footer({
     const s = themes[resolvedTheme];
 
     const defaultSocial = [
-        { href: baseUrl, imgSrc: `${baseUrl}/dalia.png`, alt: t.logoAlt },
-        { href: baseUrl, imgSrc: `${baseUrl}/dalia.png`, alt: t.logoAlt },
-        { href: baseUrl, imgSrc: `${baseUrl}/dalia.png`, alt: t.logoAlt },
+        {
+            href: baseUrl,
+            imgSrc: `${baseUrl}/logo.webp`,
+            alt: t.logoAlt,
+        },
+        {
+            href: baseUrl,
+            imgSrc: `${baseUrl}/logo.webp`,
+            alt: t.logoAlt,
+        },
+        {
+            href: baseUrl,
+            imgSrc: `${baseUrl}/logo.webp`,
+            alt: t.logoAlt,
+        },
     ];
     const links = socialLinks ?? defaultSocial;
 
     return (
         <>
-            <Section style={{ marginBottom: "32px", padding: "0 8px" }}>
+            <Section
+                style={{ marginBottom: "32px", padding: "0 8px" }}
+            >
                 <Row>
                     <Column
                         style={{
@@ -46,7 +67,7 @@ export function Footer({
                         }}
                     >
                         <Img
-                            src={`${baseUrl}/dalia.png`}
+                            src={`${baseUrl}/logo.webp`}
                             width={42}
                             height={42}
                             alt={t.logoAlt}
@@ -66,7 +87,8 @@ export function Footer({
                         <Text
                             style={{
                                 margin: 0,
-                                fontFamily: '"Libre Baskerville", Georgia, serif',
+                                fontFamily:
+                                    '"Libre Baskerville", Georgia, serif',
                                 fontWeight: 700,
                                 fontSize: "16px",
                                 color: s.styles.primaryBackground,
@@ -79,7 +101,10 @@ export function Footer({
                         <Column
                             key={i}
                             style={{
-                                width: i < links.length - 1 ? "11%" : "12%",
+                                width:
+                                    i < links.length - 1
+                                        ? "11%"
+                                        : "12%",
                                 textAlign: "right",
                                 verticalAlign: "middle",
                             }}
@@ -148,7 +173,8 @@ export function Footer({
                         marginBottom: "50px",
                     }}
                 >
-                    © {new Date().getFullYear()} {t.companyName}. <br />
+                    © {new Date().getFullYear()} {t.companyName}.{" "}
+                    <br />
                     {t.address} <br />
                     <br />
                     {t.rightsReserved}

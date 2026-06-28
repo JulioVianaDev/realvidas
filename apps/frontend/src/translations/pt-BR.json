@@ -74,7 +74,55 @@
         "adminSaasTenants": "Tenants e pagamentos",
         "adminSaasUsers": "Usuários",
         "adminSaasPlans": "Planos",
-        "adminSaasAnalytics": "Analytics"
+        "adminSaasAnalytics": "Analytics",
+        "profiles": "Perfis"
+    },
+    "profile": {
+        "title": "Perfis de permissão",
+        "subtitle": "Crie funções com um conjunto de módulos e vincule-as aos usuários.",
+        "form": {
+            "createTitle": "Criar perfil",
+            "editTitle": "Editar perfil",
+            "name": "Nome do perfil",
+            "namePlaceholder": "ex.: Secretário",
+            "permitAll": "Ver todos os módulos",
+            "permitAllHint": "Quando ativado, este perfil acessa todos os módulos.",
+            "modules": "Módulos permitidos",
+            "save": "Salvar perfil",
+            "saving": "Salvando..."
+        },
+        "list": {
+            "empty": "Nenhum perfil criado ainda.",
+            "allModules": "Todos os módulos",
+            "modulesCount": "{count} módulo(s)",
+            "edit": "Editar",
+            "delete": "Excluir",
+            "columns": {
+                "name": "Perfil",
+                "access": "Acesso",
+                "actions": "Ações"
+            }
+        },
+        "assign": {
+            "title": "Vincular perfis a um usuário",
+            "user": "Usuário",
+            "userPlaceholder": "Selecione um usuário",
+            "profiles": "Perfis",
+            "noProfiles": "Crie um perfil primeiro.",
+            "save": "Salvar vínculo",
+            "saving": "Salvando..."
+        },
+        "toast": {
+            "saveSuccess": "Perfil salvo",
+            "saveError": "Não foi possível salvar o perfil",
+            "saveErrorDescription": "Ocorreu um erro ao salvar o perfil.",
+            "deleteSuccess": "Perfil removido",
+            "deleteError": "Não foi possível remover o perfil",
+            "deleteErrorDescription": "Ocorreu um erro ao remover o perfil.",
+            "assignSuccess": "Vínculo salvo",
+            "assignError": "Não foi possível salvar o vínculo",
+            "assignErrorDescription": "Ocorreu um erro ao salvar o vínculo."
+        }
     },
     "adminSaas": {
         "tenants": {

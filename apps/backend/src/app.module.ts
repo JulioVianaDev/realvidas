@@ -24,6 +24,7 @@ import { MailModule } from './modules/mail/mail.module';
 import { SeedModule } from './modules/seed/seed.module';
 import { EnterpriseModule } from './modules/enterprise/enterprise.module';
 import { EnterpriseMemberModule } from './modules/enterprise-member/enterprise-member.module';
+import { ProfileModule } from './modules/profile/profile.module';
 import { PublicResolverModule } from './modules/public-resolver/public-resolver.module';
 
 @Module({
@@ -60,6 +61,7 @@ import { PublicResolverModule } from './modules/public-resolver/public-resolver.
     AuthModule,
     EnterpriseModule,
     EnterpriseMemberModule,
+    ProfileModule,
 
     PublicResolverModule,
 

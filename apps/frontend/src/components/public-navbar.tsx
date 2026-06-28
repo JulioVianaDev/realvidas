@@ -20,20 +20,17 @@ export function PublicNavbar() {
     return (
         <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur ">
             <div className="container mx-auto ">
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-24 items-center justify-between">
                     {/* Logo */}
                     <div
                         className="flex items-center  gap-2 cursor-pointer hover:opacity-80 transition-opacity"
                         onClick={() => navigate({ to: "/" })}
                     >
                         <img
-                            src="/dalia.png"
+                            src="/logo2.webp"
                             alt="realvidas"
-                            className="w-9 h-9"
+                            className="w-90 h-20"
                         />
-                        <span className="font-baskerville font-bold text-md text-gradient-primary">
-                            realvidas
-                        </span>
                     </div>
 
                     {/* Desktop Navigation */}

@@ -36,7 +36,7 @@ export function Header({
         >
             <Link href={baseUrl}>
                 <Img
-                    src={`${baseUrl}/dalia.png`}
+                    src={`${baseUrl}/logo.webp`}
                     width={42}
                     height={42}
                     alt={t.logoAlt}

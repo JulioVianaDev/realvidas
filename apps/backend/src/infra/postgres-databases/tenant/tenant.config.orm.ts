@@ -8,6 +8,8 @@ export const tenantConfig: DataSourceOptions = {
   entities: [
     __dirname + '/entities/enterprise.entity{.ts,.js}',
     __dirname + '/entities/enterprise-member.entity{.ts,.js}',
+    __dirname + '/entities/profile.entity{.ts,.js}',
+    __dirname + '/entities/pivot/user-profile.pivot.entity{.ts,.js}',
     __dirname + '/entities/enterprise-invitation.entity{.ts,.js}',
     __dirname + '/entities/file.entity{.ts,.js}',
     __dirname + '/entities/calendar.entity{.ts,.js}',

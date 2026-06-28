@@ -52,6 +52,16 @@ export const API_ROUTES = {
         UPDATE: (id: string) => `enterprise-members/${id}`,
         REMOVE: (id: string) => `enterprise-members/${id}`,
     },
+    PROFILE: {
+        GET_ALL: "profiles",
+        GET_MINE: "profiles/me",
+        GET_BY_ID: (id: string) => `profiles/${id}`,
+        CREATE: "profiles",
+        UPDATE: (id: string) => `profiles/${id}`,
+        DELETE: (id: string) => `profiles/${id}`,
+        GET_BY_USER: (userId: string) => `profiles/user/${userId}`,
+        ASSIGN: "profiles/assign",
+    },
     ENTERPRISE_INVITATION: {
         CREATE: (enterpriseId: string) =>
             `enterprise-invitations/${enterpriseId}`,

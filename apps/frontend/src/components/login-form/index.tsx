@@ -151,7 +151,7 @@ export function LoginForm() {
                     <button
                         type="button"
                         onClick={() => navigate({ to: "/register" })}
-                        className="text-primary hover:text-primary/20 underline underline-offset-4"
+                        className="cursor-pointer text-primary/90 hover:text-primary underline underline-offset-4"
                     >
                         {t("auth.login.createAccount")}
                     </button>

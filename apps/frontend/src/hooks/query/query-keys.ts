@@ -2,6 +2,7 @@ import { API_ROUTES } from "@/api";
 import type { GetUsersParams } from "@global-types/params/user.params";
 import type { IGetEnterprisesParams, IGetMyEnterprisesParams } from "@global-types/params/enterprise.params";
 import type { IGetEnterpriseMembersParams } from "@global-types/params/enterprise-member.params";
+import type { IGetProfilesParams } from "@global-types/params/profile.params";
 import type { IGetAllAiRalphsParams } from "@global-types/params/ai-ralph.params";
 import type { IGetAllAiToolsParams } from "@global-types/params/ai-tool.params";
 import type { IGetAllAssistantsParams } from "@global-types/params/assistant.params";
@@ -49,6 +50,14 @@ export const queryKeys = {
     enterpriseMember: {
         all: () => [API_ROUTES.ENTERPRISE_MEMBER.GET_ALL] as const,
         list: (p: IGetEnterpriseMembersParams) => [API_ROUTES.ENTERPRISE_MEMBER.GET_ALL, "list", p] as const,
+    },
+
+    profile: {
+        all: () => [API_ROUTES.PROFILE.GET_ALL] as const,
+        list: (p: IGetProfilesParams) => [API_ROUTES.PROFILE.GET_ALL, "list", p] as const,
+        detail: (id: string) => [API_ROUTES.PROFILE.GET_ALL, "detail", id] as const,
+        mine: () => [API_ROUTES.PROFILE.GET_MINE] as const,
+        byUser: (userId: string) => [API_ROUTES.PROFILE.GET_ALL, "by-user", userId] as const,
     },
 
     aiRalph: {

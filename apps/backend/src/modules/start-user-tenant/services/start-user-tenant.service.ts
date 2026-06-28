@@ -12,6 +12,8 @@ import { IStartUserTenantResponse } from '@global-types/responses/start-user-ten
 import { getTenantConnection } from 'src/infra/postgres-databases/tenant/utils';
 import { EnterpriseEntity } from 'src/infra/postgres-databases/tenant/entities/enterprise.entity';
 import { EnterpriseMemberEntity } from 'src/infra/postgres-databases/tenant/entities/enterprise-member.entity';
+import { ProfileEntity } from 'src/infra/postgres-databases/tenant/entities/profile.entity';
+import { UserProfilePivotEntity } from 'src/infra/postgres-databases/tenant/entities/pivot/user-profile.pivot.entity';
 import { UserEntity } from 'src/infra/postgres-databases/main/entities/user.entity';
 import { TenantEntity } from 'src/infra/postgres-databases/main/entities/tenant.entity';
 import { EnterpriseRole } from 'src/infra/postgres-databases/main/entities/enums';
@@ -88,6 +90,24 @@ export class StartUserTenantService {
         role: EnterpriseRole.OWNER,
       });
 
+      // The owner is the tenant admin: create an "Administrador" permit-all
+      // profile and link the owner to it, so they can see every module and
+      // manage other users' profiles from the start.
+      const profileRepo =
+        tenantConnection.getRepository(ProfileEntity);
+      const pivotRepo = tenantConnection.getRepository(
+        UserProfilePivotEntity,
+      );
+      const adminProfile = await profileRepo.save({
+        name: 'Administrador',
+        modules: [],
+        permitAll: true,
+      });
+      await pivotRepo.save({
+        userId,
+        profileId: adminProfile.id,
+      });
+
       await this.mainDataSource
         .getRepository(UserEntity)
         .update(userId, {
@@ -101,12 +121,10 @@ export class StartUserTenantService {
         [userId, tenant.id],
       );
 
-      this.socketService.emitToTenant(tenant.id, 'tenant:ready', {
-        tenantId: tenant.id,
-        enterpriseId: savedEnterprise.id,
-        enterpriseName: savedEnterprise.name,
-      });
-
+      // Emit only to the user room. The creating user's socket is already in
+      // both the user room and the tenant room (the startup page joins it), so
+      // a tenant-room broadcast as well would deliver tenant:ready twice and
+      // trigger duplicate toasts. The user is the only member at provisioning.
       this.socketService.emitToUser(userId, 'tenant:ready', {
         tenantId: tenant.id,
         enterpriseId: savedEnterprise.id,

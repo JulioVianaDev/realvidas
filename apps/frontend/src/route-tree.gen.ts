@@ -22,6 +22,7 @@ import { Route as PublicEmailsViewsIndexRouteImport } from './pages/_public/emai
 import { Route as AuthenticatedStartupIndexRouteImport } from './pages/_authenticated/startup/index'
 import { Route as AuthenticatedInicioIndexRouteImport } from './pages/_authenticated/inicio/index'
 import { Route as PublicAuthGoogleCallbackIndexRouteImport } from './pages/_public/auth/google/callback/index'
+import { Route as AuthenticatedVerifiedConfigurationProfilesIndexRouteImport } from './pages/_authenticated/_verified/configuration/profiles/index'
 import { Route as AuthenticatedVerifiedConfigurationEnterpriseIndexRouteImport } from './pages/_authenticated/_verified/configuration/enterprise/index'
 import { Route as AuthenticatedAdminAdminUsersIndexRouteImport } from './pages/_authenticated/_admin/admin/users/index'
 import { Route as AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRouteImport } from './pages/_authenticated/_verified/configuration/enterprise/edit.$enterpriseId'
@@ -91,6 +92,12 @@ const PublicAuthGoogleCallbackIndexRoute =
     path: '/auth/google/callback/',
     getParentRoute: () => PublicRoute,
   } as any)
+const AuthenticatedVerifiedConfigurationProfilesIndexRoute =
+  AuthenticatedVerifiedConfigurationProfilesIndexRouteImport.update({
+    id: '/_verified/configuration/profiles/',
+    path: '/configuration/profiles/',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
 const AuthenticatedVerifiedConfigurationEnterpriseIndexRoute =
   AuthenticatedVerifiedConfigurationEnterpriseIndexRouteImport.update({
     id: '/_verified/configuration/enterprise/',
@@ -124,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/welcome/': typeof PublicWelcomeIndexRoute
   '/admin/users/': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/configuration/enterprise/': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
+  '/configuration/profiles/': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
   '/auth/google/callback/': typeof PublicAuthGoogleCallbackIndexRoute
   '/configuration/enterprise/edit/$enterpriseId': typeof AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute
 }
@@ -139,6 +147,7 @@ export interface FileRoutesByTo {
   '/welcome': typeof PublicWelcomeIndexRoute
   '/admin/users': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/configuration/enterprise': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
+  '/configuration/profiles': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
   '/auth/google/callback': typeof PublicAuthGoogleCallbackIndexRoute
   '/configuration/enterprise/edit/$enterpriseId': typeof AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute
 }
@@ -158,6 +167,7 @@ export interface FileRoutesById {
   '/_public/welcome/': typeof PublicWelcomeIndexRoute
   '/_authenticated/_admin/admin/users/': typeof AuthenticatedAdminAdminUsersIndexRoute
   '/_authenticated/_verified/configuration/enterprise/': typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
+  '/_authenticated/_verified/configuration/profiles/': typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
   '/_public/auth/google/callback/': typeof PublicAuthGoogleCallbackIndexRoute
   '/_authenticated/_verified/configuration/enterprise/edit/$enterpriseId': typeof AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute
 }
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
     | '/welcome/'
     | '/admin/users/'
     | '/configuration/enterprise/'
+    | '/configuration/profiles/'
     | '/auth/google/callback/'
     | '/configuration/enterprise/edit/$enterpriseId'
   fileRoutesByTo: FileRoutesByTo
@@ -190,6 +201,7 @@ export interface FileRouteTypes {
     | '/welcome'
     | '/admin/users'
     | '/configuration/enterprise'
+    | '/configuration/profiles'
     | '/auth/google/callback'
     | '/configuration/enterprise/edit/$enterpriseId'
   id:
@@ -208,6 +220,7 @@ export interface FileRouteTypes {
     | '/_public/welcome/'
     | '/_authenticated/_admin/admin/users/'
     | '/_authenticated/_verified/configuration/enterprise/'
+    | '/_authenticated/_verified/configuration/profiles/'
     | '/_public/auth/google/callback/'
     | '/_authenticated/_verified/configuration/enterprise/edit/$enterpriseId'
   fileRoutesById: FileRoutesById
@@ -310,6 +323,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicAuthGoogleCallbackIndexRouteImport
       parentRoute: typeof PublicRoute
     }
+    '/_authenticated/_verified/configuration/profiles/': {
+      id: '/_authenticated/_verified/configuration/profiles/'
+      path: '/configuration/profiles'
+      fullPath: '/configuration/profiles/'
+      preLoaderRoute: typeof AuthenticatedVerifiedConfigurationProfilesIndexRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
     '/_authenticated/_verified/configuration/enterprise/': {
       id: '/_authenticated/_verified/configuration/enterprise/'
       path: '/configuration/enterprise'
@@ -351,6 +371,7 @@ interface AuthenticatedRouteChildren {
   AuthenticatedInicioIndexRoute: typeof AuthenticatedInicioIndexRoute
   AuthenticatedStartupIndexRoute: typeof AuthenticatedStartupIndexRoute
   AuthenticatedVerifiedConfigurationEnterpriseIndexRoute: typeof AuthenticatedVerifiedConfigurationEnterpriseIndexRoute
+  AuthenticatedVerifiedConfigurationProfilesIndexRoute: typeof AuthenticatedVerifiedConfigurationProfilesIndexRoute
   AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute: typeof AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute
 }
 
@@ -360,6 +381,8 @@ const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedStartupIndexRoute: AuthenticatedStartupIndexRoute,
   AuthenticatedVerifiedConfigurationEnterpriseIndexRoute:
     AuthenticatedVerifiedConfigurationEnterpriseIndexRoute,
+  AuthenticatedVerifiedConfigurationProfilesIndexRoute:
+    AuthenticatedVerifiedConfigurationProfilesIndexRoute,
   AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute:
     AuthenticatedVerifiedConfigurationEnterpriseEditEnterpriseIdRoute,
 }

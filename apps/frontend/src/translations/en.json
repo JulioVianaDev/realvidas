@@ -74,7 +74,55 @@
         "adminSaasTenants": "Tenants & payments",
         "adminSaasUsers": "Users",
         "adminSaasPlans": "Plans",
-        "adminSaasAnalytics": "Analytics"
+        "adminSaasAnalytics": "Analytics",
+        "profiles": "Profiles"
+    },
+    "profile": {
+        "title": "Permission profiles",
+        "subtitle": "Create roles with a set of modules and assign them to users.",
+        "form": {
+            "createTitle": "Create profile",
+            "editTitle": "Edit profile",
+            "name": "Profile name",
+            "namePlaceholder": "e.g. Secretary",
+            "permitAll": "See all modules",
+            "permitAllHint": "When enabled, this profile can access every module.",
+            "modules": "Allowed modules",
+            "save": "Save profile",
+            "saving": "Saving..."
+        },
+        "list": {
+            "empty": "No profiles created yet.",
+            "allModules": "All modules",
+            "modulesCount": "{count} module(s)",
+            "edit": "Edit",
+            "delete": "Delete",
+            "columns": {
+                "name": "Profile",
+                "access": "Access",
+                "actions": "Actions"
+            }
+        },
+        "assign": {
+            "title": "Assign profiles to a user",
+            "user": "User",
+            "userPlaceholder": "Select a user",
+            "profiles": "Profiles",
+            "noProfiles": "Create a profile first.",
+            "save": "Save assignment",
+            "saving": "Saving..."
+        },
+        "toast": {
+            "saveSuccess": "Profile saved",
+            "saveError": "Could not save profile",
+            "saveErrorDescription": "Something went wrong while saving the profile.",
+            "deleteSuccess": "Profile removed",
+            "deleteError": "Could not remove profile",
+            "deleteErrorDescription": "Something went wrong while removing the profile.",
+            "assignSuccess": "Assignment saved",
+            "assignError": "Could not save assignment",
+            "assignErrorDescription": "Something went wrong while saving the assignment."
+        }
     },
     "adminSaas": {
         "tenants": {

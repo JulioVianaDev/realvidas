@@ -30,6 +30,8 @@ import {
 import { useLocation } from "@tanstack/react-router";
 import { useUserStore } from "@/zustand/user.store";
 import { RoleType } from "@global-types/entities/user.entity-type";
+import { AppModule } from "@global-types/entities/profile.entity-type";
+import { useGetMyPermissionsQuery } from "@/hooks/query/profile/profile.query";
 import { useTranslation } from "@/contexts/TranslationsContext";
 import {
     Select,
@@ -79,7 +81,10 @@ import { cn } from "@/lib/utils";
 import { NavMain } from "../nav-main";
 
 // Add role permissions to navigation items
-const getNavigationData = (t: (key: string) => string) => ({
+const getNavigationData = (
+    t: (key: string) => string,
+    canManageProfiles: boolean,
+) => ({
     navMain: [
         // {
         //     title: "Escolas",
@@ -107,195 +112,6 @@ const getNavigationData = (t: (key: string) => string) => ({
         //         },
         //     ],
         // },
-        {
-            title: t("sidebar.scheduling"),
-            url: "#",
-            icon: Calendar,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.events"),
-                    url: "/events",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.calendar"),
-                    url: "/calendars",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.chat"),
-                    url: "/chat",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.scheduleProfiles"),
-                    url: "/schedules",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
-        {
-            title: t("sidebar.reports"),
-            url: "/reports",
-            icon: BarChart,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.appointments"),
-                    url: "/reports/appointments",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.messages"),
-                    url: "/reports/messages",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
-        {
-            title: t("sidebar.sellerArea"),
-            url: "/seller",
-            icon: User2Icon,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.sales"),
-                    url: "/seller/sales",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.createCoupons"),
-                    url: "/seller/create-coupons",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.payments"),
-                    url: "/seller/payments",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
-        {
-            title: t("sidebar.catalog"),
-            url: "/catalog",
-            icon: LayoutGrid,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.catalogOverview"),
-                    url: "/catalog",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.catalogView"),
-                    url: "/catalog/view",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.categories"),
-                    url: "/catalog/categories",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.products"),
-                    url: "/catalog/products",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.combos"),
-                    url: "/catalog/combos",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
-        {
-            title: t("sidebar.offerings"),
-            url: "/offerings",
-            icon: ClipboardList,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.offeringsOverview"),
-                    url: "/offerings",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.offeringsServices"),
-                    url: "/offerings/services",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.offeringsCategories"),
-                    url: "/offerings/categories",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.offeringsProfessionals"),
-                    url: "/offerings/professionals",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
-        {
-            title: t("sidebar.pipelines"),
-            url: "/pipelines",
-            icon: KanbanSquare,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.pipelinesList"),
-                    url: "/pipelines",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
-        {
-            title: t("sidebar.customers"),
-            url: "/customers",
-            icon: Users,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.customersList"),
-                    url: "/customers",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.campaignsList"),
-                    url: "/customers/campaigns",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
-        {
-            title: t("sidebar.artificialIntelligence"),
-            url: "/ai",
-            icon: Brain,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.assistants"),
-                    url: "/ai/assistants",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.tools"),
-                    url: "/ai/tools",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.ralphs"),
-                    url: "/ai/ralphs",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.usage"),
-                    url: "/ai/usage",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-            ],
-        },
 
         {
             title: t("sidebar.settings"),
@@ -308,64 +124,27 @@ const getNavigationData = (t: (key: string) => string) => ({
                     url: "/settings/emails",
                     allowedRoles: ["ADMIN", "USER"] as RoleType[],
                 },
-                {
-                    title: t("sidebar.flows"),
-                    url: "/settings/flows",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.socialMedias"),
-                    url: "/settings/social-medias",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
+
                 {
                     title: t("sidebar.configurationEnterprises"),
                     url: "/configuration/enterprise",
                     allowedRoles: ["ADMIN", "USER"] as RoleType[],
                 },
-            ],
-        },
-        {
-            title: t("sidebar.administrative"),
-            url: "/administrative",
-            icon: Database,
-            allowedRoles: ["ADMIN", "USER"] as RoleType[],
-            items: [
-                {
-                    title: t("sidebar.logs"),
-                    url: "/logs",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.dashboard"),
-                    url: "/adm/dashboard",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.myPayments"),
-                    url: "/payments",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.myPlan"),
-                    url: "/subscription",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.paymentsMonitoring"),
-                    url: "/adm/payments-dashboard",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.credits"),
-                    url: "/credits",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
-                {
-                    title: t("sidebar.enterprise"),
-                    url: "/enterprise",
-                    allowedRoles: ["ADMIN", "USER"] as RoleType[],
-                },
+
+                // Only users who can manage profiles (permit-all / tenant
+                // admin) see the permissions panel.
+                ...(canManageProfiles
+                    ? [
+                          {
+                              title: t("sidebar.profiles"),
+                              url: "/configuration/profiles",
+                              allowedRoles: [
+                                  "ADMIN",
+                                  "USER",
+                              ] as RoleType[],
+                          },
+                      ]
+                    : []),
             ],
         },
     ],
@@ -418,9 +197,31 @@ const hasAccess = (
     return allowedRoles.includes(userRole);
 };
 
+/** Effective module-permission context for the current user. */
+type ModuleAccessContext = {
+    isAdmin: boolean;
+    permitAll: boolean;
+    allowedModules: AppModule[];
+};
+
+/**
+ * A nav item without a `module` is always allowed (role still applies).
+ * Module-gated items require permitAll, the module in the user's list, or a
+ * SaaS admin (main role ADMIN bypasses tenant module permissions).
+ */
+const hasModuleAccess = (
+    module: AppModule | undefined,
+    ctx: ModuleAccessContext,
+): boolean => {
+    if (!module) return true;
+    if (ctx.isAdmin || ctx.permitAll) return true;
+    return ctx.allowedModules.includes(module);
+};
+
 type NavItemWithTitle = {
     title: string;
     allowedRoles?: RoleType[];
+    module?: AppModule;
     items?: NavItemWithTitle[];
 };
 
@@ -448,9 +249,14 @@ const sortNavItemsByTitleAsc = <T extends NavItemWithTitle>(
 const filterNavItems = <T extends NavItemWithTitle>(
     items: T[],
     userRole: RoleType | undefined,
+    moduleCtx: ModuleAccessContext,
 ): T[] => {
     return items
-        .filter((item) => hasAccess(item.allowedRoles, userRole))
+        .filter(
+            (item) =>
+                hasAccess(item.allowedRoles, userRole) &&
+                hasModuleAccess(item.module, moduleCtx),
+        )
         .map((item) => {
             if (!item.items?.length) {
                 return item;
@@ -458,8 +264,10 @@ const filterNavItems = <T extends NavItemWithTitle>(
 
             return {
                 ...item,
-                items: item.items.filter((subItem) =>
-                    hasAccess(subItem.allowedRoles, userRole),
+                items: item.items.filter(
+                    (subItem) =>
+                        hasAccess(subItem.allowedRoles, userRole) &&
+                        hasModuleAccess(subItem.module, moduleCtx),
                 ),
             };
         });
@@ -479,27 +287,45 @@ export function AppSidebar({
     const { mutate: patchMyCurrentTenant } =
         usePatchMyCurrentTenantMutation();
 
+    // Only query permissions once the user has a tenant; the endpoint is
+    // tenant-scoped and has no connection before a workspace exists.
+    const { data: myPermissions } = useGetMyPermissionsQuery(
+        !!user && !!userData?.currentTenantViewId,
+    );
+    const permitAll = myPermissions?.permitAll ?? false;
+    const allowedModules = myPermissions?.modules ?? [];
+    const canManageProfiles =
+        isAdmin || (myPermissions?.canManage ?? false);
+
+    const moduleCtx = React.useMemo<ModuleAccessContext>(
+        () => ({ isAdmin, permitAll, allowedModules }),
+        [isAdmin, permitAll, allowedModules],
+    );
+
     const isCalendarPage = pathname === "/calendar";
 
-    const data = React.useMemo(() => getNavigationData(t), [t]);
+    const data = React.useMemo(
+        () => getNavigationData(t, canManageProfiles),
+        [t, canManageProfiles],
+    );
 
     const filteredNavMain = React.useMemo(() => {
         return sortNavItemsByTitleAsc(
-            filterNavItems(data.navMain, user?.role),
+            filterNavItems(data.navMain, user?.role, moduleCtx),
         );
-    }, [data.navMain, user?.role]);
+    }, [data.navMain, user?.role, moduleCtx]);
 
     const filteredProjects = React.useMemo(() => {
         return sortNavItemsByTitleAsc(
-            filterNavItems(data.projects, user?.role),
+            filterNavItems(data.projects, user?.role, moduleCtx),
         );
-    }, [data.projects, user?.role]);
+    }, [data.projects, user?.role, moduleCtx]);
 
     const filteredAdminSaasNav = React.useMemo(() => {
         return sortNavItemsByTitleAsc(
-            filterNavItems(data.adminSaasNav, user?.role),
+            filterNavItems(data.adminSaasNav, user?.role, moduleCtx),
         );
-    }, [data.adminSaasNav, user?.role]);
+    }, [data.adminSaasNav, user?.role, moduleCtx]);
 
     const { data: adminTenants = [] } =
         useAdminListTenantsQuery(isAdmin);

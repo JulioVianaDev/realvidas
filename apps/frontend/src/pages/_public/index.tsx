@@ -43,7 +43,8 @@ export const Route = createFileRoute("/_public/")({
 });
 
 /* ── Contact constants (realvidas.com.br) ── */
-const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5512997151128";
+const WHATSAPP_URL =
+    "https://api.whatsapp.com/send?phone=5512997151128";
 const PHONE_MOBILE = "+5512997151128";
 const PHONE_MOBILE_LABEL = "(12) 99715-1128";
 const PHONE_LAND = "+551235221128";
@@ -64,7 +65,9 @@ function WhatsappIcon({ className }: { className?: string }) {
 }
 
 const scrollToId = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    document
+        .getElementById(id)
+        ?.scrollIntoView({ behavior: "smooth" });
 
 /* ── Hero rotating slides ── */
 const SLIDES = [
@@ -90,10 +93,18 @@ const STATS = [
     { icon: Clock, value: "24h", label: "Atendimento" },
     { icon: ShieldCheck, value: "+10", label: "Anos de atuação" },
     { icon: Award, value: "6", label: "Certificações" },
-    { icon: HeartPulse, value: "100%", label: "Equipe especializada" },
+    {
+        icon: HeartPulse,
+        value: "100%",
+        label: "Equipe especializada",
+    },
 ];
 
-const SERVICES: { icon: LucideIcon; title: string; description: string }[] = [
+const SERVICES: {
+    icon: LucideIcon;
+    title: string;
+    description: string;
+}[] = [
     {
         icon: Truck,
         title: "Transporte terrestre de pacientes",
@@ -159,7 +170,15 @@ const STANDARDS = [
     "Atendimento personalizado, ágil e humanizado",
 ];
 
-const PLANS = [
+const PLANS: {
+    tier: string;
+    tierClass: string;
+    name: string;
+    coverage: string;
+    features: string[];
+    featured: boolean;
+    image?: string;
+}[] = [
     {
         tier: "Bronze",
         tierClass: "bg-bronze",
@@ -171,6 +190,7 @@ const PLANS = [
             "Agendamento por WhatsApp",
         ],
         featured: false,
+        image: "/plano_bronze.webp",
     },
     {
         tier: "Prata",
@@ -183,6 +203,7 @@ const PLANS = [
             "Equipe de plantão",
         ],
         featured: false,
+        image: "/plano_prata.webp",
     },
     {
         tier: "Ouro",
@@ -196,6 +217,7 @@ const PLANS = [
             "Atendimento prioritário",
         ],
         featured: true,
+        image: "/plano_ouro.webp",
     },
     {
         tier: "Particular",
@@ -290,7 +312,9 @@ function LandingPage() {
                             <Button
                                 size="lg"
                                 className="bg-orange-500 text-white shadow-brand hover:bg-orange-600"
-                                onClick={() => scrollToId(current.ctaTarget)}
+                                onClick={() =>
+                                    scrollToId(current.ctaTarget)
+                                }
                             >
                                 <WhatsappIcon className="size-5" />
                                 {current.cta}
@@ -315,7 +339,8 @@ function LandingPage() {
                                     onClick={() => setSlide(idx)}
                                     className="h-2.5 rounded-full transition-all duration-300"
                                     style={{
-                                        width: idx === slide ? 28 : 10,
+                                        width:
+                                            idx === slide ? 28 : 10,
                                         background:
                                             idx === slide
                                                 ? "#fff"
@@ -333,7 +358,8 @@ function LandingPage() {
                             Foto da frota / equipe
                         </span>
                         <span className="text-xs opacity-70">
-                            Atendimento 24 horas em Pindamonhangaba e região
+                            Atendimento 24 horas em Pindamonhangaba e
+                            região
                         </span>
                     </div>
                 </div>
@@ -379,8 +405,9 @@ function LandingPage() {
                             Serviços de emergência e remoção
                         </h2>
                         <p className="mt-3 text-lg text-muted-foreground">
-                            Estrutura completa para urgência e emergência médica,
-                            com equipe treinada e equipamentos de última geração.
+                            Estrutura completa para urgência e
+                            emergência médica, com equipe treinada e
+                            equipamentos de última geração.
                         </p>
                     </motion.div>
 
@@ -391,7 +418,9 @@ function LandingPage() {
                                 <motion.div
                                     key={service.title}
                                     {...reveal}
-                                    transition={{ delay: (i % 3) * 0.08 }}
+                                    transition={{
+                                        delay: (i % 3) * 0.08,
+                                    }}
                                 >
                                     <Card className="group h-full border-t-4 border-t-orange-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                         <CardHeader>
@@ -426,7 +455,9 @@ function LandingPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         className="relative flex aspect-[5/4] items-center justify-center overflow-hidden rounded-3xl shadow-lg"
-                        style={{ background: "var(--grad-institutional)" }}
+                        style={{
+                            background: "var(--grad-institutional)",
+                        }}
                     >
                         <div className="flex flex-col items-center gap-2 text-white/80">
                             <Users className="size-14" />
@@ -458,14 +489,16 @@ function LandingPage() {
                     <motion.div {...reveal}>
                         <Eyebrow>Quem somos</Eyebrow>
                         <h2 className="mt-3 font-display text-3xl font-extrabold md:text-4xl">
-                            Oriunda da consultoria e do treinamento em saúde
+                            Oriunda da consultoria e do treinamento em
+                            saúde
                         </h2>
                         <p className="mt-4 leading-relaxed text-muted-foreground">
-                            A Real Vidas foi criada para prestar serviços de
-                            altíssima qualidade no atendimento e remoção de
-                            pacientes de urgência e emergência — com equipe
-                            treinada constantemente e técnicas atualizadas de
-                            resgate.
+                            A Real Vidas foi criada para prestar
+                            serviços de altíssima qualidade no
+                            atendimento e remoção de pacientes de
+                            urgência e emergência — com equipe
+                            treinada constantemente e técnicas
+                            atualizadas de resgate.
                         </p>
                         <div className="mt-6 grid gap-3 sm:grid-cols-2">
                             {STANDARDS.map((item) => (
@@ -499,8 +532,9 @@ function LandingPage() {
                             Planos que se adaptam à sua necessidade
                         </h2>
                         <p className="mt-3 text-lg text-muted-foreground">
-                            Modelos de serviço e atendimento para diferentes
-                            aplicações. Conheça os detalhes e fale com a gente.
+                            Modelos de serviço e atendimento para
+                            diferentes aplicações. Conheça os detalhes
+                            e fale com a gente.
                         </p>
                     </motion.div>
 
@@ -526,6 +560,14 @@ function LandingPage() {
                                         </div>
                                     )}
                                     <CardHeader className="text-center">
+                                        {plan.image && (
+                                            <img
+                                                src={plan.image}
+                                                alt={plan.name}
+                                                loading="lazy"
+                                                className="mx-auto mb-3 h-24 w-auto object-contain"
+                                            />
+                                        )}
                                         <span
                                             className={`mx-auto mb-2 inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide text-white ${plan.tierClass}`}
                                         >
@@ -540,17 +582,19 @@ function LandingPage() {
                                     </CardHeader>
                                     <CardContent className="flex-grow">
                                         <ul className="space-y-3">
-                                            {plan.features.map((feature) => (
-                                                <li
-                                                    key={feature}
-                                                    className="flex items-start gap-2 text-sm"
-                                                >
-                                                    <CheckCircle2 className="mt-0.5 size-4 flex-shrink-0 text-success" />
-                                                    <span className="text-muted-foreground">
-                                                        {feature}
-                                                    </span>
-                                                </li>
-                                            ))}
+                                            {plan.features.map(
+                                                (feature) => (
+                                                    <li
+                                                        key={feature}
+                                                        className="flex items-start gap-2 text-sm"
+                                                    >
+                                                        <CheckCircle2 className="mt-0.5 size-4 flex-shrink-0 text-success" />
+                                                        <span className="text-muted-foreground">
+                                                            {feature}
+                                                        </span>
+                                                    </li>
+                                                ),
+                                            )}
                                         </ul>
                                     </CardContent>
                                     <CardFooter>
@@ -590,8 +634,9 @@ function LandingPage() {
                             Solicite seu orçamento
                         </h2>
                         <p className="mt-3 text-lg text-muted-foreground">
-                            Para remoções, preencha os dados abaixo. Para outros
-                            serviços, fale com a gente pelo WhatsApp.
+                            Para remoções, preencha os dados abaixo.
+                            Para outros serviços, fale com a gente
+                            pelo WhatsApp.
                         </p>
                     </motion.div>
 
@@ -613,14 +658,16 @@ function LandingPage() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         className="overflow-hidden rounded-3xl p-10 text-center text-white shadow-brand md:p-16"
-                        style={{ background: "var(--grad-emergency)" }}
+                        style={{
+                            background: "var(--grad-emergency)",
+                        }}
                     >
                         <h2 className="font-display text-2xl font-extrabold md:text-4xl">
                             Pensou em Remoções ou Emergências?
                         </h2>
                         <p className="mt-3 text-lg text-white/90">
-                            Fale com a Real Vidas — atendimento 24 horas, todos os
-                            dias.
+                            Fale com a Real Vidas — atendimento 24
+                            horas, todos os dias.
                         </p>
                         <div className="mt-8 flex flex-wrap justify-center gap-3">
                             <Button
@@ -662,7 +709,7 @@ function LandingPage() {
                     <div>
                         <div className="flex items-center gap-2">
                             <img
-                                src="/dalia.png"
+                                src="/logo.webp"
                                 alt="Real Vidas"
                                 className="size-9"
                             />
@@ -671,8 +718,9 @@ function LandingPage() {
                             </span>
                         </div>
                         <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/80">
-                            Serviços de altíssima qualidade no atendimento e
-                            remoção de pacientes de urgência e emergência.
+                            Serviços de altíssima qualidade no
+                            atendimento e remoção de pacientes de
+                            urgência e emergência.
                         </p>
                         <p className="mt-4 font-display text-sm font-semibold italic text-white/90">
                             Sua vida, nossa missão.
@@ -738,9 +786,12 @@ function LandingPage() {
                 <div className="border-t border-white/15">
                     <div className="container mx-auto flex flex-wrap justify-between gap-2 px-4 py-4 text-xs text-white/60">
                         <span>
-                            © 2026 Real Vidas · Remoções e Emergências 24h
+                            © 2026 Real Vidas · Remoções e
+                            Emergências 24h
                         </span>
-                        <span>Atendimento 24 horas · Vale do Paraíba</span>
+                        <span>
+                            Atendimento 24 horas · Vale do Paraíba
+                        </span>
                     </div>
                 </div>
             </footer>
@@ -764,7 +815,10 @@ function LandingPage() {
                 >
                     <span
                         className="absolute inset-0 animate-ping rounded-full"
-                        style={{ background: "#25D366", opacity: 0.6 }}
+                        style={{
+                            background: "#25D366",
+                            opacity: 0.6,
+                        }}
                     />
                     <WhatsappIcon className="relative size-7" />
                 </a>
@@ -805,19 +859,24 @@ const REQUIRED_FIELDS: (keyof FormState)[] = [
 
 function QuoteForm() {
     const [form, setForm] = useState<FormState>(EMPTY_FORM);
-    const [errors, setErrors] = useState<Partial<Record<keyof FormState, boolean>>>(
-        {},
-    );
+    const [errors, setErrors] = useState<
+        Partial<Record<keyof FormState, boolean>>
+    >({});
     const [sent, setSent] = useState(false);
 
     const update =
         (key: keyof FormState) =>
-        (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+        (
+            e: React.ChangeEvent<
+                HTMLInputElement | HTMLTextAreaElement
+            >,
+        ) =>
             setForm((prev) => ({ ...prev, [key]: e.target.value }));
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const nextErrors: Partial<Record<keyof FormState, boolean>> = {};
+        const nextErrors: Partial<Record<keyof FormState, boolean>> =
+            {};
         REQUIRED_FIELDS.forEach((key) => {
             if (!form[key].trim()) nextErrors[key] = true;
         });
@@ -841,8 +900,9 @@ function QuoteForm() {
                             Orçamento enviado!
                         </p>
                         <p className="text-sm">
-                            Recebemos sua solicitação. Nossa equipe retornará em
-                            instantes pelo telefone ou WhatsApp informado.
+                            Recebemos sua solicitação. Nossa equipe
+                            retornará em instantes pelo telefone ou
+                            WhatsApp informado.
                         </p>
                     </div>
                 </div>

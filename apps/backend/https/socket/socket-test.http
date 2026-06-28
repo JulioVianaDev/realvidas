@@ -1,0 +1,75 @@
+@baseUrl = http://localhost:8080
+@apiVersion = v1
+
+### Health check
+GET {{baseUrl}}/ping HTTP/1.1
+
+### Emit to all connected sockets
+POST {{baseUrl}}/{{apiVersion}}/socket/all HTTP/1.1
+Content-Type: application/json
+
+{
+  "event": "socket:demo:all",
+  "data": {
+    "message": "Hello all sockets",
+    "timestamp": "2026-03-26T23:30:00.000Z"
+  }
+}
+
+### Emit to one user room (user:{userId})
+POST {{baseUrl}}/{{apiVersion}}/socket/user HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId": "a0824f3b-2d5f-4b55-8dfb-fc54a70652cf",
+  "event": "socket:demo:user",
+  "data": {
+    "message": "Hello one user",
+    "priority": "high"
+  }
+}
+
+### Emit to one role room (role:{role})
+POST {{baseUrl}}/{{apiVersion}}/socket/role HTTP/1.1
+Content-Type: application/json
+
+{
+  "role": "USER",
+  "event": "socket:demo:role",
+  "data": {
+    "message": "Hello role ADMIN"
+  }
+}
+
+### Emit to one tenant room (tenant:{tenantId})
+POST {{baseUrl}}/{{apiVersion}}/socket/tenant HTTP/1.1
+Content-Type: application/json
+
+{
+  "tenantId":"b94988e7-9e5a-48f4-8376-b0f9c0471771",
+  "event": "socket:demo:tenant",
+  "data": {
+    "message": "Hello tenant"
+  }
+}
+
+### Emit to one guest clientId (UUID used before login)
+POST {{baseUrl}}/{{apiVersion}}/socket/guest HTTP/1.1
+Content-Type: application/json
+
+{
+  "clientId": "48a3cf4c-72f9-4a9d-a0a8-6e7858d83f96",
+  "event": "socket:demo:guest",
+  "data": {
+    "message": "Hello guest by clientId"
+  }
+}
+
+### Persist authenticated user current tenant (updates socket tenant room too)
+PATCH {{baseUrl}}/{{apiVersion}}/users/me/current-tenant HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer REPLACE_JWT_TOKEN
+
+{
+  "tenantId": "REPLACE_TENANT_ID"
+}

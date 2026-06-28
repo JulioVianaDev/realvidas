@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(grep -E \"catalog|product/|combo/|\\\\\\\\.action\\\\\\\\.ts|\\\\\\\\.query\\\\\\\\.ts\")",
+      "Bash(node ../../packages/types/node_modules/typescript/bin/tsc --noEmit -p tsconfig.app.json)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -E \"\\\\.entity\\\\.ts$\")",
+      "Bash(find:*)",
+      "Bash(npx tsr:*)",
+      "Bash(grep -E \"router|TanStackRouter\" vite.config.* package.json)",
+      "Bash(npx @tanstack/router-cli generate)",
+      "Bash(ls tsr.config.*)",
+      "Bash(npm run:*)",
+      "Bash(mkdir -p '__TRACKED_VAR__/$tenantId')",
+      "Bash(mv '__TRACKED_VAR__/$enterpriseId.tsx' '__TRACKED_VAR__/$tenantId/$enterpriseId.tsx')",
+      "Read(//c/Users/Admin/Documents/validações/pixie/apps/frontend/src/pages/_public/cart/**)"
+    ]
+  }
+}

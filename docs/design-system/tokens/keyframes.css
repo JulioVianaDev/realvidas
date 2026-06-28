@@ -1,0 +1,22 @@
+/* Real Vidas — shared keyframes used by components (spinners, pulses). */
+
+@keyframes rv-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rv-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* Emergency "live" ping — used by status dots / 24h badges */
+@keyframes rv-ping {
+  0%   { transform: scale(1); opacity: 0.7; }
+  70%  { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes rv-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

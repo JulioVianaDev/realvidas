@@ -1,0 +1,112 @@
+---
+alwaysApply: true
+---
+## Frontend Layer Architecture Rules
+
+### Rule Name: frontend-layer-architecture
+
+### Description:
+The frontend enforces strict separation between UI (pages/components) and data-fetching layers. Breaking these rules causes cache key mismatches, stale data bugs, and unmaintainable code.
+
+---
+
+### Layer Hierarchy (strict, top-down only)
+
+```
+Pages / Components (.tsx)
+        │  can only import hooks from ↓
+        ▼
+hooks/query/  (.query.ts files)
+        │  can only import actions from ↓
+        ▼
+hooks/action/  (.action.ts files)
+        │  uses API_ROUTES + axios ↓
+        ▼
+api.ts  (route constants)
+```
+
+---
+
+### FORBIDDEN in Pages and Components (.tsx files)
+
+1. **NEVER import from `@tanstack/react-query`**
+   - No `useQuery`, `useInfiniteQuery`, `useMutation`, `useQueryClient`
+   - The only exceptions are `main.tsx` (QueryClientProvider setup) and `__root.tsx` (type-only import)
+
+2. **NEVER import from `@/hooks/action/`**
+   - Pages/components must not call HTTP actions directly
+   - All data operations go through `hooks/query/` hooks
+
+3. **NEVER import `API_ROUTES` from `@/api`**
+   - Pages/components must not reference API routes for any purpose
+   - If you need query keys for cache operations, create a hook in the query layer
+
+4. **NEVER import `queryKeys` from `@/hooks/query/query-keys`**
+   - Pages/components must not manipulate cache keys directly
+   - If a page needs to invalidate cache, create a hook in `hooks/query/` that does it
+
+---
+
+### REQUIRED in hooks/query/ (.query.ts files)
+
+1. **ALL query keys MUST use `queryKeys` from `query-keys.ts`**
+   - Never construct query keys with inline `[API_ROUTES.X.Y, param1, param2]`
+   - Always use `queryKeys.entityName.list(params)`, `queryKeys.entityName.detail(id)`, etc.
+
+2. **New entities MUST add their key factory to `query-keys.ts` BEFORE creating queries**
+   - Follow the pattern:
+     ```typescript
+     entityName: {
+         all: () => [API_ROUTES.ENTITY_NAME.GET_ALL] as const,
+         list: (p: IGetAllEntityNameParams) => [API_ROUTES.ENTITY_NAME.GET_ALL, "list", p] as const,
+         detail: (id: string, enterpriseId: string) => [API_ROUTES.ENTITY_NAME.GET_ALL, "detail", id, enterpriseId] as const,
+     },
+     ```
+   - `all()` → base key for broad invalidation (invalidates all lists + details)
+   - `list(params)` → for GET_ALL queries, params as a single object
+   - `detail(id)` → for GET_BY_ID queries
+
+3. **Mutations MUST use `queryKeys` for invalidation**
+   ```typescript
+   onSuccess: () => {
+       queryClient.invalidateQueries({ queryKey: queryKeys.entityName.all() });
+   }
+   ```
+
+4. **If a page needs direct cache manipulation**, create a hook in `hooks/query/`:
+   - For invalidation: `useInvalidateX()` returning a callback
+   - For cache updates: `useSetXCache()` returning a callback
+   - For prefetch configs: `ensureXQueryConfig()` returning query options
+
+---
+
+### REQUIRED in hooks/action/ (.action.ts files)
+
+1. **Actions are the ONLY place that imports `API_ROUTES`** (besides `query-keys.ts`)
+2. Actions are pure HTTP functions — no React hooks, no cache manipulation
+3. One action per HTTP request
+
+---
+
+### Query Key Hierarchy for Cache Control
+
+```
+queryKeys.entity.all()                → invalidates EVERYTHING for this entity
+queryKeys.entity.list(params)         → specific list with exact params
+queryKeys.entity.detail(id)           → specific item by ID
+```
+
+React Query matches by prefix, so `invalidateQueries({ queryKey: queryKeys.entity.all() })`
+will invalidate all lists AND details for that entity.
+
+---
+
+### Validation Checklist
+
+- [ ] No `.tsx` file imports from `@tanstack/react-query` (except `main.tsx`, `__root.tsx`)
+- [ ] No `.tsx` file imports from `@/hooks/action/`
+- [ ] No `.tsx` file imports `API_ROUTES` or `queryKeys`
+- [ ] All query keys in `.query.ts` files use `queryKeys.*` (never inline arrays)
+- [ ] New entities have key factory in `query-keys.ts`
+- [ ] Mutations use `queryKeys.entity.all()` for invalidation
+- [ ] Key factory params match the actual request params types from `@global-types/params/`

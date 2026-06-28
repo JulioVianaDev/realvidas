@@ -1,0 +1,170 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "paths": {
+      "@/api": [
+        "./src/api.ts"
+      ],
+      "@/components/login-form": [
+        "./src/components/login-form/index.tsx"
+      ],
+      "@/components/trial-block": [
+        "./src/components/trial-block/index.ts"
+      ],
+      "@/pages/_authenticated": [
+        "./src/pages/_authenticated.tsx"
+      ],
+      "@/pages/_authenticated/_admin": [
+        "./src/pages/_authenticated/_admin.tsx"
+      ],
+      "@/pages/_authenticated/_admin/admin/analytics": [
+        "./src/pages/_authenticated/_admin/admin/analytics/index.tsx"
+      ],
+      "@/pages/_authenticated/_admin/admin/plans": [
+        "./src/pages/_authenticated/_admin/admin/plans/index.tsx"
+      ],
+      "@/pages/_authenticated/_admin/admin/tenants": [
+        "./src/pages/_authenticated/_admin/admin/tenants/index.tsx"
+      ],
+      "@/pages/_authenticated/_admin/admin/users": [
+        "./src/pages/_authenticated/_admin/admin/users/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified": [
+        "./src/pages/_authenticated/_verified.tsx"
+      ],
+      "@/pages/_authenticated/_verified/ai/assistants": [
+        "./src/pages/_authenticated/_verified/ai/assistants/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/ai/ralphs": [
+        "./src/pages/_authenticated/_verified/ai/ralphs/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/ai/tools": [
+        "./src/pages/_authenticated/_verified/ai/tools/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/ai/usage": [
+        "./src/pages/_authenticated/_verified/ai/usage/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/calendars": [
+        "./src/pages/_authenticated/_verified/calendars/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/catalog": [
+        "./src/pages/_authenticated/_verified/catalog/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/catalog/categories": [
+        "./src/pages/_authenticated/_verified/catalog/categories/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/catalog/combos": [
+        "./src/pages/_authenticated/_verified/catalog/combos/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/catalog/orders": [
+        "./src/pages/_authenticated/_verified/catalog/orders/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/catalog/products": [
+        "./src/pages/_authenticated/_verified/catalog/products/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/configuration/enterprise": [
+        "./src/pages/_authenticated/_verified/configuration/enterprise/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/conversations": [
+        "./src/pages/_authenticated/_verified/conversations/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/conversations/ai": [
+        "./src/pages/_authenticated/_verified/conversations/ai/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/conversations/mine": [
+        "./src/pages/_authenticated/_verified/conversations/mine/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/credits": [
+        "./src/pages/_authenticated/_verified/credits/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/customers": [
+        "./src/pages/_authenticated/_verified/customers/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/customers/campaigns": [
+        "./src/pages/_authenticated/_verified/customers/campaigns/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/enterprise": [
+        "./src/pages/_authenticated/_verified/enterprise/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/enterprise/details": [
+        "./src/pages/_authenticated/_verified/enterprise/details/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/enterprise/trial": [
+        "./src/pages/_authenticated/_verified/enterprise/trial/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/events": [
+        "./src/pages/_authenticated/_verified/events/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/offerings": [
+        "./src/pages/_authenticated/_verified/offerings/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/offerings/categories": [
+        "./src/pages/_authenticated/_verified/offerings/categories/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/offerings/professionals": [
+        "./src/pages/_authenticated/_verified/offerings/professionals/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/offerings/services": [
+        "./src/pages/_authenticated/_verified/offerings/services/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/pipelines": [
+        "./src/pages/_authenticated/_verified/pipelines/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/seller": [
+        "./src/pages/_authenticated/_verified/seller/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/settings/social-medias": [
+        "./src/pages/_authenticated/_verified/settings/social-medias/index.tsx"
+      ],
+      "@/pages/_authenticated/_verified/subscription": [
+        "./src/pages/_authenticated/_verified/subscription/index.tsx"
+      ],
+      "@/pages/_authenticated/inicio": [
+        "./src/pages/_authenticated/inicio/index.tsx"
+      ],
+      "@/pages/_authenticated/startup": [
+        "./src/pages/_authenticated/startup/index.tsx"
+      ],
+      "@/pages/_public": [
+        "./src/pages/_public.tsx"
+      ],
+      "@/pages/_public/auth/google/callback": [
+        "./src/pages/_public/auth/google/callback/index.tsx"
+      ],
+      "@/pages/_public/emails-views": [
+        "./src/pages/_public/emails-views/index.tsx"
+      ],
+      "@/pages/_public/login": [
+        "./src/pages/_public/login/index.tsx"
+      ],
+      "@/pages/_public/plans": [
+        "./src/pages/_public/plans/index.tsx"
+      ],
+      "@/pages/_public/register": [
+        "./src/pages/_public/register/index.tsx"
+      ],
+      "@/pages/_public/verify-email": [
+        "./src/pages/_public/verify-email/index.tsx"
+      ],
+      "@/pages/_public/welcome": [
+        "./src/pages/_public/welcome/index.tsx"
+      ],
+      "@/providers/trial": [
+        "./src/providers/trial/index.ts"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "@global-types/*": [
+        "../../packages/types/dist/*"
+      ],
+      "@email-templates": [
+        "../../packages/email-templates/dist/index.d.ts"
+      ],
+      "@email-templates/*": [
+        "../../packages/email-templates/dist/*"
+      ]
+    }
+  }
+}

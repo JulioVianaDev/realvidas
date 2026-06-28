@@ -1,0 +1,28 @@
+/* Real Vidas — Webfonts
+   Montserrat   → display / headings / UI labels (geometric, confident)
+   Source Sans 3 → body / long-form / forms (humanist, legible at small sizes)
+   Both shipped as variable woff2 (latin subset). */
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../assets/fonts/Montserrat-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../assets/fonts/SourceSans3-var.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../assets/fonts/SourceSans3-var-italic.woff2") format("woff2");
+}

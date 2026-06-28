@@ -1,0 +1,67 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "@realvidas/backend",
+  "sourceRoot": "apps/backend/src",
+  "projectType": "application",
+  "tags": ["scope:backend", "lang:ts"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run build",
+        "cwd": "apps/backend"
+      },
+      "inputs": ["production", "^production"],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run dev",
+        "cwd": "apps/backend"
+      },
+      "continuous": true,
+      "cache": false
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run lint",
+        "cwd": "apps/backend"
+      },
+      "cache": true
+    },
+    "start:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node dist/main",
+        "cwd": "apps/backend"
+      }
+    },
+    "db:run:main": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run db:run:main",
+        "cwd": "apps/backend"
+      },
+      "cache": false
+    },
+    "db:run:tenant": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run db:run:tenant",
+        "cwd": "apps/backend"
+      },
+      "cache": false
+    },
+    "docker:build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'Use CI/CD to build Docker images'"
+      },
+      "cache": false
+    }
+  },
+  "implicitDependencies": ["@realvidas/types", "@realvidas/email-templates"]
+}

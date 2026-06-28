@@ -1,0 +1,705 @@
+---
+alwaysApply: true
+---
+## Type Validation Rule
+
+### Rule Name: repositories-rules
+
+### Description:
+Before implementing any new endpoint or modifying existing ones, ensure proper type validation by following these steps:
+
+1. Check if the entity type exists in `/packages/types/src/entities/`
+   - If yes, ensure it follows the naming convention `IEntityNameEntity`
+   - If no, create the appropriate type definition first
+
+2. Verify corresponding body request type in `/packages/types/src/@types/body-requests/`
+   - Body request types should follow the naming pattern:
+     - For POST: `IPostEntityNameBodyRequest`
+     - For PUT: `IPutEntityNameBodyRequest`
+
+3. Ensure payload consistency:
+   - Body request types should extend or reference the main entity type when appropriate
+   - Use `Omit<>` or `Pick<>` to derive from the main entity type
+   - Example:
+     ```typescript
+     import { IEntityNameEntity } from "../entities/entity-name.entity";
+     
+     export interface IPostEntityNameBodyRequest {
+         // Only include fields needed for creation
+         field1: string;
+         field2: number;
+         // Omit auto-generated fields like id, createdAt, etc.
+     }
+     ```
+
+4. Verify corresponding params to get query type in `/packages/types/src/params/`
+   - Params types should follow the naming pattern using EntityName and METHOD:
+     - For GET All: `IGetAllEntityNameParams`
+     - For GET Specific: `IGetByIdEntityNameParams`
+
+5. Ensure params consistency:
+   - Example:
+     ```typescript
+     import { IEntityNameEntity } from "../entities/entity-name.entity.ts";
+     
+     export interface IGetAllEntitiNameParams {
+         // Only include fields needed for creation
+         order: "name-desc" | "name-asc";
+         field2: IEntityName["propriety"];
+         // Omit auto-generated fields like id, createdAt, etc.p
+     }
+     ```
+
+8. Verify corresponding dto type to correct types type in `/apps/backend/src/modules/module-name/dtos/entity-name.dto.ts`
+   - Every dto NEEED use `Exact` helper type to ensure :
+     - For GET methods search type in: `/packages/types/src/params/`
+     - For PUT or POST methods search type inside: `/packages/types/src/body-requests/`
+
+7. Check if have one contract inside `/apps/backend/src/modules/module-name/repositories/entity-name/entity-name.contract.repository.ts`
+   - The contract need be one class to implement by repository
+   - The contract will be injected on service to not pass database responsabilities to service 
+    - Example of class ContractRepository:
+    ```typescript
+     import { IGetEntityNameParams } from "@global-types/params/entity-name";
+     import { IGetEntityNameResponse } from "@global-types/responses/trigger";
+     import { IEntityNameEntity } from "@global-types/entities/entity-name.entity.ts";
+     export abstract class IEntityNameContractRepository {
+        abstract findAndCount(
+            filter: IGetEntityNameParams,
+            sectorId: number,
+        ): Promise<IGetEntityNameResponse>;
+
+        abstract save(payload: Omit<IEntityNameEntity, "id" | "files" | "attachments" | "lastUsed">): Promise<IEntityNameEntity>;
+
+        abstract findOne(id: number): Promise<IEntityNameEntity | null>;
+     }
+
+    ```
+
+8. Check if have one repository inside `/apps/backend/src/modules/module-name/repositories/entity-name/entity-name.prisma.repository.ts`
+   - The contract need be one class to implement by repository
+   - The contract will be injected on service to not pass database responsabilities to service 
+   - Every PrismaRepository have implemens Exact the contract to not pass wrong implementations
+    - Example of class Prisma:
+    ```typescript
+        import { Injectable } from '@nestjs/common';
+        import { EntityNameRepositoryContract } from './entity-name.contract.repository';
+        import { IEntityNameEntity } from '@global-types/class';
+        import { PrismaService } from 'src/prisma/prisma.service';
+        import { GetEntityNameParams } from '@global-types/params/entity-name.params';
+        import { GetEntityNameesResponse } from '@global-types/responses/entity-name.response';
+        import { Prisma } from '@prisma/client';
+        import { CreateEntityNameBodyRequest } from '@global-types/body-requests/entity-name.body-request';
+        @Injectable()
+        export class EntityNamePrismaRepository implements EntityNameRepositoryContract {
+            constructor(private readonly prisma: PrismaService) { }
+
+            async getAllEntityNamees(params: GetEntityNameParams): Promise<GetEntityNameesResponse> {
+                let { page = 1, pageSize = 10, search = '' } = params;
+                page = Math.max(1, page);
+
+                const skip = (page - 1) * pageSize;
+                const take = pageSize;
+
+                const conditions: Prisma.EntityNameWhereInput[] = [];
+
+                if (search) {
+                    conditions.push({
+                        OR: [
+                            {
+                                name: { contains: search, mode: 'insensitive' },
+                            },
+                            {
+                                description: {
+                                    contains: search,
+                                    mode: 'insensitive',
+                                },
+                            },
+                        ],
+                    });
+                }
+                const where: Prisma.EntityNameWhereInput =
+                    conditions.length > 0 ? { AND: conditions } : {};
+                const classes = await this.prisma.entityName.findMany({
+                    where,
+                    skip,
+                    take,
+                    orderBy: {
+                        id: 'desc',
+                    },
+                });
+
+                const total = await this.prisma.entityName.count({ where });
+                const lastPage = Math.ceil(total / pageSize);
+                return {
+                    data: classes,
+                    metadata: {
+                        page,
+                        hasNextPage: total > page * pageSize,
+                        hasPreviousPage: page > 1,
+                        total,
+                        lastPage,
+                    },
+                };
+            }
+
+            async getEntityNameById(id: number): Promise<IEntityNameEntity | null> {
+                return this.prisma.entityName.findUnique({
+                    where: { id },
+                });
+            }
+
+            async createEntityName(classData: CreateEntityNameBodyRequest): Promise<IEntityNameEntity> {
+                const {
+                    name,
+                    description,
+                    difficulty = 'EASY_1',
+                } = classData;
+
+                return this.prisma.entityName.create({
+                    data: {
+                        name,
+                        description,
+                        difficulty,
+                    },
+                });
+            }
+
+            async updateEntityName(
+                id: number,
+                classData: Partial<IEntityNameEntity>,
+            ): Promise<IEntityNameEntity> {
+                return this.prisma.entityName.update({
+                    where: { id },
+                    data: classData,
+                });
+            }
+
+            async deleteEntityName(id: number): Promise<{ success: boolean; id: number }> {
+                await this.prisma.entityName.delete({
+                    where: { id },
+                });
+                return { success: true, id };
+            }
+        } 
+
+    ```
+     - Example of class Elastic Search Repository:
+    ```typescript
+        import { Injectable } from '@nestjs/common';
+        import { Client, estypes } from '@elastic/elasticsearch';
+        import { Exact } from '@global-types/utils/exact';
+        import { EntityNameRepositoryContract } from './entity-name.contract.repository';
+        import {
+        FormElement,
+        IEntityName,
+        } from '@global-types/entities/entity-name.entity.ts';
+        import {
+        GetEntityNamesParams,
+        OrderEntityName,
+        } from '@global-types/params/entity-names.params';
+        import { GetEntityNamesResponse } from '@global-types/responses/entity-name.response';
+        import { IEntityName2NameEntity } from '@global-types/entities/entity-name.entity';
+
+        @Injectable()
+        export class FormEntityNameElasticSearchRepository
+        implements
+        Exact<
+            FormEntityNameElasticSearchRepository,
+            FormEntityNameRepositoryContract
+        > {
+        private elasticClient: Client;
+        private readonly FORM_ANSWERS_INDEX = 'form_entity-names';
+        private readonly FORM_VERSIONS_INDEX = 'form_versions';
+        private readonly FORMS_INDEX = 'forms';
+
+        constructor() {
+            this.elasticClient = new Client({
+            node: process.env.ELASTIC_SEARCH_URL,
+            maxRetries: 3,
+            requestTimeout: 60000,
+            });
+        }
+
+        async insertEntityName(
+            entity-name: Omit<IEntityName2NameEntity, 'id' | 'date'>,
+        ) {
+            const document = {
+            responses: entity-name.responses,
+            formId: entity-name.formId,
+            formVersion: entity-name.formVersion,
+            date: new Date().toISOString(),
+            };
+
+            const result = await this.elasticClient.index({
+            index: this.FORM_ANSWERS_INDEX,
+            document,
+            refresh: true,
+            });
+
+            return {
+            id: result._id,
+            ...document,
+            };
+        }
+
+        async deleteEntityName(id: string) {
+            await this.elasticClient.delete({
+            index: this.FORM_ANSWERS_INDEX,
+            id,
+            refresh: true,
+            });
+
+            return { success: true, id };
+        }
+
+        async getEntityNameById(id: string) {
+            try {
+            const response =
+                await this.elasticClient.get<IEntityName2NameEntity>({
+                index: this.FORM_ANSWERS_INDEX,
+                id,
+                });
+
+            const entity-name = response._source;
+            if (!entity-name) {
+                throw new Error(`EntityName with ID ${id} not found`);
+            }
+            let form: IEntityName2 = null;
+
+            try {
+                const versionQuery: estypes.QueryDslQueryContainer =
+                {
+                bool: {
+                    must: [
+                    {
+                        term: { originalFormId: entity-name.formId },
+                    },
+                    { term: { version: entity-name.formVersion } },
+                    ],
+                },
+                };
+
+                const { hits: versionHits } =
+                await this.elasticClient.search<
+                    IEntityName2 & {
+                    version: number;
+                    originalFormId: string;
+                    }
+                >({
+                    index: this.FORM_VERSIONS_INDEX,
+                    query: versionQuery,
+                    size: 1,
+                });
+
+                if (versionHits.hits.length > 0) {
+                const versionHit = versionHits.hits[0];
+                form = {
+                    id: entity-name.formId,
+                    name: versionHit._source.name,
+                    elements: versionHit._source.elements,
+                    version: versionHit._source.version,
+                    date: versionHit._source.date
+                    ? new Date(
+                        versionHit._source.date,
+                    ).toISOString()
+                    : null,
+                };
+                } else {
+                // If not found in versions, try the main forms index
+                const formQuery: estypes.QueryDslQueryContainer =
+                {
+                    term: { _id: entity-name.formId },
+                };
+
+                const { hits: formHits } =
+                    await this.elasticClient.search<IEntityName2>({
+                    index: this.FORMS_INDEX, // Make sure this is your main forms index name
+                    query: formQuery,
+                    size: 1,
+                    });
+
+                if (formHits.hits.length > 0) {
+                    const formHit = formHits.hits[0];
+                    // Check if the form version matches what we need
+                    if (
+                    formHit._source.version ===
+                    entity-name.formVersion
+                    ) {
+                    form = {
+                        id: formHit._id,
+                        name: formHit._source.name,
+                        elements: formHit._source.elements,
+                        version: formHit._source.version,
+                        date: formHit._source.date
+                        ? new Date(
+                            formHit._source.date,
+                        ).toISOString()
+                        : null,
+                    };
+                    }
+                }
+                }
+            } catch (error) {
+                console.error(
+                'Error retrieving form data:',
+                error,
+                );
+            }
+            return {
+                id: response._id,
+                ...response._source,
+                form,
+            };
+            } catch (error) {
+            if (error.meta?.statusCode === 404) {
+                throw new Error(`EntityName with ID ${id} not found`);
+            }
+            throw error;
+            }
+        }
+        async getEntityNames({
+            search,
+            formId,
+            page = 1,
+            pageSize = 10,
+            order = 'date-desc',
+        }: GetEntityNamesParams): Promise<GetEntityNamesResponse> {
+            const must: estypes.QueryDslQueryContainer[] = [];
+
+            // Add search condition if provided
+            if (search) {
+            must.push({
+                wildcard: { 'responses.*': `*${search}*` },
+            });
+            }
+
+            // Add formId condition if provided
+            if (formId) {
+            must.push({
+                term: { formId },
+            });
+            }
+
+            const query: estypes.QueryDslQueryContainer = {
+            bool: {
+                must: must.length > 0 ? must : [{ match_all: {} }],
+            },
+            };
+
+            // Count total entity-names matching the query
+            const countResult = await this.elasticClient.count({
+            index: this.FORM_ANSWERS_INDEX,
+            query,
+            });
+
+            const total = countResult.count;
+            const lastPage = Math.ceil(total / pageSize);
+            const hasNextPage = page * pageSize < total;
+            const hasPreviousPage = page > 1;
+
+            const { hits } =
+            await this.elasticClient.search<IEntityName2NameEntity>({
+                index: this.FORM_ANSWERS_INDEX,
+                query,
+                sort: this.getSort(order),
+                from: (page - 1) * pageSize,
+                size: pageSize,
+            });
+
+            const entity-namesWithForms = await Promise.all(
+            hits.hits.map(async (hit) => {
+                const entity-name = {
+                id: hit._id,
+                ...hit._source,
+                };
+
+                // First try to find the exact version in the versions index
+                let form: IEntityName2 = null;
+
+                try {
+                // Try specific version in FORM_VERSIONS_INDEX
+                const versionQuery: estypes.QueryDslQueryContainer =
+                {
+                    bool: {
+                    must: [
+                        {
+                        term: { originalFormId: entity-name.formId },
+                        },
+                        { term: { version: entity-name.formVersion } },
+                    ],
+                    },
+                };
+
+                const { hits: versionHits } =
+                    await this.elasticClient.search<
+                    IEntityName2 & {
+                        version: number;
+                        originalFormId: string;
+                    }
+                    >({
+                    index: this.FORM_VERSIONS_INDEX,
+                    query: versionQuery,
+                    size: 1,
+                    });
+
+                if (versionHits.hits.length > 0) {
+                    const versionHit = versionHits.hits[0];
+                    form = {
+                    id: entity-name.formId,
+                    name: versionHit._source.name,
+                    elements: versionHit._source.elements,
+                    version: versionHit._source.version,
+                    date: versionHit._source.date
+                        ? new Date(
+                        versionHit._source.date,
+                        ).toISOString()
+                        : null,
+                    };
+                } else {
+                    // If not found in versions, try the main forms index
+                    const formQuery: estypes.QueryDslQueryContainer =
+                    {
+                    term: { _id: entity-name.formId },
+                    };
+
+                    const { hits: formHits } =
+                    await this.elasticClient.search<IEntityName2>({
+                        index: this.FORMS_INDEX, // Make sure this is your main forms index name
+                        query: formQuery,
+                        size: 1,
+                    });
+
+                    if (formHits.hits.length > 0) {
+                    const formHit = formHits.hits[0];
+                    // Check if the form version matches what we need
+                    if (
+                        formHit._source.version ===
+                        entity-name.formVersion
+                    ) {
+                        form = {
+                        id: formHit._id,
+                        name: formHit._source.name,
+                        elements: formHit._source.elements,
+                        version: formHit._source.version,
+                        date: formHit._source.date
+                            ? new Date(
+                            formHit._source.date,
+                            ).toISOString()
+                            : null,
+                        };
+                    }
+                    }
+                }
+                } catch (error) {
+                console.error(
+                    'Error retrieving form data:',
+                    error,
+                );
+                }
+
+                return {
+                ...entity-name,
+                form,
+                };
+            }),
+            );
+
+            return {
+            data: entity-namesWithForms,
+            metadata: {
+                hasNextPage,
+                hasPreviousPage,
+                lastPage,
+                total,
+                page,
+            },
+            };
+        }
+        async getEntityNamesByFormId(
+            formId: string,
+            {
+            page = 1,
+            pageSize = 10,
+            }: {
+            page?: number;
+            pageSize?: number;
+            } = {},
+        ) {
+            const query: estypes.QueryDslQueryContainer = {
+            bool: {
+                must: [{ term: { formId } }],
+            },
+            };
+
+            const countResult = await this.elasticClient.count({
+            index: this.FORM_ANSWERS_INDEX,
+            query,
+            });
+
+            const total = countResult.count;
+            const lastPage = Math.ceil(total / pageSize);
+            const hasNextPage = page * pageSize < total;
+            const hasPreviousPage = page > 1;
+
+            const { hits } =
+            await this.elasticClient.search<IEntityName2NameEntity>({
+                index: this.FORM_ANSWERS_INDEX,
+                query,
+                sort: [{ date: { order: 'desc' } }],
+                from: (page - 1) * pageSize,
+                size: pageSize,
+            });
+
+            return {
+            data: hits.hits.map((hit) => ({
+                ...hit._source,
+                id: hit._id,
+            })),
+            metadata: {
+                hasNextPage,
+                hasPreviousPage,
+                lastPage,
+                total,
+                page,
+            },
+            };
+        }
+
+        async getEntityNamesByFormVersion(
+            formId: string,
+            formVersion: number,
+            {
+            page = 1,
+            pageSize = 10,
+            }: {
+            page?: number;
+            pageSize?: number;
+            } = {},
+        ) {
+            const query: estypes.QueryDslQueryContainer = {
+            bool: {
+                must: [
+                { term: { formId } },
+                { term: { formVersion } },
+                ],
+            },
+            };
+
+            const countResult = await this.elasticClient.count({
+            index: this.FORM_ANSWERS_INDEX,
+            query,
+            });
+
+            const total = countResult.count;
+            const lastPage = Math.ceil(total / pageSize);
+            const hasNextPage = page * pageSize < total;
+            const hasPreviousPage = page > 1;
+
+            const { hits } =
+            await this.elasticClient.search<IEntityName2NameEntity>({
+                index: this.FORM_ANSWERS_INDEX,
+                query,
+                sort: [{ date: { order: 'desc' } }],
+                from: (page - 1) * pageSize,
+                size: pageSize,
+            });
+
+            return {
+            data: hits.hits.map((hit) => ({
+                ...hit._source,
+                id: hit._id,
+            })),
+            metadata: {
+                hasNextPage,
+                hasPreviousPage,
+                lastPage,
+                total,
+                page,
+            },
+            };
+        }
+        private getSort(order: OrderEntityName): any[] {
+            switch (order) {
+            case 'date-asc':
+                return [{ date: { order: 'asc' } }];
+            case 'date-desc':
+                return [{ date: { order: 'desc' } }];
+            default:
+                return [{ date: { order: 'desc' } }];
+            }
+        }
+        }
+
+
+    ```
+
+9. How implement Contract Repository in service
+   - First you need check if has one repository token in 
+   backend/src/infra/database/tokens/repository-tokens.ts
+   this token is like :
+   ``` typescript
+   export const REPOSITORY_TOKENS = {
+        ENTITY_NAME_REPOSITORY: Symbol('IEntityNameRepository'),
+   }
+    ```
+
+    and in backend/src/infra/database/database.providers.ts
+
+    - need has this 
+
+    ```typescript
+       export const repositoryProviders: Provider[] [ {
+       EntityNamePrismaRepository,
+        {
+            provide: REPOSITORY_TOKENS.ENTITY_NAME_REPOSITORY,
+            useClass: EntityNamePrismaRepository,
+        },
+        }
+        ]
+    ```
+
+   - To implement the contractRepository you need inject the contract in /backend/src/modules/module-name/services/entity-name.service.ts
+   - Example of class service Inject contract:
+    ```typescript
+    
+    import { REPOSITORY_TOKENS } from 'src/infra/database/tokens/repository-tokens';
+    import { IEntityNameContractRepository } from "../repositories/entity-name/entity-name.contract.repository.ts";
+    
+    @Injectable({ scope: Scope.TRANSIENT })
+    export class EntityNameService {
+        constructor(
+            @Inject(REPOSITORY_TOKENS.ENTITY_NAME_REPOSITORY)
+            private readonly entityNameRepository: IEntityNameContractRepository,
+        ) { }
+    }
+
+    ```
+    
+
+10. How implement Prisma Repository in module
+   - To implement the contractRepository you DONT need inject the contract in /apps/backend/src/modules/module-name/entity-name.module.ts because already is injected in backend/src/infra/database/database.providers.ts
+   - Example of class service Inject contract:
+    ```typescript
+    @Module({
+        imports: [],
+        controllers: [],
+        providers: [
+          
+        ],
+        exports: [],
+    })
+    export class EntityName {}
+
+
+    ```
+    
+11. Validation checklist:
+   - All required fields are properly typed
+   - No unnecessary fields are included in body requests
+   - Proper use of optional fields with `?` notation
+   - Consistent use of enums and custom types
+   - Proper nesting of related types
+   - In module and service need have same name of entitie
+
+This rule helps maintain consistency between entity definitions and API payloads, reducing runtime errors and improving type safety.

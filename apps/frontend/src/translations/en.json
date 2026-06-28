@@ -1,0 +1,2024 @@
+{
+    "common": {
+        "welcome": "Welcome",
+        "cancel": "Cancel",
+        "save": "Save",
+        "saving": "Saving...",
+        "back": "Back",
+        "backToHome": "Back to Home",
+        "refresh": "Refresh",
+        "loading": "Loading...",
+        "checking": "Checking...",
+        "error": "Error",
+        "success": "Success",
+        "copy": "Copy",
+        "close": "Close"
+    },
+    "sidebar": {
+        "scheduling": "Scheduling",
+        "calendar": "Calendars",
+        "events": "Events",
+        "chat": "Chat",
+        "scheduleProfiles": "Schedule Profiles",
+        "reports": "Reports",
+        "appointments": "Appointments",
+        "messages": "Messages",
+        "sellerArea": "Seller Area",
+        "sales": "Sales",
+        "createCoupons": "Create Coupons",
+        "payments": "Payments",
+        "catalog": "Catalog",
+        "catalogOverview": "Overview",
+        "catalogView": "Catalog preview",
+        "categories": "Categories",
+        "products": "Products",
+        "combos": "Combos",
+        "offerings": "Service offerings",
+        "offeringsOverview": "Overview",
+        "offeringsServices": "Services",
+        "offeringsCategories": "Service categories",
+        "offeringsProfessionals": "Professionals",
+        "artificialIntelligence": "Artificial Intelligence",
+        "assistants": "Assistants",
+        "tools": "Abilities",
+        "ralphs": "Checklists",
+        "usage": "Usage",
+        "enterprise": "Enterprise",
+        "tenant": "Tenant",
+        "switchTenant": "Switch tenant",
+        "switchEnterprise": "Switch enterprise",
+        "settings": "Settings",
+        "emails": "Emails",
+        "flows": "Flows",
+        "socialMedias": "Social media",
+        "myPayments": "My Payments",
+        "myPlan": "My Plan",
+        "administrative": "Administrative",
+        "logs": "Logs",
+        "dashboard": "Dashboard",
+        "paymentsMonitoring": "Payments Monitoring",
+        "plansManagement": "Plans Management",
+        "credits": "Credits",
+        "configurationEnterprises": "My enterprises",
+        "pipelines": "Pipelines",
+        "pipelinesList": "My Pipelines",
+        "pipelinesBoards": "Boards",
+        "close": "Close",
+        "open": "Open",
+        "customers": "Customers",
+        "customersList": "Customer list",
+        "campaigns": "Campaigns",
+        "campaignsList": "Campaign list",
+        "adminSaas": "Admin SaaS",
+        "adminSaasSection": "SaaS administration",
+        "adminSaasTenants": "Tenants & payments",
+        "adminSaasUsers": "Users",
+        "adminSaasPlans": "Plans",
+        "adminSaasAnalytics": "Analytics"
+    },
+    "adminSaas": {
+        "tenants": {
+            "title": "Tenants & payments",
+            "description": "Global view of all workspaces, subscriptions, and platform payments.",
+            "tableTitle": "All tenants",
+            "owner": "Owner",
+            "tenantId": "Tenant ID",
+            "billing": "Subscription",
+            "pending": "Pending",
+            "lastPayment": "Last payment",
+            "active": "Active",
+            "inactive": "No access",
+            "manage": "Manage",
+            "billingFor": "Billing — {name}",
+            "billingHint": "Simulate pending payments or grant free access (R$0 custom plan) for testing.",
+            "grantAccess": "Grant free access",
+            "subscriptions": "Subscriptions",
+            "payments": "Payments",
+            "simulatePaid": "Simulate as paid"
+        }
+    },
+    "customersPage": {
+        "title": "Customers",
+        "subtitle": "People linked to the selected enterprise (tenant database).",
+        "add": "New customer",
+        "selectEnterprise": "Select an enterprise in the sidebar to load customers.",
+        "searchPlaceholder": "Search by name, phone, or email",
+        "search": "Search",
+        "colName": "Name",
+        "colPhone": "Phone",
+        "colEmail": "Email",
+        "colSocialMedias": "Social media",
+        "colCreated": "Created",
+        "colActions": "Actions",
+        "empty": "No customers found.",
+        "showing": "Showing {from}–{to} of {total}",
+        "createTitle": "New customer",
+        "editTitle": "Edit customer",
+        "fieldName": "Name",
+        "fieldPhone": "Phone",
+        "fieldEmail": "Email",
+        "deleteTitle": "Remove customer?",
+        "deleteConfirm": "This soft-deletes the customer record.",
+        "deleteAction": "Remove"
+    },
+    "campaignPage": {
+        "title": "Campaigns",
+        "subtitle": "WhatsApp follow-up campaigns with CSV import and delivery tracking.",
+        "new": "New campaign",
+        "selectEnterprise": "Select an enterprise in the sidebar to manage campaigns.",
+        "empty": "No campaigns yet.",
+        "colName": "Name",
+        "colStatus": "Status",
+        "colRecipients": "Recipients",
+        "colCreated": "Created",
+        "colActions": "Actions",
+        "viewReport": "View report",
+        "downloadTemplate": "Download CSV template",
+        "createTitle": "New campaign",
+        "createSubtitle": "Upload a CSV with customer names and WhatsApp numbers.",
+        "fieldName": "Campaign name",
+        "fieldDescription": "Description",
+        "fieldMessage": "Initial message",
+        "fieldFollowUp": "AI follow-up prompt (when customer replies)",
+        "fieldSocialMidia": "WhatsApp channel",
+        "fieldAssistant": "Assistant (optional)",
+        "fieldCsv": "Recipients CSV",
+        "csvHint": "First row is ignored (template header). Columns: name, phone.",
+        "submit": "Create campaign",
+        "reportTitle": "Campaign report",
+        "statSent": "Sent",
+        "statDelivered": "Delivered",
+        "statRead": "Read",
+        "statResponded": "Responded",
+        "recipientsTitle": "Recipients",
+        "colCustomer": "Customer",
+        "colPhone": "Phone",
+        "colRecipientStatus": "Status",
+        "statusImporting": "Importing",
+        "statusReady": "Ready",
+        "statusRunning": "Running",
+        "statusCompleted": "Completed",
+        "statusFailed": "Failed"
+    },
+    "socialMediasPage": {
+        "title": "Social media channels",
+        "subtitle": "Register and manage channels for the selected enterprise.",
+        "add": "Add channel",
+        "name": "Name",
+        "namePlaceholder": "e.g. Main WhatsApp",
+        "type": "Type",
+        "connected": "Connected",
+        "active": "Active",
+        "yes": "Yes",
+        "no": "No",
+        "delete": "Remove channel",
+        "selectEnterpriseFirst": "Select an enterprise in the sidebar first.",
+        "empty": "No channels registered yet.",
+        "deleteConfirm": "Remove this channel?",
+        "dialogTitle": "New channel",
+        "previousPage": "Previous",
+        "nextPage": "Next",
+        "typeLabels": {
+            "WHATSAPP_realvidas": "WhatsApp Web"
+        },
+        "connect": "Connect",
+        "connectQrTitle": "Link WhatsApp",
+        "connectQrDescription": "Scan the QR code with WhatsApp on your phone to link this channel.",
+        "connectSuccessTitle": "Connected",
+        "connectSuccessMessage": "WhatsApp linked successfully. You can close this dialog.",
+        "connectedAlready": "This channel is already linked. You can close this dialog.",
+        "qrImageAlt": "WhatsApp QR code",
+        "qrTimeout": "The QR code took too long to appear. Try again.",
+        "retryQr": "Try again",
+        "qrLoadError": "Could not load the QR code.",
+        "aiAssistant": "AI assistant",
+        "aiAssistantNone": "Human only",
+        "aiAssistantNotConfigured": "Not configured",
+        "configureAi": "Configure AI",
+        "aiConfigTitle": "How AI handles this channel",
+        "aiConfigDescription": "Choose which assistant automatically replies to inbound messages on this channel. Flow: webhook → lifecycle → AI assistant → outbound reply.",
+        "aiConfigHint": "New conversations start in AI mode when an assistant is linked. Already open conversations keep their current mode.",
+        "aiConfigToolsHint": "Tools like calendar and CRM remain available on the assistant tools page. Text replies are sent to the customer automatically.",
+        "aiAssistantPlaceholder": "Select an assistant",
+        "linkAssistantTools": "Configure assistant tools",
+        "fieldAiAssistant": "AI assistant (optional)",
+        "fieldAiAssistantHint": "When set, new conversations on this channel use this assistant."
+    },
+    "auth": {
+        "register": {
+            "title": "Create Account",
+            "subtitle": "Fill in the details below to create your account",
+            "name": "Full Name",
+            "namePlaceholder": "Your full name",
+            "email": "Email",
+            "emailPlaceholder": "youremail@example.com",
+            "cpf": "CPF",
+            "cpfOptional": "CPF (Optional)",
+            "cpfPlaceholder": "000.000.000-00",
+            "age": "Age (Optional)",
+            "agePlaceholder": "Your age",
+            "role": "User Type",
+            "rolePlaceholder": "Select type",
+            "roleUser": "User",
+            "roleAdmin": "Administrator",
+            "password": "Password",
+            "passwordPlaceholder": "Minimum 6 characters",
+            "confirmPassword": "Confirm Password",
+            "confirmPasswordPlaceholder": "Enter password again",
+            "submit": "Create Account",
+            "submitting": "Creating account...",
+            "haveAccount": "Already have an account?",
+            "loginHere": "Log in here",
+            "orContinueWith": "Or continue with",
+            "validation": {
+                "nameMin": "Name must be at least 2 characters.",
+                "emailInvalid": "Please enter a valid email.",
+                "passwordMin": "Password must be at least 6 characters.",
+                "passwordMatch": "Passwords do not match.",
+                "roleRequired": "Please select a user type.",
+                "cpfInvalid": "Invalid CPF."
+            },
+            "success": "Account created successfully! You can log in now.",
+            "codeSent": "We sent a 6-digit code to your email.",
+            "error": "Error creating account. Please try again.",
+            "verify": {
+                "title": "Verify your email",
+                "subtitle": "Enter the 6-digit code we sent to {email}.",
+                "codeLabel": "Code",
+                "codeInvalid": "Enter exactly 6 digits.",
+                "submit": "Confirm and sign in",
+                "submitting": "Sending...",
+                "invalid": "Invalid or expired code.",
+                "missingSession": "Invalid registration session. Please register again.",
+                "hint": "You can also confirm using the button in the email we sent (valid for 5 minutes).",
+                "resendNewCode": "Send new code",
+                "resending": "Sending new code...",
+                "resendSuccess": "A new code was sent to your email.",
+                "resendError": "Could not send a new code."
+            }
+        },
+        "verifyEmailPage": {
+            "title": "Confirm your email",
+            "subtitle": "Enter the 6-digit code sent to {email} to keep using the app.",
+            "footerHint": "Need a new code? Use the button below.",
+            "success": "Email confirmed!",
+            "backToHomeLogout": "Log out and return to home"
+        },
+        "welcomePage": {
+            "title": "Welcome",
+            "subtitle": "Confirm your email to continue with realvidas.",
+            "loading": "Confirming your email...",
+            "expiredTitle": "This link has expired",
+            "expiredDetail": "Confirmation through this link is no longer allowed. Request a new code by email or enter the 6-digit code we sent you.",
+            "expiredHint": "If you already have a code, enter it below. Otherwise, request a new email.",
+            "invalidLink": "This link is invalid. Register again or open the latest email we sent you.",
+            "noToken": "Open the link from your email to confirm your account.",
+            "goHome": "Go to home",
+            "goRegister": "Back to registration",
+            "newCodeSent": "We sent a new code to your email.",
+            "newCodeSentDetail": "Check your inbox for the new 6-digit code and confirmation link (valid for 5 minutes).",
+            "sendNewCode": "Send new code by email",
+            "sendingNewCode": "Sending new code to your email...",
+            "redirecting": "All set! Redirecting...",
+            "confirmed": "Email confirmed!",
+            "resendFailed": "Could not send a new code. Try again or register again.",
+            "verifyCodeLabel": "Verification code",
+            "verifySubmit": "Confirm with code",
+            "verifySubmitting": "Confirming..."
+        },
+        "login": {
+            "title": "Log In",
+            "subtitle": "Enter your email below to access your account",
+            "emailPlaceholder": "youremail@example.com",
+            "passwordPlaceholder": "Your password",
+            "validation": {
+                "emailInvalid": "Please enter a valid email.",
+                "passwordMin": "Password must be at least 3 characters."
+            },
+            "submit": "Sign in",
+            "submitting": "Signing in...",
+            "orContinueWith": "Or continue with",
+            "noAccount": "Don't have an account?",
+            "createAccount": "Create one here",
+            "errorFallback": "Could not sign in. Please try again."
+        },
+        "google": {
+            "successToast": "Signed in successfully!",
+            "errorServerFallback": "Could not authenticate with the server.",
+            "errorGooglePopup": "Could not sign in with Google.",
+            "continueWithGoogle": "Continue with Google",
+            "submitting": "Signing in..."
+        }
+    },
+    "layout": {
+        "footerCopyright": "© 2026 realvidas. All rights reserved."
+    },
+    "pages": {
+        "inicio": {
+            "title": "Home",
+            "placeholder": "Welcome to your dashboard.",
+            "loadError": "We couldn’t load your profile. Refresh the page or try again shortly.",
+            "readyBadge": "Tenant setup complete",
+            "setup": {
+                "title": "How do you want to get started?",
+                "subtitle": "You don’t have a tenant set up yet. Pick a path — this shapes how your account is configured.",
+                "flexibilityTitle": "You can switch later",
+                "flexibilityBody": "Choosing one option now doesn’t stop you from signing up for the other later. You can add the other profile whenever you want.",
+                "seller": {
+                    "title": "I’m a seller",
+                    "description": "Refer customers with your coupon and track your results.",
+                    "point1": "Ongoing commissions while referred customers keep paying with your coupon.",
+                    "point2": "Free training and plenty of demo credits to show the product confidently.",
+                    "point3": "Best if you want referral income without running a company workspace.",
+                    "cta": "Continue as a seller"
+                },
+                "company": {
+                    "title": "I want to create my company",
+                    "description": "Set up your operation and use the platform as a business owner.",
+                    "point1": "Company setup, team, and workspaces at your pace.",
+                    "point2": "Guidance for structuring operations and building AI systems for your business.",
+                    "point3": "Built for owners who want to run and scale on the platform.",
+                    "cta": "Set up my company"
+                }
+            }
+        },
+        "seller": {
+            "title": "Seller area",
+            "description": "Use the sidebar for coupons, sales, and payments. More onboarding steps will appear here soon."
+        },
+        "startup": {
+            "title": "Create your workspace",
+            "subtitle": "Fill in your enterprise details to get started",
+            "description": "In a few steps you will set up your company, invite your team, and put scheduling and AI to work for you.",
+            "ctaCreateCompany": "Create my company",
+            "backToHome": "Back to home",
+            "tenantReady": "Your workspace is ready!",
+            "createError": "Failed to start workspace creation",
+            "readyTitle": "Workspace Ready!",
+            "readyDescription": "Your workspace has been created successfully.",
+            "goToDashboard": "Go to Dashboard",
+            "provisioningTitle": "Setting up your workspace...",
+            "provisioningDescription": "We are preparing everything for you. This may take a few moments.",
+            "provisioningHint": "Please do not close this page",
+            "form": {
+                "enterpriseName": "Enterprise name",
+                "enterpriseNamePlaceholder": "My Company",
+                "email": "Business email",
+                "submit": "Create workspace"
+            }
+        },
+        "admDashboard": {
+            "title": "Admin",
+            "placeholder": "Admin dashboard."
+        }
+    },
+    "emailsPreview": {
+        "title": "Email templates preview",
+        "loginCode": "Login code",
+        "resetPassword": "Reset password",
+        "theme": "Theme",
+        "language": "Language",
+        "themeLight": "light",
+        "themeDark": "dark",
+        "lightMode": "Light mode",
+        "darkMode": "Dark mode",
+        "switchToEnglish": "Switch to English",
+        "switchToPortuguese": "Switch to Portuguese"
+    },
+    "assistants": {
+        "index": {
+            "title": "AI assistants",
+            "subtitle": "Manage your AI assistants and workflows",
+            "newAssistant": "New assistant",
+            "loading": "Loading assistants...",
+            "deleteConfirm": "Are you sure you want to delete this assistant?",
+            "emptyTitle": "No assistants found",
+            "emptyDescription": "Create your first AI assistant to get started",
+            "createAssistant": "Create assistant",
+            "loadMore": "Load more",
+            "active": "Active",
+            "inactive": "Inactive",
+            "selectEnterpriseFirst": "Select an enterprise in the menu to view and manage assistants for this workspace.",
+            "linkTools": "Link tools"
+        },
+        "tools": {
+            "title": "Link tools",
+            "subtitle": "Choose which tools {name} can use in conversations.",
+            "subtitleLoading": "Choose which tools this assistant can use.",
+            "cardTitle": "Available tools",
+            "cardDescription": "Enable mocked templates or custom tools. The AI only calls tools linked here.",
+            "loading": "Loading tools...",
+            "empty": "No tools available yet.",
+            "mockedBadge": "Template",
+            "customBadge": "Custom",
+            "enabled": "On",
+            "disabled": "Off",
+            "backToList": "Back to assistants",
+            "missingAssistant": "Select an assistant from the list to link tools.",
+            "sectionToolsCount": "{count} tools",
+            "sectionEnabledCount": "{enabled} enabled",
+            "expandAll": "Expand all",
+            "collapseAll": "Collapse all",
+            "selectAll": "Select all",
+            "selectingAll": "Selecting...",
+            "allSelectedInSection": "All tools in this section are enabled",
+            "saveChanges": "Save changes",
+            "savingChanges": "Saving...",
+            "discardChanges": "Discard",
+            "unsavedChanges": "Unsaved changes"
+        },
+        "breadcrumb": {
+            "home": "Home",
+            "assistants": "Assistants",
+            "create": "Create",
+            "edit": "Edit",
+            "tools": "Tools"
+        },
+        "aiService": {
+            "CHAT_GPT": "ChatGPT",
+            "GEMINI": "Gemini",
+            "CLAUDE": "Claude",
+            "DEEPSEEK": "DeepSeek",
+            "OTHER_ENTERPRISE": "Other enterprise"
+        },
+        "form": {
+            "back": "Back",
+            "createTitle": "Create new assistant",
+            "createSubtitle": "Configure a new AI assistant for your workflows",
+            "editTitle": "Edit assistant",
+            "editSubtitle": "Update the AI assistant details",
+            "cardTitle": "Assistant details",
+            "cardDescCreate": "Fill in the AI assistant information",
+            "cardDescEdit": "Update the AI assistant information",
+            "nameLabel": "Name *",
+            "namePlaceholder": "Assistant name",
+            "descriptionLabel": "Description",
+            "descriptionPlaceholder": "Describe the assistant's purpose",
+            "aiServiceLabel": "AI service *",
+            "modelLabel": "Model *",
+            "selectService": "Select service",
+            "selectModel": "Select model",
+            "modelAvailableFor": "Model available for {service}",
+            "imageLabel": "Assistant image",
+            "imageHintCreate": "Upload an image for the assistant (max 5MB)",
+            "imageHintEdit": "Upload a new image or keep the current one (max 5MB)",
+            "cancel": "Cancel",
+            "create": "Create assistant",
+            "creating": "Creating...",
+            "save": "Save changes",
+            "saving": "Saving...",
+            "validation": {
+                "nameRequired": "Name is required",
+                "modelRequired": "Model is required"
+            },
+            "loadingAssistant": "Loading assistant...",
+            "notFound": "Assistant not found",
+            "activeLabel": "Active",
+            "activeDescription": "Whether the assistant is active and can be used",
+            "linkTools": "Link tools"
+        }
+    },
+    "catalogPage": {
+        "breadcrumb": {
+            "products": "Products",
+            "new": "New product",
+            "edit": "Edit"
+        },
+        "common": {
+            "selectEnterpriseFirst": "Select an enterprise first.",
+            "loading": "Loading...",
+            "cancel": "Cancel",
+            "save": "Save",
+            "name": "Name",
+            "description": "Description",
+            "slug": "Slug",
+            "order": "Order",
+            "activeFemale": "Active",
+            "inactiveFemale": "Inactive",
+            "activeMale": "Active",
+            "inactiveMale": "Inactive",
+            "featured": "Featured",
+            "iconUrl": "Icon URL",
+            "iconEmoji": "Icon",
+            "selectEmoji": "Select an emoji",
+            "searchEmoji": "Search emoji...",
+            "clearEmoji": "Clear icon",
+            "noEmojisFound": "No emojis found",
+            "imageUrl": "Image URL",
+            "imageUpload": "Image upload",
+            "priceCents": "Price (cents)",
+            "price": "Price (R$)",
+            "originalPriceCents": "Original price (cents)",
+            "originalPrice": "Original price (R$)",
+            "discountPercent": "Discount %",
+            "category": "Category",
+            "selectPlaceholder": "Select",
+            "tagsComma": "Tags (comma-separated)",
+            "emDash": "—",
+            "confirmDeleteCategory": "Remove this category?",
+            "confirmDeleteProduct": "Remove this product?",
+            "confirmDeleteCombo": "Remove this combo?",
+            "activeSwitch": "Active"
+        },
+        "table": {
+            "actions": "Actions",
+            "image": "Image",
+            "status": "Status",
+            "addons": "Add-ons"
+        },
+        "index": {
+            "title": "Catalog",
+            "subtitle": "Manage categories, products, and combos for your business.",
+            "howItWorksTitle": "How the catalog works",
+            "howItWorksIntro": "Build your menu in order: each step depends on the previous one. Start with categories, then add products, bundle them into combos, and preview the result.",
+            "stepCategoriesTitle": "1. Categories",
+            "stepCategoriesDesc": "Create groups to organize your menu (e.g. Pizzas, Drinks). Every product must belong to a category.",
+            "stepProductsTitle": "2. Products",
+            "stepProductsDesc": "Register items with price, image, and optional add-ons. Products are linked to a category.",
+            "stepCombosTitle": "3. Combos",
+            "stepCombosDesc": "Bundle two or more products at a special price. You need at least one product before creating combos.",
+            "stepViewTitle": "4. Preview",
+            "stepViewDesc": "See how customers will browse categories, products, and combos in your public catalog.",
+            "stepLink": "Open",
+            "categoriesTitle": "Categories",
+            "categoriesDesc": "Organize your products into categories.",
+            "productsTitle": "Products",
+            "productsDesc": "Create products with add-ons and variants.",
+            "combosTitle": "Combos",
+            "combosDesc": "Build discounted bundles.",
+            "viewTitle": "View catalog",
+            "viewDesc": "See how customers will view your menu."
+        },
+        "view": {
+            "title": "Catalog preview",
+            "subtitle": "This is a preview of the menu your customers will see.",
+            "previewBadge": "Live preview",
+            "openPublicCatalog": "View public catalog",
+            "setupPublicLink": "Set up public link",
+            "copyPublicLink": "Copy public link",
+            "linkCopied": "Public link copied",
+            "linkCopyFailed": "Could not copy link",
+            "all": "All",
+            "empty": "No active products yet.",
+            "emptyHint": "Add products and categories in the catalog to see them here.",
+            "statsCategories": "{count} categories",
+            "statsProducts": "{count} products",
+            "statsCombos": "{count} combos",
+            "itemSingular": "item",
+            "itemPlural": "items",
+            "productsSection": "Products",
+            "combosSection": "Combos"
+        },
+        "public": {
+            "menuTitle": "Menu",
+            "services": "Services",
+            "myOrders": "My orders",
+            "cart": "Cart",
+            "emptyProducts": "No products available at the moment.",
+            "storeNotFound": "Store not found",
+            "storeNotFoundHint": "This link may be invalid or the store is no longer available."
+        },
+        "categories": {
+            "title": "Categories",
+            "subtitle": "Organize your products into categories.",
+            "newCategory": "New category",
+            "emptyTitle": "No categories yet",
+            "createCategory": "Create category",
+            "editCategory": "Edit category",
+            "newCategoryDialog": "New category",
+            "statusActive": "active",
+            "statusInactive": "inactive"
+        },
+        "products": {
+            "title": "Products",
+            "subtitle": "Create products with add-ons and variants.",
+            "newProduct": "New product",
+            "needCategoryFirst": "Create a category before adding products.",
+            "needCategoryFirstDescription": "Products must be assigned to a category. Create at least one category to start registering products in your catalog.",
+            "goToCategories": "Go to categories",
+            "emptyTitle": "No products yet",
+            "createProduct": "Create product",
+            "editProduct": "Edit product",
+            "newProductDialog": "New product",
+            "formSubtitle": "Fill in the details below to register a product in your catalog.",
+            "basicSection": "Basic information",
+            "pricingSection": "Pricing",
+            "mediaSection": "Image",
+            "optionsSection": "Options",
+            "promotionSection": "Promotion",
+            "backToProducts": "Back to products",
+            "notFound": "Product not found.",
+            "incrementGroupsTitle": "Add-on groups",
+            "addGroup": "Add group",
+            "labelField": "Label",
+            "minSelections": "Min selections",
+            "maxSelections": "Max selections",
+            "increment": "Add-on",
+            "placeholderIncrementName": "Name",
+            "placeholderPriceCent": "Price (cents)",
+            "incrementPrice": "Price (R$)",
+            "placeholderMax": "Max",
+            "permitPromotion": "Enable promotion",
+            "promotionType": "Promotion type",
+            "selectPromotionType": "Select type",
+            "percentage": "Percentage",
+            "fixedValue": "Fixed amount",
+            "promotionPercent": "Promotion (%)",
+            "promotionValueCents": "Promotion value (cents)",
+            "promotionValue": "Promotion value (R$)",
+            "reqShort": "req.",
+            "activeShort": "active",
+            "incrementGroupsBadge": "{count} add-on group(s)"
+        },
+        "combos": {
+            "title": "Combos",
+            "subtitle": "Combine products with a discount.",
+            "newCombo": "New combo",
+            "needProductsFirst": "Create products before building combos.",
+            "needProductsFirstDescription": "Combos are bundles of existing products. Register at least one product before creating combo offers.",
+            "goToProducts": "Go to products",
+            "emptyTitle": "No combos yet",
+            "createCombo": "Create combo",
+            "editCombo": "Edit combo",
+            "newComboDialog": "New combo",
+            "comboItemsTitle": "Combo items",
+            "addItem": "Add item",
+            "removedProduct": "removed product",
+            "alertMinOneProduct": "Add at least one product to the combo.",
+            "deleteCombo": "Remove this combo?"
+        }
+    },
+    "aiToolsPage": {
+        "title": "Abilities",
+        "subtitle": "Actions the AI can perform using your APIs",
+        "examples": "Examples",
+        "newTool": "New ability",
+        "selectEnterpriseFirst": "Select an enterprise first.",
+        "emptyTitle": "No abilities yet",
+        "emptyHint": "Create abilities so the AI can interact with your APIs.",
+        "emptyExamplesHint": "Click \"Examples\" for quick demos.",
+        "editTool": "Edit ability",
+        "newToolDialog": "New ability",
+        "methodName": "Method name",
+        "abilityName": "Ability name",
+        "abilityNamePlaceholder": "E.g. Generate payment for the user",
+        "functionName": "Function name (AI calling)",
+        "functionNameHint": "Generated automatically in camelCase from the display name.",
+        "isHttpRequest": "Calls an external API (HTTP)",
+        "httpMethod": "HTTP method",
+        "handlerKey": "Handler key",
+        "url": "URL",
+        "description": "Description",
+        "linkedRalph": "Linked checklist",
+        "noRalphRequired": "— No required checklist —",
+        "bodyFields": "Body fields",
+        "fieldName": "Name",
+        "fieldValueSource": "Value source",
+        "fieldSourceManual": "Manual",
+        "fieldSourceChecklist": "Checklist",
+        "fieldSourceToolInput": "Tool input",
+        "fieldSourceToolResponse": "Tool response JSON",
+        "fieldChecklistName": "Checklist name",
+        "fieldType": "Type",
+        "fieldStepKey": "Step key",
+        "selectChecklistStep": "Select a checklist step",
+        "fieldNamePlaceholder": "fieldName",
+        "required": "REQ",
+        "optional": "OPT",
+        "stepPrefix": "step:",
+        "manualValue": "— manual value —",
+        "linkedStepHint": "Checklist: ralphName[stepName]",
+        "installChecklistFirst": "Save the template checklist to your library before linking it to a tool.",
+        "addField": "Add field",
+        "responseSchema": "Response schema",
+        "responseSchemaHint": "Choose Builder (field types) or Example JSON (paste a real response sample so the AI knows what this tool returns).",
+        "responseSchemaReadOnlyHint": "Schema is inherited from the selected source.",
+        "httpRequestBodySchema": "HTTP request body (JSON)",
+        "httpRequestBodySchemaHint": "Paste the JSON payload sent on POST/PUT. Use import to create body fields from keys.",
+        "syncFromBodyFields": "Load from body fields",
+        "importKeysAsBodyFields": "Add keys as body fields",
+        "importResponseKeysAsBodyFields": "Add response keys as body fields",
+        "jsonEditor": {
+            "builder": "Builder",
+            "example": "Example JSON",
+            "builderHint": "Define each response field and its type. Updates the example on the right.",
+            "splitHint": "Builder and example stay in sync — edit either side.",
+            "exampleHint": "Paste or edit a real response sample. Updates the builder on the left.",
+            "exampleEditorHint": "JSON validation, autocomplete, and format on paste are enabled.",
+            "formatJson": "Format JSON",
+            "loadExample": "Load example",
+            "sampleHelp": "The example uses number (14), boolean (true), text (\"hello\"), and a nested object with string and number — same shape in every language.",
+            "addField": "Add field",
+            "fieldKey": "Field",
+            "exampleValue": "Example value",
+            "noFieldsYet": "No fields yet — edit the JSON or click Add field."
+        },
+        "responseSchemaSource": "Schema source",
+        "responseSchemaManual": "Manual JSON",
+        "responseSchemaFromTool": "From another tool",
+        "responseSchemaFromChecklist": "From checklist",
+        "sourceTool": "Source tool",
+        "selectSourceTool": "Select a tool",
+        "sourceToolBodyField": "Source body field",
+        "selectSourceToolBodyField": "Select a body field",
+        "sourceToolResponseKey": "Response JSON key",
+        "selectSourceToolResponseKey": "Select a response key",
+        "sourceChecklist": "Source checklist",
+        "selectSourceChecklist": "Select a checklist",
+        "deleteConfirm": "Delete ability \"{name}\"?",
+        "deleteConfirmDescription": "This action cannot be undone.",
+        "confirmDelete": "Delete",
+        "moduleLabel": "Module",
+        "modulePlaceholder": "Select a module",
+        "modules": {
+            "general": "General",
+            "generalDescription": "Custom tools that do not fit a specific system module"
+        },
+        "catalog": {
+            "title": "Ready-made templates",
+            "subtitle": "Public examples available to everyone — no database save required.",
+            "allCategories": "All",
+            "mockedBadge": "Template",
+            "myItemsTitle": "My abilities",
+            "myItemsSubtitle": "Custom abilities for your enterprise.",
+            "myItemsEmpty": "No custom abilities yet",
+            "viewExample": "View template",
+            "exampleNotFound": "Template not found.",
+            "categories": {
+                "calendar": "Calendar",
+                "calendarDescription": "Availability lookup",
+                "scheduling": "Scheduling",
+                "schedulingDescription": "Appointment booking",
+                "payments": "Payments",
+                "paymentsDescription": "Billing and checkout",
+                "crm": "CRM",
+                "crmDescription": "Kanban and sales pipeline",
+                "messaging": "Messaging",
+                "messagingDescription": "Send replies to customers"
+            }
+        },
+        "examplesData": {
+            "checkCalendarDaysFree": {
+                "name": "Check calendar availability",
+                "description": "Checks which weekdays are available for booking. Use when the customer asks about time slots."
+            },
+            "registerScheduling": {
+                "name": "Register appointment",
+                "description": "Registers an appointment for the customer. Use when the customer confirms the desired time."
+            },
+            "generatePayment": {
+                "name": "Generate payment for the user",
+                "description": "Generates a payment for the customer. Requires personal data collected via the customer_info checklist."
+            },
+            "getKanbanCustomerColumn": {
+                "name": "Get customer kanban column",
+                "description": "Returns which kanban column the customer is in."
+            },
+            "createCustomerNotation": {
+                "name": "Create customer notation",
+                "description": "Creates an annotation about the customer (positive, negative, or neutral). Use to record observations, preferences, or context for future conversations. Optionally link to a pipeline card."
+            },
+            "getCustomerNotations": {
+                "name": "List customer notations",
+                "description": "Lists annotations written about the customer. Use before updating context or when you need past notes about this customer."
+            },
+            "updateCustomerNotation": {
+                "name": "Update customer notation",
+                "description": "Updates an existing customer annotation (details, status, or linked pipeline card)."
+            },
+            "deleteCustomerNotation": {
+                "name": "Delete customer notation",
+                "description": "Removes a customer annotation by id when it is no longer accurate or relevant."
+            },
+            "sendMessage": {
+                "name": "Send message to customer",
+                "description": "Sends a text reply to the customer. Use when you have a final answer for the user."
+            }
+        }
+    },
+    "aiRalphsPage": {
+        "title": "Checklists",
+        "subtitle": "Data-collection flows the AI runs in conversations",
+        "examples": "Examples",
+        "newRalph": "New checklist",
+        "selectEnterpriseFirst": "Select an enterprise first.",
+        "emptyTitle": "No checklists yet",
+        "emptyHint": "Checklists are smart forms the AI fills during chat.",
+        "emptyExamplesHint": "Click \"Examples\" to see how it works.",
+        "stepsCount": "{count} steps",
+        "reuseBadge": "reuse",
+        "editRalph": "Edit checklist",
+        "newVersionHint": "Changes create a new version — previous versions are kept and deactivated.",
+        "saveNewVersion": "Save new version",
+        "version": "Version {version}",
+        "newRalphDialog": "New checklist",
+        "name": "Name",
+        "checklistName": "Checklist name",
+        "checklistNamePlaceholder": "E.g. call my customer",
+        "handlerKey": "Handler key",
+        "description": "When should this checklist be used?",
+        "reusable": "Reusable",
+        "steps": "Steps",
+        "stepPlaceholder": "What the AI should ask...",
+        "required": "REQ",
+        "optional": "OPT",
+        "obrigatory": "Required",
+        "stepDescriptionCampus": "What the AI should collect",
+        "stepFieldName": "Field name",
+        "stepType": "Type",
+        "stepChecks": "Validation checks",
+        "addCheck": "Add check",
+        "checkValuePlaceholder": "Check value",
+        "addStep": "Add step",
+        "deleteConfirm": "Delete checklist \"{name}\"?",
+        "deleteConfirmDescription": "This action cannot be undone.",
+        "confirmDelete": "Delete",
+        "catalog": {
+            "title": "Ready-made templates",
+            "subtitle": "Public examples available to everyone — no database save required.",
+            "allCategories": "All",
+            "mockedBadge": "Template",
+            "myItemsTitle": "My checklists",
+            "myItemsSubtitle": "Custom checklists for your enterprise.",
+            "myItemsEmpty": "No custom checklists yet",
+            "viewExample": "View template",
+            "exampleNotFound": "Template not found.",
+            "categories": {
+                "customer": "Customer",
+                "customerDescription": "Customer data collection",
+                "scheduling": "Scheduling",
+                "schedulingDescription": "Appointment booking flows"
+            }
+        },
+        "seedExamples": {
+            "customerInfo": {
+                "description": "Collects basic customer information for payments",
+                "step0": "Get the customer's full name",
+                "step1": "Get the customer's CPF"
+            },
+            "schedulingInfo": {
+                "description": "Collects data to create an appointment",
+                "step0": "Ask which service the customer wants",
+                "step1": "Confirm start date and time",
+                "step2": "Additional notes from the customer"
+            }
+        }
+    },
+    "navbar": {
+        "accountSettings": "Account Settings",
+        "notifications": "Notifications",
+        "billing": "Billing",
+        "upgradeToPro": "Upgrade to Pro",
+        "lightMode": "Light Mode",
+        "darkMode": "Dark Mode",
+        "logout": "Log out"
+    },
+    "calendar": {
+        "addEvent": "Add Event",
+        "mainCalendarAdvertisement": "Cannot be deleted",
+        "views": {
+            "agenda": "Agenda",
+            "day": "Day",
+            "week": "Week",
+            "month": "Month",
+            "year": "Year"
+        },
+        "filter": {
+            "clearFilter": "Clear Filter",
+            "colors": "Colors"
+        },
+        "colors": {
+            "blue": "Blue",
+            "green": "Green",
+            "red": "Red",
+            "yellow": "Yellow",
+            "purple": "Purple",
+            "orange": "Orange"
+        },
+        "userSelect": {
+            "selectUser": "Select a user",
+            "all": "All",
+            "selected": "{count} selected",
+            "clear": "Clear selection"
+        },
+        "calendarSelect": {
+            "selectCalendar": "Select a calendar",
+            "all": "All Calendars"
+        },
+        "settings": {
+            "title": "Calendar settings",
+            "useDarkMode": "Use dark mode",
+            "showConfirmationDialog": "Show confirmation dialog on event drop",
+            "useDotBadge": "Use dot badge",
+            "use24HourFormat": "Use 24 hour format",
+            "agendaViewGroupBy": "Agenda view group by",
+            "date": "Date",
+            "color": "Color"
+        },
+        "dialog": {
+            "addEvent": {
+                "title": "Add New Event",
+                "description": "Create a new event for your calendar."
+            },
+            "editEvent": {
+                "title": "Edit Event",
+                "description": "Modify your existing event."
+            },
+            "deleteEvent": {
+                "title": "Are you absolutely sure?",
+                "description": "This action cannot be undone. This will permanently delete your event and remove event data from our servers.",
+                "button": "Delete"
+            },
+            "eventDetails": {
+                "responsible": "Responsible",
+                "startDate": "Start Date",
+                "endDate": "End Date",
+                "description": "Description",
+                "at": "at",
+                "edit": "Edit",
+                "delete": "Delete"
+            },
+            "form": {
+                "title": "Title",
+                "titlePlaceholder": "Enter a title",
+                "variant": "Variant",
+                "variantPlaceholder": "Select a variant",
+                "description": "Description",
+                "descriptionPlaceholder": "Enter a description",
+                "cancel": "Cancel",
+                "saveChanges": "Save Changes",
+                "createEvent": "Create Event",
+                "continue": "Continue"
+            }
+        },
+        "toast": {
+            "eventCreated": "Event created successfully",
+            "eventUpdated": "Event updated successfully",
+            "eventDeleted": "Event deleted successfully",
+            "eventDeleteError": "Error deleting event",
+            "eventAddError": "Failed to add event",
+            "eventEditError": "Failed to edit event"
+        },
+        "eventsList": {
+            "eventsOn": "Events on",
+            "more": "more...",
+            "noEvents": "No events for this date.",
+            "events": "events"
+        },
+        "eventMove": {
+            "title": "Confirm Event Move",
+            "description": "Are you sure you want to move",
+            "from": "from",
+            "to": "to",
+            "moveEvent": "Move Event"
+        },
+        "agenda": {
+            "searchPlaceholder": "Type a command or search...",
+            "noResults": "No results found."
+        },
+        "dayView": {
+            "happeningNow": "Happening now",
+            "noCurrentEvents": "No appointments or consultations at the moment"
+        }
+    },
+    "configurationEnterprise": {
+        "select": {
+            "placeholder": "Select enterprise",
+            "noEnterprises": "No enterprises available."
+        },
+        "edit": {
+            "title": "Edit enterprise",
+            "subtitle": "Update company information and public catalog settings.",
+            "selectLabel": "Enterprise you are editing",
+            "selectCardTitle": "Switch enterprise",
+            "selectCardDescription": "Choose which enterprise you want to edit."
+        },
+        "breadcrumb": {
+            "enterprises": "Enterprises",
+            "edit": "Edit"
+        },
+        "list": {
+            "title": "Enterprises",
+            "subtitle": "View and manage enterprises you belong to.",
+            "empty": "You have no enterprises yet. Create one to get started.",
+            "loadError": "Could not load enterprises.",
+            "edit": "Edit",
+            "delete": "Delete",
+            "columns": {
+                "name": "Name",
+                "email": "Email",
+                "plan": "Plan",
+                "members": "Members",
+                "actions": "Actions"
+            }
+        },
+        "deleteDialog": {
+            "title": "Delete enterprise?",
+            "description": "This will remove \"{name}\" and related data according to your plan. This action may not be reversible.",
+            "confirm": "Delete"
+        }
+    },
+    "enterprise": {
+        "title": "My Enterprises",
+        "subtitle": "Manage your organizations and teams",
+        "loading": "Loading your enterprises...",
+        "error": "Error loading enterprises. Please try again.",
+        "status": {
+            "active": "Active",
+            "inactive": "Inactive"
+        },
+        "createButton": "Create Enterprise",
+        "editButton": "Edit",
+        "manageButton": "Manage Enterprise",
+        "members": "members",
+        "calendars": "calendars",
+        "createdAt": "Created at",
+        "index": {
+            "documentSection": "CPF / CNPJ"
+        },
+        "pagination": {
+            "previous": "Previous",
+            "next": "Next",
+            "page": "Page",
+            "of": "of"
+        },
+        "onboarding": {
+            "hero": {
+                "title": "Welcome to Enterprise Management",
+                "subtitle": "Create your first enterprise to unlock powerful calendar management, team collaboration, and seamless Google integration."
+            },
+            "features": {
+                "teamCollaboration": {
+                    "title": "Team Collaboration",
+                    "description": "Invite team members, assign roles, and collaborate seamlessly across your organization."
+                },
+                "calendarManagement": {
+                    "title": "Calendar Management",
+                    "description": "Create, manage, and share calendars with your team. Sync with Google Calendar effortlessly."
+                },
+                "googleIntegration": {
+                    "title": "Google Integration",
+                    "description": "Seamlessly connect with Google Workspace. Import and sync calendars automatically."
+                },
+                "enterpriseSecurity": {
+                    "title": "Enterprise Security",
+                    "description": "Role-based access control, secure authentication, and data protection for your organization."
+                },
+                "lightningFast": {
+                    "title": "Lightning Fast",
+                    "description": "Real-time updates, instant synchronization, and blazing-fast performance for all your needs."
+                },
+                "scaleWithEase": {
+                    "title": "Scale with Ease",
+                    "description": "From small teams to large organizations. Our platform grows with your business needs."
+                }
+            },
+            "benefits": {
+                "title": "Why Create an Enterprise?",
+                "saveTime": {
+                    "title": "Save Time",
+                    "description": "Automate calendar management and reduce scheduling conflicts by up to 80%."
+                },
+                "betterCollaboration": {
+                    "title": "Better Collaboration",
+                    "description": "Keep everyone on the same page with shared calendars and real-time updates."
+                },
+                "enterpriseSecurity": {
+                    "title": "Enterprise-Grade Security",
+                    "description": "Your data is protected with industry-standard security measures and encryption."
+                },
+                "workFromAnywhere": {
+                    "title": "Work from Anywhere",
+                    "description": "Access your calendars and team from any device, anywhere in the world."
+                }
+            }
+        },
+        "dialog": {
+            "create": {
+                "title": "Create New Enterprise",
+                "description": "Set up your organization to start managing calendars and teams.",
+                "imageLabel": "Enterprise Image",
+                "nameLabel": "Enterprise Name",
+                "namePlaceholder": "Acme Corporation",
+                "slugLabel": "Slug (URL)",
+                "slugPlaceholder": "acme-corp",
+                "slugHelp": "This will be used in your enterprise URL",
+                "emailLabel": "Email",
+                "emailPlaceholder": "contact@acme.com",
+                "phoneLabel": "Phone",
+                "phonePlaceholder": "+1 (555) 000-0000",
+                "documentTypeLabel": "Document Type",
+                "cpfOption": "CPF (Individual)",
+                "cnpjOption": "CNPJ (Company)",
+                "cpfLabel": "CPF",
+                "cpfPlaceholder": "000.000.000-00",
+                "cnpjLabel": "CNPJ",
+                "cnpjPlaceholder": "00.000.000/0000-00",
+                "timezoneLabel": "Timezone",
+                "timezonePlaceholder": "Select timezone",
+                "cancelButton": "Cancel",
+                "createButton": "Create Enterprise",
+                "creatingButton": "Creating..."
+            },
+            "edit": {
+                "title": "Edit enterprise",
+                "description": "Update your company information."
+            }
+        },
+        "details": {
+            "createTitle": "Company Details",
+            "createDescription": "Enter your company information below",
+            "editTitle": "Company Information",
+            "editDescription": "Update your company information below",
+            "descriptionLabel": "Company description",
+            "descriptionPlaceholder": "Describe your company: segment, how you work, culture, services, and anything visitors should know.",
+            "descriptionHint": "Maximum {max} characters.",
+            "descriptionCounter": "{current} / {max}",
+            "shortPathLabel": "Public URL",
+            "shortPathHint": "Letters, numbers and hyphens only. Between 5 and 40 characters. Used for your public catalog link.",
+            "shortPathNormalizedPreview": "Will be saved as: {value}",
+            "shortPathAvailable": "Available",
+            "shortPathReserved": "This word is reserved and cannot be used",
+            "shortPathInvalid": "Invalid format",
+            "shortPathTaken": "Already taken by another store",
+            "publicCatalogLink": "Public catalog link",
+            "publicCatalogLinkHint": "Share this link with customers so they can browse products and place orders."
+        },
+        "toast": {
+            "createSuccess": "Enterprise created successfully!",
+            "createSuccessDescription": "{name} has been created.",
+            "createError": "Error creating enterprise",
+            "createErrorDescription": "There was an error creating the enterprise.",
+            "updateSuccess": "Enterprise updated successfully!",
+            "updateSuccessDescription": "{name} has been updated.",
+            "updateError": "Error updating enterprise",
+            "updateErrorDescription": "There was an error updating the enterprise.",
+            "deleteSuccess": "Enterprise deleted successfully!",
+            "deleteSuccessDescription": "The enterprise has been deleted.",
+            "deleteError": "Error deleting enterprise",
+            "deleteErrorDescription": "There was an error deleting the enterprise.",
+            "transferSuccess": "Ownership transferred successfully!",
+            "transferSuccessDescription": "The enterprise ownership has been transferred.",
+            "transferError": "Error transferring ownership",
+            "transferErrorDescription": "There was an error transferring the ownership.",
+            "tokensSuccess": "Google tokens updated successfully!",
+            "tokensSuccessDescription": "The Google tokens have been updated.",
+            "tokensError": "Error updating Google tokens",
+            "tokensErrorDescription": "There was an error updating the Google tokens."
+        },
+        "noEnterprise": {
+            "title": "No Enterprise Found",
+            "description": "You need to create or join an enterprise to access this content.",
+            "createButton": "Create Enterprise",
+            "benefits": {
+                "title": "Why Create an Enterprise?",
+                "benefit1": "Manage your team and calendars",
+                "benefit2": "Access advanced features",
+                "benefit3": "Collaborate with your team",
+                "benefit4": "Track your business performance"
+            }
+        },
+        "trial": {
+            "title": "Trial Information",
+            "subtitle": "Manage your trial period",
+            "viewTrial": "View Trial",
+            "startTrial": "Start Trial",
+            "activeTrial": "Active Trial",
+            "expiredTrial": "Expired Trial",
+            "startTrialTitle": "Start Trial",
+            "activeDescription": "You are enjoying your free trial period.",
+            "expiredDescription": "Your trial period has expired. Upgrade to continue using.",
+            "canStartDescription": "You can start a free trial",
+            "startedAt": "Started on",
+            "expiresAt": "Expires on",
+            "timeRemaining": "Time remaining",
+            "expired": "Expired",
+            "days": "days",
+            "day": "day",
+            "hours": "hours",
+            "hour": "hour",
+            "minutes": "minutes",
+            "minute": "minute",
+            "seconds": "seconds",
+            "second": "second",
+            "remaining": "remaining",
+            "trialStatus": "Trial Status",
+            "tokensUsed": "Tokens Used",
+            "tokensAvailable": "Tokens Available",
+            "totalScheduling": "Total Scheduling",
+            "status": "Status",
+            "understood": "Got it",
+            "later": "Later",
+            "upgrade": "Upgrade",
+            "starting": "Starting...",
+            "startFreeTrial": "Start Free Trial",
+            "trialExpiredOn": "Your trial expired on",
+            "toContinue": "To continue using all features, upgrade your plan.",
+            "trialFeatures": {
+                "title": "Try all features for",
+                "daysFree": "3 days free",
+                "noCommitment": "No commitment, cancel anytime.",
+                "fullAccess": "Full access to all features",
+                "support": "Support during trial period",
+                "noCard": "No credit card required",
+                "cancelAnytime": "Cancel anytime"
+            },
+            "blocked": {
+                "title": "Content Blocked",
+                "noTrialDescription": "You need an active trial to access this page. Start your free 3-day trial or upgrade your plan.",
+                "expiredDescription": "Your trial period has expired. To continue using this feature, start a trial or upgrade your plan.",
+                "expiredMessage": "Your trial has expired. To continue using all features, choose one of the plans below.",
+                "trialCardDescription": "Try all features for 3 days free.",
+                "upgradeTitle": "Upgrade",
+                "upgradeDescription": "Choose a plan and get full access to all features.",
+                "viewPlans": "View Plans",
+                "learnMore": "Learn more about trials and plans"
+            },
+            "blockPanel": {
+                "title": "Restricted Access",
+                "description": "You need an active trial or a paid plan to access this content.",
+                "expiredMessage": "Your trial has expired. Start a new trial or subscribe to a plan to continue.",
+                "canStartTitle": "Start Your Free Trial",
+                "canStartMessage": "Try all features for 3 days free.",
+                "trialOption": {
+                    "title": "Free Trial",
+                    "description": "3 days free to try"
+                },
+                "planOption": {
+                    "title": "Subscribe to a Plan",
+                    "description": "Full permanent access",
+                    "benefit1": "Unlimited access",
+                    "benefit2": "All features",
+                    "benefit3": "Priority support",
+                    "button": "View Plans"
+                },
+                "viewTrialDetails": "View my trial details"
+            },
+            "trialBlocked": {
+                "title": "Trial Required",
+                "description": "This feature requires an active trial or paid plan.",
+                "viewPlans": "View Available Plans",
+                "features": {
+                    "fullAccess": "Access all features during the trial period.",
+                    "support": "Full support during the trial period.",
+                    "noCard": "No credit card required to start.",
+                    "cancelAnytime": "Cancel anytime, no commitment."
+                }
+            }
+        }
+    },
+    "landing": {
+        "brand": {
+            "name": "realvidas",
+            "tagline": "Smart Scheduling for Modern Professionals"
+        },
+        "nav": {
+            "features": "Features",
+            "about": "About",
+            "demos": "Demos",
+            "pricing": "Pricing",
+            "login": "Log in",
+            "getStarted": "Get Started"
+        },
+        "hero": {
+            "title": "realvidas",
+            "subtitle": "Unified Communication for Enterprises",
+            "description": "Connect WhatsApp, Instagram, Telegram and more in one powerful platform. Automate, manage and scale your business messaging.",
+            "cta": "Start for Free",
+            "secondaryCta": "Watch Demo",
+            "trustBadge": "All your social networks in one place"
+        },
+        "features": {
+            "title": "Everything You Need to Succeed",
+            "subtitle": "Powerful tools designed specifically for service professionals",
+            "smartScheduling": {
+                "title": "Smart Scheduling",
+                "description": "AI-powered scheduling that prevents double bookings, optimizes your calendar, and suggests the best times for appointments."
+            },
+            "clientManagement": {
+                "title": "Client Management",
+                "description": "Keep detailed records of all your clients, their preferences, appointment history, and send automated reminders."
+            },
+            "multiCalendar": {
+                "title": "Multiple Calendars",
+                "description": "Manage multiple service providers, locations, and appointment types all in one unified platform."
+            },
+            "aiAssistants": {
+                "title": "AI Assistants",
+                "description": "Let AI handle customer inquiries, booking confirmations, and follow-ups automatically via chat and WhatsApp."
+            },
+            "socialIntegration": {
+                "title": "Social Media Integration",
+                "description": "Connect with Instagram, Facebook, WhatsApp and more. Let clients book directly from your social media profiles."
+            },
+            "analytics": {
+                "title": "Business Analytics",
+                "description": "Track revenue, popular services, peak hours, and client retention with detailed reports and insights."
+            },
+            "payments": {
+                "title": "Payment Processing",
+                "description": "Accept payments online, create invoices, and manage your finances all in one place."
+            },
+            "notifications": {
+                "title": "Smart Notifications",
+                "description": "Automated SMS and email reminders reduce no-shows by up to 80% and keep your schedule full."
+            }
+        },
+        "about": {
+            "title": "Built for Service Professionals",
+            "subtitle": "We understand the unique challenges of managing a service-based business",
+            "story": {
+                "title": "Our Story",
+                "content": "realvidas was created by service professionals who were frustrated with complicated, expensive scheduling software. We built a platform that's powerful yet simple, affordable yet feature-rich, and designed specifically for barbers, beauticians, and personal service providers."
+            },
+            "mission": {
+                "title": "Our Mission",
+                "content": "To empower every service professional with technology that helps them focus on what they do best - providing exceptional service to their clients."
+            },
+            "values": {
+                "title": "Our Values",
+                "simplicity": "Simplicity - Easy to use, hard to mess up",
+                "affordability": "Affordability - Professional tools at fair prices",
+                "support": "Support - Real humans, real help, real fast",
+                "innovation": "Innovation - Always improving, always listening"
+            }
+        },
+        "demos": {
+            "title": "See realvidas in Action",
+            "subtitle": "Discover how easy it is to manage your business",
+            "calendar": {
+                "title": "Intuitive Calendar View",
+                "description": "Drag and drop appointments, see your whole week at a glance, and never miss a booking."
+            },
+            "booking": {
+                "title": "Online Booking Portal",
+                "description": "Clients can book appointments 24/7 through your personalized booking page."
+            },
+            "mobile": {
+                "title": "Mobile-First Design",
+                "description": "Manage your business on the go with our responsive mobile interface."
+            },
+            "ai": {
+                "title": "AI Chat Assistant",
+                "description": "Your virtual receptionist that handles bookings and questions automatically."
+            }
+        },
+        "stats": {
+            "users": "Active Users",
+            "appointments": "Appointments Scheduled",
+            "satisfaction": "Customer Satisfaction",
+            "saved": "Hours Saved Monthly"
+        },
+        "testimonials": {
+            "title": "What Professionals Say",
+            "subtitle": "Join thousands of happy customers",
+            "testimonial1": {
+                "name": "Maria Silva",
+                "role": "Hair Salon Owner",
+                "content": "realvidas transformed my business. I went from managing appointments on paper to having a fully automated system. No-shows decreased by 70%!"
+            },
+            "testimonial2": {
+                "name": "João Santos",
+                "role": "Barber Shop",
+                "content": "The AI assistant is incredible. It handles bookings while I focus on my clients. My revenue increased 40% in just 3 months."
+            },
+            "testimonial3": {
+                "name": "Ana Costa",
+                "role": "Nail Artist",
+                "content": "Simple, affordable, and powerful. Everything I need in one place. The client management feature alone is worth it."
+            }
+        },
+        "cta": {
+            "title": "Ready to Transform Your Business?",
+            "subtitle": "Join thousands of professionals already using realvidas",
+            "button": "Start Your Free Trial",
+            "noCard": "No credit card required",
+            "cancel": "Cancel anytime"
+        },
+        "footer": {
+            "product": "Product",
+            "features": "Features",
+            "pricing": "Pricing",
+            "demos": "Demos",
+            "company": "Company",
+            "about": "About Us",
+            "contact": "Contact",
+            "support": "Support",
+            "legal": "Legal",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "rights": "All rights reserved."
+        }
+    },
+    "plans": {
+        "hero": {
+            "title": "Choose the Perfect Plan for Your Business",
+            "subtitle": "Manage schedules, clients, and grow your business with our powerful scheduling platform",
+            "description": "From solo professionals to large enterprises, we have a plan that fits your needs"
+        },
+        "billing": {
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "save": "Save 20%"
+        },
+        "features": {
+            "calendars": "Calendar",
+            "calendars_plural": "Calendars",
+            "users": "User",
+            "users_plural": "Users",
+            "aiAgents": "AI Agent",
+            "aiAgents_plural": "AI Agents",
+            "socialNetworks": "Social Network",
+            "socialNetworks_plural": "Social Networks",
+            "credits": "Credits",
+            "storage": "Storage",
+            "unlimited": "Unlimited"
+        },
+        "cta": {
+            "getStarted": "Get Started",
+            "contactSales": "Contact Sales",
+            "currentPlan": "Current Plan",
+            "popular": "Most Popular",
+            "enterprise": "Enterprise"
+        },
+        "tiers": {
+            "starter": {
+                "name": "Starter",
+                "description": "Perfect for solo professionals getting started",
+                "price": "227",
+                "period": "/month"
+            },
+            "professional": {
+                "name": "Professional",
+                "description": "Ideal for small teams and growing businesses",
+                "price": "487",
+                "period": "/month"
+            },
+            "business": {
+                "name": "Business",
+                "description": "Best for established businesses with multiple users",
+                "price": "997",
+                "period": "/month"
+            },
+            "custom": {
+                "name": "Custom",
+                "description": "Tailored solutions for large enterprises",
+                "price": "Custom",
+                "period": "pricing"
+            }
+        },
+        "public": {
+            "unlimitedValue": "∞",
+            "customPrice": "Contact us",
+            "customPeriod": "Custom pricing",
+            "monthlyPeriod": "/month"
+        },
+        "benefits": {
+            "title": "Everything You Need to Succeed",
+            "subtitle": "Powerful features to help you manage your business efficiently",
+            "feature1": {
+                "title": "Smart Scheduling",
+                "description": "AI-powered scheduling that prevents conflicts and optimizes your time"
+            },
+            "feature2": {
+                "title": "Client Management",
+                "description": "Keep track of all your clients and their preferences in one place"
+            },
+            "feature3": {
+                "title": "Social Integration",
+                "description": "Connect with clients through multiple social media platforms"
+            },
+            "feature4": {
+                "title": "Analytics & Reports",
+                "description": "Gain insights into your business with detailed analytics and reports"
+            },
+            "feature5": {
+                "title": "Secure & Reliable",
+                "description": "Enterprise-grade security to protect your data and your clients"
+            },
+            "feature6": {
+                "title": "24/7 Support",
+                "description": "Get help whenever you need it with our dedicated support team"
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "q1": "Can I change plans later?",
+            "a1": "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.",
+            "q2": "What are credits used for?",
+            "a2": "Credits are used for AI features, automated messaging, and advanced integrations.",
+            "q3": "Is there a free trial?",
+            "a3": "Yes! All plans come with a 14-day free trial. No credit card required.",
+            "q4": "What happens to my data if I cancel?",
+            "a4": "Your data is securely stored for 30 days after cancellation, giving you time to export it."
+        },
+        "testimonials": {
+            "title": "Loved by Professionals Worldwide",
+            "subtitle": "Join thousands of businesses already using our platform"
+        }
+    },
+    "payment": {
+        "title": "Payment Management",
+        "subtitle": "Manage your payments and subscriptions",
+        "createPayment": "Create Payment",
+        "viewPayments": "View Payments",
+        "paymentHistory": "Payment History",
+        "noPayments": "No payments found",
+        "loading": "Loading payments...",
+        "error": "Error loading payments",
+        "status": {
+            "PENDING": "Pending",
+            "PROCESSING": "Processing",
+            "PAID": "Paid",
+            "FAILED": "Failed",
+            "REFUNDED": "Refunded",
+            "CANCELED": "Canceled",
+            "EXPIRED": "Expired"
+        },
+        "method": {
+            "PIX": "PIX",
+            "PIX_RECORRENTE": "Recurring PIX",
+            "CREDIT_CARD": "Credit Card",
+            "BANK_SLIP": "Bank Slip",
+            "DEBIT_CARD": "Debit Card"
+        },
+        "fields": {
+            "amount": "Amount",
+            "amountInCents": "Amount (in cents)",
+            "currency": "Currency",
+            "paymentMethod": "Payment Method",
+            "status": "Status",
+            "createdAt": "Created At",
+            "paidAt": "Paid At",
+            "expiresAt": "Expires At",
+            "abacatePayId": "AbacatePay ID",
+            "qrCode": "QR Code",
+            "qrCodeText": "PIX Copy & Paste",
+            "paymentUrl": "Payment URL"
+        },
+        "actions": {
+            "checkStatus": "Check Status",
+            "copyQrCode": "Copy QR Code",
+            "openPaymentUrl": "Open Payment",
+            "viewDetails": "View Details",
+            "refund": "Refund",
+            "cancel": "Cancel Payment"
+        },
+        "messages": {
+            "paymentCreated": "Payment created successfully",
+            "paymentUpdated": "Payment updated successfully",
+            "paymentCanceled": "Payment canceled successfully",
+            "statusChecked": "Payment status updated",
+            "qrCodeCopied": "QR Code copied to clipboard",
+            "errorCreating": "Error creating payment",
+            "errorUpdating": "Error updating payment",
+            "errorChecking": "Error checking payment status",
+            "errorMissingData": "Missing required data to create payment",
+            "noPlansAvailable": "No payment plans available at the moment",
+            "subscriptionCreated": "Subscription created successfully",
+            "redirectingToPayment": "Redirecting to payment page..."
+        },
+        "create": {
+            "title": "Create Payment",
+            "subtitle": "Select a plan and generate a payment",
+            "steps": {
+                "paymentType": "Payment type",
+                "selectPlan": "Select plan",
+                "paymentMethod": "Payment method"
+            },
+            "mode": {
+                "oneTime": {
+                    "title": "One-time payment",
+                    "description": "Pay once for the selected plan.",
+                    "pixFull": "PIX full payment",
+                    "creditUpTo12x": "Credit card up to 12 installments",
+                    "debitFull": "Debit card full payment",
+                    "once": "one-time",
+                    "select": "Select one-time"
+                },
+                "subscription": {
+                    "title": "Subscription",
+                    "description": "Recurring payment based on billing cycle.",
+                    "pixRecorrente": "Recurring PIX",
+                    "creditRecurring": "Recurring credit card",
+                    "monthlyOrYearly": "Monthly or yearly billing",
+                    "select": "Select subscription"
+                }
+            },
+            "billingCycleTitle": "Billing cycle",
+            "billingCycleDescription": "Choose how often you want to be charged.",
+            "saveWithYearly": "save with yearly billing",
+            "savingsVsMonthly": "Save {amount} compared to monthly billing",
+            "selectPlan": "Select a Plan",
+            "selected": "Selected",
+            "noPlans": "No plans available at the moment",
+            "orderSummary": "Order summary",
+            "billingDocumentTitle": "Billing document",
+            "billingDocumentDescription": "Choose which enterprise document will be used for payment (Asaas / PIX).",
+            "billingEnterpriseLabel": "Enterprise",
+            "billingDocumentTypeLabel": "Document",
+            "billingDocumentCpf": "CPF (Individual)",
+            "billingDocumentCnpj": "CNPJ (Business)",
+            "billingDocumentMissing": "This enterprise has no CPF or CNPJ on file.",
+            "billingDocumentUpdateEnterprise": "Update enterprise profile",
+            "paymentMethodTitle": "Payment method",
+            "paymentMethodDescription": "Choose how you want to pay.",
+            "pixRecorrenteHint": "Recurring charge with PIX.",
+            "pixFullHint": "Instant full payment via PIX.",
+            "creditUpTo12xHint": "Split into up to 12 installments.",
+            "creditRecurringHint": "Recurring charge on your credit card.",
+            "debitFullHint": "Single payment using debit card.",
+            "installments": "Installments",
+            "noInterest": "no interest",
+            "totalWithInstallments": "Total with installments",
+            "pixRecorrenteLabel": "Recurring PIX enabled",
+            "creditRecurringLabel": "Recurring credit card enabled",
+            "totalAmount": "Total Amount",
+            "confirmButton": "Confirm payment",
+            "generatePayment": "Generate Payment",
+            "generating": "Generating...",
+            "processing": "Processing...",
+            "creatingSubscription": "Creating subscription...",
+            "creatingPayment": "Creating payment...",
+            "success": "Payment generated successfully!",
+            "paymentGenerated": "Payment Generated",
+            "paymentInstructions": "Please complete the payment using one of the methods below",
+            "scanQRCode": "Scan the QR Code with your banking app",
+            "copyPixCode": "Or copy the PIX code below",
+            "orCopyPaste": "or copy and paste",
+            "pixCopyPaste": "PIX copy and paste",
+            "pixCopyPasteHint": "Copy this code and paste it into your banking app.",
+            "copied": "Copied to clipboard!",
+            "copiedButton": "Copied",
+            "copyButton": "Copy",
+            "paymentLink": "Payment Link",
+            "openPaymentPage": "Open Payment Page",
+            "expiresAt": "Expires at",
+            "viewDetails": "View Payment Details",
+            "goToPayments": "Go to payments",
+            "goToSubscription": "Go to subscription",
+            "billingCycle": {
+                "title": "Billing Cycle",
+                "description": "Choose how often you want to be billed"
+            },
+            "error": {
+                "selectPlan": "Please select a plan first",
+                "generic": "Error generating payment. Please try again."
+            }
+        },
+        "successPage": {
+            "fallbackName": "there",
+            "verifying": "Confirming payment with the server…",
+            "invalidSessionTitle": "Invalid link",
+            "invalidSessionDescription": "The payment session id (session_id) is missing. Use the link Stripe shows after checkout.",
+            "errorForbiddenTitle": "Access denied",
+            "errorForbiddenDescription": "This session does not belong to your account or organization.",
+            "errorNotFoundTitle": "Session not found",
+            "errorNotFoundDescription": "We could not find this payment in our system. Make sure you are signed into the correct account.",
+            "errorGenericTitle": "Could not confirm",
+            "errorGenericDescription": "Please try again in a moment or open the payments page.",
+            "goToPayments": "Go to payments",
+            "pendingTitle": "Payment not confirmed yet",
+            "pendingDescription": "Stripe has not marked this session as paid yet, or processing is still in progress.",
+            "stripeStatus": "Session status: {session} · Payment: {payment}",
+            "refresh": "Refresh",
+            "welcomeTitle": "Welcome, {name}!",
+            "paidSubtitle": "Your payment is confirmed. Your subscription or plan is active.",
+            "subscriptionLabel": "Subscription",
+            "oneTimeLabel": "One-time payment",
+            "subscriptionStatus": "Subscription: {status}",
+            "nextSteps": "You can keep using the app as usual.",
+            "goToApp": "Go to home",
+            "goToSubscription": "Go to subscription"
+        },
+        "stats": {
+            "title": "Payment Statistics",
+            "totalRevenue": "Total Revenue",
+            "totalPaid": "Total Paid",
+            "totalPending": "Total Pending",
+            "totalFailed": "Total Failed",
+            "totalRefunded": "Total Refunded",
+            "paidCount": "Paid Payments",
+            "pendingCount": "Pending Payments",
+            "failedCount": "Failed Payments",
+            "refundedCount": "Refunded Payments"
+        }
+    },
+    "subscription": {
+        "title": "Subscription Management",
+        "subtitle": "Manage your plans and subscriptions",
+        "mySubscription": "My Subscription",
+        "activeSubscription": "Active Subscription",
+        "noSubscription": "No active subscription",
+        "subscribe": "Subscribe",
+        "loading": "Loading subscriptions...",
+        "error": "Error loading subscriptions",
+        "status": {
+            "PENDING": "Pending",
+            "ACTIVE": "Active",
+            "PAST_DUE": "Past Due",
+            "CANCELED": "Canceled",
+            "EXPIRED": "Expired",
+            "PAUSED": "Paused"
+        },
+        "billingCycle": {
+            "MONTHLY": "Monthly",
+            "YEARLY": "Yearly",
+            "monthly": "per month",
+            "yearly": "per year"
+        },
+        "fields": {
+            "plan": "Plan",
+            "status": "Status",
+            "billingCycle": "Billing Cycle",
+            "price": "Price",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "nextBillingDate": "Next Billing Date",
+            "canceledAt": "Canceled At"
+        },
+        "actions": {
+            "subscribe": "Subscribe",
+            "changePlan": "Change Plan",
+            "cancel": "Cancel Subscription",
+            "reactivate": "Reactivate",
+            "viewDetails": "View Details",
+            "manageSubscription": "Manage Subscription"
+        },
+        "messages": {
+            "subscriptionCreated": "Subscription created successfully",
+            "subscriptionUpdated": "Subscription updated successfully",
+            "subscriptionCanceled": "Subscription canceled successfully",
+            "subscriptionReactivated": "Subscription reactivated successfully",
+            "errorCreating": "Error creating subscription",
+            "errorUpdating": "Error updating subscription",
+            "errorCanceling": "Error canceling subscription"
+        },
+        "cancel": {
+            "title": "Cancel Subscription",
+            "message": "Are you sure you want to cancel your subscription?",
+            "reason": "Reason for cancellation (optional)",
+            "confirm": "Yes, Cancel",
+            "keepSubscription": "Keep Subscription"
+        },
+        "customRequest": {
+            "button": "Request custom plan",
+            "title": "Request custom plan",
+            "description": "Send a customization request for {plan} to admin.",
+            "selectedPlanFallback": "selected plan",
+            "notesLabel": "Notes for admin",
+            "notesPlaceholder": "Describe your custom needs (features, users, billing, etc.)",
+            "submit": "Submit request",
+            "success": "Custom plan request sent to admin.",
+            "error": "Could not submit custom plan request."
+        },
+        "page": {
+            "title": "My subscription",
+            "subtitle": "Plan and billing details for your workspace",
+            "emptyTitle": "No subscription yet",
+            "emptyDescription": "Subscribe to a plan to unlock full access to the platform for your workspace.",
+            "subscribeCta": "Choose a plan",
+            "planSection": "Your plan",
+            "billingSection": "Billing",
+            "nextPayment": "Next payment",
+            "nextPaymentAmount": "Amount",
+            "billingDay": "Billing day (each month)",
+            "memberSince": "Member since",
+            "pendingPaymentNote": "Your subscription is pending payment confirmation. Complete checkout to activate access.",
+            "pastDueNote": "Your last payment failed. Access may be limited until payment is updated.",
+            "retry": "Try again"
+        }
+    },
+    "plan": {
+        "title": "Plans",
+        "subtitle": "Choose the perfect plan for your business",
+        "currentPlan": "Current Plan",
+        "selectPlan": "Select Plan",
+        "loading": "Loading plans...",
+        "error": "Error loading plans",
+        "features": {
+            "calendars": "calendar(s)",
+            "calendarsUnlimited": "Unlimited calendars",
+            "users": "user(s)",
+            "usersUnlimited": "Unlimited users",
+            "aiAgents": "AI agent(s)",
+            "aiAgentsUnlimited": "Unlimited AI agents",
+            "socialNetworks": "social network(s)",
+            "socialNetworksUnlimited": "Unlimited social networks",
+            "credits": "credits/month",
+            "creditsUnlimited": "Unlimited credits",
+            "storage": "GB storage",
+            "storageUnlimited": "Unlimited storage"
+        },
+        "names": {
+            "starter": "Starter",
+            "professional": "Professional",
+            "business": "Business",
+            "custom": "Custom"
+        },
+        "badges": {
+            "popular": "Popular",
+            "recommended": "Recommended",
+            "custom": "Contact Sales"
+        },
+        "actions": {
+            "choosePlan": "Choose Plan",
+            "upgrade": "Upgrade",
+            "downgrade": "Downgrade",
+            "contactSales": "Contact Sales",
+            "currentPlan": "Current Plan"
+        },
+        "currency": {
+            "BRL": "R$",
+            "USD": "$",
+            "EUR": "€"
+        },
+        "messages": {
+            "planSelected": "Plan selected successfully",
+            "errorSelecting": "Error selecting plan"
+        }
+    },
+    "cart": {
+        "title": "Cart",
+        "planNotFound": "Plan not found",
+        "checkout": "Checkout",
+        "billingCycle": {
+            "title": "Billing Cycle",
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "perMonth": "per month",
+            "perYear": "per year",
+            "save": "Save"
+        },
+        "paymentMethod": {
+            "title": "Payment Method",
+            "creditCard": "Credit Card",
+            "debitCard": "Debit Card",
+            "bankSlip": "Bank Slip"
+        },
+        "installments": {
+            "title": "Installments",
+            "of": "of"
+        },
+        "summary": {
+            "title": "Order Summary",
+            "plan": "Plan",
+            "billing": "Billing",
+            "method": "Method",
+            "enterprise": "Enterprise",
+            "total": "Total"
+        },
+        "success": {
+            "title": "Payment created successfully!",
+            "description": "Your payment has been generated. Follow the instructions to complete."
+        },
+        "error": {
+            "noEnterprise": "No enterprise found",
+            "noEnterpriseDescription": "You need to have an enterprise registered to make a purchase. Create an enterprise first.",
+            "noEnterpriseHint": "You need a registered enterprise to continue.",
+            "checkoutFailed": "Checkout failed",
+            "checkoutFailedDescription": "Could not process the payment. Please try again."
+        }
+    },
+    "admin": {
+        "plans": {
+            "title": "Plans Management",
+            "subtitle": "Manage pricing plans and features",
+            "noPlans": "No plans found",
+            "badges": {
+                "unlimited": "Unlimited",
+                "custom": "Custom",
+                "active": "Active",
+                "inactive": "Inactive"
+            },
+            "actions": {
+                "createPlan": "Create Plan",
+                "editPlan": "Edit Plan",
+                "deletePlan": "Delete",
+                "confirmDelete": "Delete plan"
+            },
+            "deleteDialog": {
+                "title": "Delete plan?",
+                "description": "Are you sure you want to delete \"{name}\"? This cannot be undone."
+            },
+            "createDialog": {
+                "title": "Create New Plan",
+                "description": "Fill in the details below to create a new pricing plan"
+            },
+            "editDialog": {
+                "title": "Edit Plan",
+                "description": "Update the plan details below"
+            },
+            "form": {
+                "name": "Plan Name (ID)",
+                "namePlaceholder": "e.g., starter, professional",
+                "displayName": "Display Name",
+                "displayNamePlaceholder": "e.g., Starter Plan",
+                "description": "Description",
+                "descriptionPlaceholder": "Brief description of the plan",
+                "priceMonthly": "Monthly Price (cents)",
+                "priceYearly": "Yearly Price (cents)",
+                "currency": "Currency",
+                "priceInCents": "Enter value in cents (e.g., 22700 for $227.00)",
+                "optional": "Optional",
+                "featuresTitle": "Plan Features",
+                "maxCalendars": "Max Calendars",
+                "maxUsers": "Max Users",
+                "maxAiAgents": "Max AI Agents",
+                "maxSocialNetworks": "Max Social Networks",
+                "creditsPerMonth": "Credits per Month",
+                "storageGb": "Storage (GB)",
+                "optionsTitle": "Plan Options",
+                "isUnlimited": "Unlimited Plan",
+                "isUnlimitedDescription": "All features are unlimited for this plan",
+                "isActive": "Active",
+                "isActiveDescription": "Plan is visible and available for purchase",
+                "isCustom": "Custom Plan",
+                "isCustomDescription": "Requires custom negotiation and contact with sales"
+            },
+            "messages": {
+                "planCreated": "Plan created successfully",
+                "planUpdated": "Plan updated successfully",
+                "planDeleted": "Plan deleted successfully",
+                "errorCreating": "Error creating plan",
+                "errorUpdating": "Error updating plan",
+                "errorDeleting": "Error deleting plan"
+            }
+        },
+        "payments": {
+            "title": "Payment Monitoring",
+            "subtitle": "Monitor all system payments"
+        },
+        "customPlans": {
+            "title": "Negotiated Plans",
+            "subtitle": "Manage custom plans created through enterprise negotiations",
+            "noPlans": "No negotiated plans found",
+            "noPlansDescription": "Create custom plans for enterprises that negotiated special conditions.",
+            "actions": {
+                "create": "Create Negotiated Plan"
+            },
+            "createDialog": {
+                "title": "Create Negotiated Plan",
+                "description": "Create a custom plan for an enterprise with special pricing and feature conditions"
+            },
+            "editDialog": {
+                "title": "Edit Negotiated Plan",
+                "description": "Update the negotiated plan details"
+            },
+            "deleteDialog": {
+                "title": "Delete negotiated plan?",
+                "description": "Are you sure you want to delete \"{name}\"? This cannot be undone."
+            },
+            "form": {
+                "enterpriseId": "Enterprise ID",
+                "basePlanId": "Base Plan (optional)",
+                "descriptionPlaceholder": "Describe the negotiation terms and special conditions..."
+            },
+            "messages": {
+                "created": "Negotiated plan created successfully",
+                "updated": "Negotiated plan updated successfully",
+                "deleted": "Negotiated plan deleted successfully",
+                "errorCreating": "Error creating negotiated plan",
+                "errorUpdating": "Error updating negotiated plan",
+                "errorDeleting": "Error deleting negotiated plan"
+            }
+        }
+    },
+    "pipelinePage": {
+        "title": "Pipelines",
+        "subtitle": "Manage your kanban boards and workflows.",
+        "create": "New Pipeline",
+        "createNew": "Create new pipeline",
+        "name": "Name",
+        "namePlaceholder": "e.g. Sales Pipeline",
+        "description": "Description",
+        "descriptionPlaceholder": "Describe the purpose of this pipeline...",
+        "module": "Module",
+        "empty": "No pipelines yet. Create your first one!",
+        "openBoard": "Open board",
+        "selectEnterprise": "Select an enterprise in the sidebar first.",
+        "modules": {
+            "CRM": "CRM",
+            "SUPPORT": "Support",
+            "SALES": "Sales",
+            "RECRUITMENT": "Recruitment",
+            "PROJECT": "Project",
+            "CUSTOM": "Custom"
+        },
+        "board": {
+            "title": "Board",
+            "addColumn": "Add column",
+            "addCard": "Add card",
+            "add": "Add",
+            "columnNamePlaceholder": "Column name...",
+            "cardTitlePlaceholder": "Card title...",
+            "columnDescriptionPlaceholder": "Describe when cards should stay or move to this column (used by AI)...",
+            "columnDescriptionHint": "Click to edit. The AI uses this to decide when to move cards.",
+            "columnDescriptionMissing": "Add a description so the AI knows when to move cards here",
+            "start": "Start",
+            "finish": "Finish",
+            "mandatoryStartColumn": "Required start column — cards begin here and position is fixed",
+            "mandatoryFinishColumn": "Required finish column — sales are completed here and position is fixed"
+        }
+    }
+}

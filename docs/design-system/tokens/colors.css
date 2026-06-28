@@ -1,0 +1,89 @@
+/* ============================================================
+   Real Vidas — Core color palette (raw ramps)
+   Theme-agnostic. Semantic aliases live in semantic.css.
+   ------------------------------------------------------------
+   Brand DNA (from the logo): Laranja (orange #e98b2e — the "REAL"
+   mark + primary action) + Azul royal (the "VIDAS" mark — trust,
+   institutional). Verde reserved for success; Vermelho for danger.
+   Plus the membership metals: Ouro / Prata / Bronze.
+   ============================================================ */
+
+:root {
+  /* ---- Laranja (Primary / brand · #e98b2e) ---- */
+  --orange-50:  #fef4e9;
+  --orange-100: #fce3c6;
+  --orange-200: #f9cd99;
+  --orange-300: #f4b366;
+  --orange-400: #ef9c40;
+  --orange-500: #e98b2e;  /* ← brand orange (logo) */
+  --orange-600: #d4761c;
+  --orange-700: #b05c17;
+  --orange-800: #8c4917;
+  --orange-900: #743d18;
+  --orange-950: #401e09;
+
+  /* ---- Azul royal (Secondary / institutional · logo "VIDAS") ---- */
+  --blue-50:  #eef2fb;
+  --blue-100: #d9e1f5;
+  --blue-200: #b7c5ec;
+  --blue-300: #8aa1de;
+  --blue-400: #5b78cb;
+  --blue-500: #3a5aac;
+  --blue-600: #2e4a90;  /* ← brand blue (logo wordmark) */
+  --blue-700: #283e78;
+  --blue-800: #233560;  /* deep institutional navy */
+  --blue-900: #1c2a4b;
+  --blue-950: #121a30;
+
+  /* ---- Verde (Success / vitality) ---- */
+  --green-50:  #e9fbf1;
+  --green-100: #c9f4dd;
+  --green-200: #95e7bf;
+  --green-300: #5bd49b;
+  --green-400: #25bd78;
+  --green-500: #0ea15f;
+  --green-600: #07854e;
+  --green-700: #086a40;
+  --green-800: #0a5435;
+  --green-900: #08452d;
+
+  /* ---- Vermelho (Danger / errors only) ---- */
+  --red-50:  #fff1f2;
+  --red-100: #ffe1e3;
+  --red-200: #ffc7cb;
+  --red-400: #f56974;
+  --red-500: #ea3b49;
+  --red-600: #d81f2e;
+  --red-700: #b41522;
+
+  /* ---- Amber (Warning) ---- */
+  --amber-50:  #fff8eb;
+  --amber-100: #ffeac6;
+  --amber-400: #f7b32b;
+  --amber-500: #ec9a0c;
+  --amber-600: #c8780a;
+
+  /* ---- Neutral (cool slate) ---- */
+  --neutral-0:   #ffffff;
+  --neutral-50:  #f7f8fa;
+  --neutral-100: #eef1f5;
+  --neutral-150: #e6e9ef;
+  --neutral-200: #d9dde5;
+  --neutral-300: #c0c6d0;
+  --neutral-400: #98a0ad;
+  --neutral-500: #6e7682;
+  --neutral-600: #515862;
+  --neutral-700: #3a4049;
+  --neutral-800: #262a31;
+  --neutral-850: #1b1e24;
+  --neutral-900: #14161b;
+  --neutral-950: #0c0e11;
+
+  /* ---- Membership metals (tiers) ---- */
+  --metal-ouro:   #c79a2b;
+  --metal-prata:  #9aa3ad;
+  --metal-bronze: #b0743b;
+
+  --black: #000000;
+  --white: #ffffff;
+}

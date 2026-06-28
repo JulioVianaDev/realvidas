@@ -1,0 +1,88 @@
+### Send email using a React template
+### Template type: reset-password
+### Params: resetUrl (required), userName (optional), language (optional: "en-US" | "pt-BR", default "pt-BR")
+POST http://localhost:8080/v1/mail/send-template
+Content-Type: application/json
+
+{
+  "to": "recipient@example.com",
+  "templateType": "reset-password",
+  "params": {
+    "resetUrl": "https://app.example.com/reset-password?token=abc123xyz",
+    "userName": "John Doe",
+    "language": "pt-BR"
+  }
+}
+
+### Reset password email in English (language: en-US)
+POST http://localhost:8080/v1/mail/send-template
+Content-Type: application/json
+
+{
+  "to": "recipient@example.com",
+  "subject": "Reset your password",
+  "templateType": "reset-password",
+  "params": {
+    "resetUrl": "https://app.example.com/reset?token=abc123",
+    "userName": "Jane",
+    "language": "en-US"
+  }
+}
+
+### Same request with custom subject (optional)
+POST http://localhost:8080/v1/mail/send-template
+Content-Type: application/json
+
+{
+  "to": "juliovianadev@gmail.com",
+  "subject": "Redefinir sua senha - Agenda AI",
+  "templateType": "reset-password",
+  "params": {
+    "resetUrl": "https://app.example.com/reset-password?token=goiabada",
+    "userName": "Maria"
+  }
+}
+
+### Minimal params for reset-password (userName optional)
+POST http://localhost:8080/v1/mail/send-template
+Content-Type: application/json
+
+{
+  "to": "user@gmail.com",
+  "templateType": "reset-password",
+  "params": {
+    "resetUrl": "https://myapp.com/reset?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
+}
+
+### Login code email — LIGHT theme (params: validationCode, language, loginUrl, theme)
+POST http://localhost:8080/v1/mail/send-template
+Content-Type: application/json
+
+{
+  "to": "juliovianadev@gmail.com",
+  "subject": "Seu código de login - Light",
+  "templateType": "login-code",
+  "params": {
+    "validationCode": "abc-123",
+    "language": "pt-BR",
+    "loginUrl": "https://localhost:5173",
+    "theme": "light"
+  }
+}
+
+### Login code email — DARK theme
+POST http://localhost:8080/v1/mail/send-template
+Content-Type: application/json
+
+{
+  "to": "juliovianadev@gmail.com",
+  "subject": "Seu código de login - Dark",
+  "templateType": "login-code",
+  "params": {
+    "validationCode": "xyz-789",
+    "language": "pt-BR",
+    "loginUrl": "https://localhost:5173",
+    "theme": "dark"
+  }
+}

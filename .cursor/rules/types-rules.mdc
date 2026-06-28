@@ -1,0 +1,162 @@
+---
+alwaysApply: true
+---
+## Type Validation Rule
+
+### Rule Name: types-validation
+
+### Description:
+Before implementing any new endpoint or modifying existing ones, ensure proper type validation by following these steps:
+
+1. Check if the entity type exists in `/packages/types/src/entities/`
+   - If yes, ensure it follows the naming convention `IEntityNameEntity`
+   - If no, create the appropriate type definition first
+
+2. Verify corresponding body request type in `/packages/types/src/@types/body-requests/`
+   - Body request types should follow the naming pattern:
+     - For POST: `IPostEntityNameBodyRequest`
+     - For PUT: `IPutEntityNameBodyRequest`
+
+3. Ensure payload consistency:
+   - Body request types should extend or reference the main entity type when appropriate
+   - Use `Omit<>` or `Pick<>` to derive from the main entity type
+   - Example:
+     ```typescript
+     import { IEntityNameEntity } from "../entities/entity-name.entity";
+     
+     export interface IPostEntityNameBodyRequest {
+         // Only include fields needed for creation
+         field1: string;
+         field2: number;
+         // Omit auto-generated fields like id, createdAt, etc.
+     }
+     ```
+
+4. Verify corresponding params to get query type in `/packages/types/src/params/`
+   - Params types should follow the naming pattern using EntityName and METHOD:
+     - For GET All: `IGetAllEntityNameParams`
+     - For GET Specific: `IGetByIdEntityNameParams`
+
+5. Ensure params consistency:
+   - Example:
+     ```typescript
+     import { IEntityNameEntity } from "../entities/entity-name.entity.ts";
+     
+     export interface IGetAllEntitiNameParams {
+         // Only include fields needed for creation
+         order: "name-desc" | "name-asc";
+         field2: IEntityName["propriety"];
+         // Omit auto-generated fields like id, createdAt, etc.p
+     }
+     ```
+
+6. Verify corresponding response to HTTP Requests is typed in `/packages/types/src/responses/`
+   - Params types should follow the naming pattern using I + HTTPMETHOD + SERVICE METHOD + EntityName Response:
+     - For GET All: `IGetAllEntitiesResponse`
+     - For GET Specific: `IGetByIdEntityNameParams`
+
+7. Ensure responses consistency:
+   - Example:
+     ```typescript
+     import { IEntityNameEntity } from "../file";
+     import { Paginate } from "../paginate";
+
+      
+     export type IGetAllEntitiesResponse = Paginate<IEntityNameEntity>;
+
+     ```
+
+8. Verify corresponding dto type to correct types type in `/apps/backend/src/modules/module-name/dtos/entity-name.dto.ts`
+   - Every dto NEEED use `Exact` helper type to ensure :
+     - For GET methods search type in: `/packages/types/src/params/`
+     - For PUT or POST methods search type inside: `/packages/types/src/body-requests/`
+
+9. Ensure implemented correctly:
+   - Example GET method:
+     ```typescript
+     import {
+        IGetAllEntitiNameParams,
+     } from "@global-types/params/entity-name.params";
+     import { Exact } from "@global-types/exact";
+     export class GetMethodEntityParamsDto
+        implements Exact<GetMethodEntityParamsDto, IGetAllEntitiNameParams> {
+        @IsOptional()
+        classify: IGetAllEntitiNameParams["classify"];
+
+        @IsString()
+        @IsOptional()
+        search: IGetAllEntitiNameParams["search"]
+
+        @IsEnum(modulesArray)
+        module: IGetAllEntitiNameParams["module"]
+
+        @IsNumber()
+        @IsOptional()
+        page: : IGetAllEntitiNameParams["page"]
+
+        @IsNumber()
+        @IsOptional()
+        limit: IGetAllEntitiNameParams["limit"]
+    }
+     ```
+   - Example POST method:
+     ```typescript
+     import { IPostCreateFileToEntities } from "@global-types/body-requests/entity-name.body-request";
+     import { Exact } from "@global-types/utils/exact";
+     export class IPostMethodEntityNameDto
+        implements Exact<IPostCreateFileToEntitiesDto, IPostCreateFileToEntities> {
+        @IsString()
+        entityType: IPostCreateFileToEntities["entityType"];
+
+        @IsNumber()
+        fileId: IPostCreateFileToEntities["fileId"];
+
+        @IsNumber()
+        entityId: IPostCreateFileToEntities["entityId"];
+     }
+     ```
+
+10. Controller Get Usage
+   - All times when i use Get method need used @Query nestjs type to get DTO.
+   - Example controller using GETDTO
+   ```typescript
+       export class IEntityNameController{
+        @Get("/method")
+        async getMethodName(
+            @User() user: UserSession,
+            @Query() params: GetFilesParamsDto,
+        ){
+          return await this.entityNameService.methodName({
+            params,
+            userId: user.id,
+         });
+       }
+      }
+   ```
+
+11. Controller Post Usage
+   - All times when i use Post method need used @Post nestjs type to get DTO.
+   - Example controller using POSTDTO
+   ```typescript
+       export class IEntityNameController{
+        @Post("/method")
+        async getMethodName(
+            @User() user: UserSession,
+            @Body() payload: MethodEntityNameDto,
+        ){
+          return await this.entityNameService.methodName({
+            payload,
+            userId: user.id,
+         });
+       }
+      }
+   ```
+
+12. Validation checklist:
+   - All required fields are properly typed
+   - No unnecessary fields are included in body requests
+   - Proper use of optional fields with `?` notation
+   - Consistent use of enums and custom types
+   - Proper nesting of related types
+
+This rule helps maintain consistency between entity definitions and API payloads, reducing runtime errors and improving type safety. 

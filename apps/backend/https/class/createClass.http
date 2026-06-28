@@ -1,0 +1,9 @@
+POST http://localhost:8080/v1/classes HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ1LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDQ1ODQ1ODcsImV4cCI6MTc0NDYyMDU4N30.hoTL0SEsUj_6y2-L0VG2bcncQkvFM2mK0HHarOAhNUE
+Content-Type: application/json
+
+{
+  "name": "Aula 2- Introodução a variáveis",
+  "description":"Como declarar varáveis em diferentes ambientes",
+  "difficulty": "EASY_2"
+}

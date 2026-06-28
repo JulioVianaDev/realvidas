@@ -1,0 +1,227 @@
+networks:
+    backend-network:
+        driver: bridge
+
+services:
+    db:
+        image: postgres:15
+        container_name: mynds_system_db
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            POSTGRES_DB: ${POSTGRES_DB}
+        ports:
+            - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        networks:
+            - backend-network
+        restart: unless-stopped
+        deploy:
+            resources:
+                limits:
+                    cpus: "0.5"
+                    memory: 4G
+                reservations:
+                    cpus: "0.5"
+                    memory: 2G
+
+    rabbitmq:
+        image: rabbitmq:3-management
+        container_name: rabbitmq
+        environment:
+            RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+            RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+        ports:
+            - "127.0.0.1:5672:5672"
+            - "127.0.0.1:15672:15672"
+        volumes:
+            - rabbitmq_data:/var/lib/rabbitmq
+        networks:
+            - backend-network
+        healthcheck:
+            test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+            interval: 30s
+            timeout: 10s
+            retries: 5
+            start_period: 40s
+        restart: unless-stopped
+        deploy:
+            resources:
+                limits:
+                    cpus: "0.5"
+                    memory: 512M
+                reservations:
+                    cpus: "0.5"
+                    memory: 256M
+
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+        container_name: elasticsearch
+        environment:
+            discovery.type: single-node
+            ES_JAVA_OPTS: "-Xms2g -Xmx2g"
+            xpack.security.enabled: false
+            xpack.security.http.ssl.enabled: false
+            xpack.security.transport.ssl.enabled: false
+            http.host: 0.0.0.0
+            http.port: 9200
+            bootstrap.memory_lock: true
+            # Add these settings to optimize single-node setup
+            action.auto_create_index: true
+            cluster.routing.allocation.disk.threshold_enabled: false
+            # Set default number of replicas to 0 for single-node
+            # index.number_of_replicas: 0
+        ports:
+            - "127.0.0.1:9200:9200"
+        volumes:
+            - elasticsearch_data:/usr/share/elasticsearch/data
+        networks:
+            - backend-network
+        healthcheck:
+            test: [
+                    "CMD-SHELL",
+                    "curl -f
+                    http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=5s
+                    || exit 1",
+                ]
+            interval: 30s
+            timeout: 10s
+            retries: 5
+            start_period: 120s
+        restart: unless-stopped
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+        deploy:
+            resources:
+                limits:
+                    cpus: "1.0" # Increased from 0.5
+                    memory: 4G
+                reservations:
+                    cpus: "0.5"
+                    memory: 2G
+    redis:
+        image: redis:alpine
+        container_name: redis
+        ports:
+            - "127.0.0.1:${REDIS_PORT:-6379}:6379"
+        volumes:
+            - redis_data:/data
+        networks:
+            - backend-network
+        healthcheck:
+            test: ["CMD", "redis-cli", "ping"]
+            interval: 30s
+            retries: 3
+            start_period: 30s
+            timeout: 5s
+        restart: unless-stopped
+        deploy:
+            resources:
+                limits:
+                    cpus: "0.5"
+                    memory: 256M
+                reservations:
+                    cpus: "0.25"
+                    memory: 128M
+    nginx:
+        image: nginx:alpine
+        container_name: nginx
+        restart: unless-stopped
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            # Nginx config
+            - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+            # Frontend dist folders — live volume mounts
+            # rsync new build → files served instantly, no restart needed
+            - /app/portfolio/dist:/app/portfolio/dist:ro
+            - /app/realvidas/apps/frontend/build:/app/realvidas/apps/frontend/build:ro
+
+            # SSL certificates managed by certbot
+            - certbot_certs:/etc/letsencrypt:ro
+            - certbot_www:/var/www/certbot:ro
+
+    certbot:
+        image: certbot/certbot:latest
+        container_name: certbot
+        restart: unless-stopped
+        volumes:
+            - certbot_certs:/etc/letsencrypt
+            - certbot_www:/var/www/certbot
+        # Checks every 12h, renews only when cert has <30 days left
+        entrypoint: >
+            sh -c "trap exit TERM;
+                while :; do
+                certbot renew --webroot -w /var/www/certbot --quiet;
+                sleep 12h & wait $${!};
+                done"
+
+    whatsmeow:
+        build:
+            context: ./apps/whatsmeow
+            dockerfile: Dockerfile
+        container_name: whatsapp_realvidas
+        ports:
+            - "127.0.0.1:4444:4444"
+        env_file:
+            - ./.env
+        volumes:
+            - ./apps/whatsmeow/media:/app/media
+        environment:
+            TZ: UTC
+            DB_DRIVER: postgres
+            DB_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/postgres?sslmode=disable
+            RABBITMQ_HOST: rabbitmq
+            REDIS_HOST: redis
+        networks:
+            - backend-network
+        restart: unless-stopped
+        depends_on:
+            db:
+                condition: service_started
+            rabbitmq:
+                condition: service_healthy
+            redis:
+                condition: service_healthy
+
+    # backup-service:
+    #     image: alpine:latest
+    #     container_name: backup_service
+    #     environment:
+    #         POSTGRES_USER: ${POSTGRES_USER}
+    #         POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    #         POSTGRES_DB: ${POSTGRES_DB}
+    #         POSTGRES_HOST: db
+    #         ELASTICSEARCH_HOST: elasticsearch
+    #     volumes:
+    #         - ./backups:/backups
+    #         - ./backup-script.sh:/backup-script.sh
+    #     networks:
+    #         - backend-network
+    #     depends_on:
+    #         - db
+    #         - elasticsearch
+    #     command: >
+    #         sh -c " apk add --no-cache postgresql-client curl zip &&
+    #         chmod +x /backup-script.sh && crond -f -d 8 "
+    #     restart: unless-stopped
+    #     deploy:
+    #         resources:
+    #             limits:
+    #                 cpus: "0.25"
+    #                 memory: 256M
+volumes:
+    postgres_data:
+    rabbitmq_data:
+    elasticsearch_data:
+    redis_data:
+    certbot_certs:
+    certbot_www:

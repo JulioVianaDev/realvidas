@@ -1,0 +1,68 @@
+/* ============================================================
+   Real Vidas — Elevation, blur, z-index, motion
+   Shadows are tinted with the theme's --shadow-color and scaled
+   by --shadow-strength so they read correctly in light & dark.
+   ============================================================ */
+
+:root {
+  /* Shadows — layered, navy-tinted */
+  --shadow-xs: 0 1px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 1.0));
+  --shadow-sm:
+    0 1px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 0.9)),
+    0 2px 4px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 0.7));
+  --shadow-md:
+    0 2px 4px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 0.8)),
+    0 6px 12px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 0.9));
+  --shadow-lg:
+    0 4px 8px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 0.7)),
+    0 16px 28px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 1.0));
+  --shadow-xl:
+    0 8px 16px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 0.6)),
+    0 30px 56px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 1.1));
+
+  /* Brand-tinted glow (for emergency CTAs) */
+  --shadow-brand: 0 8px 22px color-mix(in srgb, var(--brand) 40%, transparent);
+
+  /* Inner shadow (inputs / wells) */
+  --shadow-inset: inset 0 1px 2px hsl(var(--shadow-color) / calc(var(--shadow-strength) * 0.9));
+
+  /* Blur (glass surfaces / overlays) */
+  --blur-sm: 6px; /* @kind other */
+  --blur-md: 14px; /* @kind other */
+  --blur-lg: 26px; /* @kind other */
+
+  /* Z-index scale */
+  --z-base:     0; /* @kind other */
+  --z-sticky:   100; /* @kind other */
+  --z-header:   200; /* @kind other */
+  --z-dropdown: 300; /* @kind other */
+  --z-overlay:  400; /* @kind other */
+  --z-modal:    500; /* @kind other */
+  --z-toast:    600; /* @kind other */
+  --z-tooltip:  700; /* @kind other */
+
+  /* Motion — durations */
+  --dur-instant: 80ms; /* @kind other */
+  --dur-fast:    140ms; /* @kind other */
+  --dur-base:    220ms; /* @kind other */
+  --dur-slow:    360ms; /* @kind other */
+  --dur-slower:  560ms; /* @kind other */
+
+  /* Motion — easing
+     Real Vidas favors crisp, confident motion: quick ease-out
+     for entrances, gentle ease-in-out for state changes. No bounce. */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.45, 0, 0.25, 1); /* @kind other */
+  --ease-in:     cubic-bezier(0.5, 0, 0.9, 0.4); /* @kind other */
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-instant: 0ms; /* @kind other */
+    --dur-fast: 0ms; /* @kind other */
+    --dur-base: 0ms; /* @kind other */
+    --dur-slow: 0ms; /* @kind other */
+    --dur-slower: 0ms; /* @kind other */
+  }
+}

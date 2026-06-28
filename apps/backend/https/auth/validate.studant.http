@@ -1,0 +1,5 @@
+POST http://localhost:8080/v1/auth/validate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNzM2ODAwNzU3LCJleHAiOjE3MzY4MzY3NTd9.Y2gseaqxq-UZ0goSaWfx2mHS_1CCWgxsYqOIUA2Jotg
+Content-Type: application/json
+
+{}

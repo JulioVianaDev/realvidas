@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Status & tiers" subtitle="Success, warning, danger, info + membership metals" -->
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;background:var(--bg-canvas);padding:18px;font-family:var(--font-body)}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .sw{flex:1;min-width:90px;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border)}
+  .top{height:46px}
+  .cap{padding:6px 8px;font-family:var(--font-display);font-size:11px;font-weight:600;color:var(--text-body);background:var(--surface)}
+  .cap small{display:block;font-family:var(--font-mono);font-weight:400;color:var(--text-subtle);font-size:9px}
+</style></head><body>
+<div class="row" style="margin-bottom:10px">
+  <div class="sw"><div class="top" style="background:var(--success)"></div><div class="cap">Sucesso<small>--success</small></div></div>
+  <div class="sw"><div class="top" style="background:var(--warning)"></div><div class="cap">Atenção<small>--warning</small></div></div>
+  <div class="sw"><div class="top" style="background:var(--danger)"></div><div class="cap">Perigo<small>--danger</small></div></div>
+  <div class="sw"><div class="top" style="background:var(--info)"></div><div class="cap">Info<small>--info</small></div></div>
+</div>
+<div class="row">
+  <div class="sw"><div class="top" style="background:var(--tier-ouro)"></div><div class="cap">Ouro<small>--tier-ouro</small></div></div>
+  <div class="sw"><div class="top" style="background:var(--tier-prata)"></div><div class="cap">Prata<small>--tier-prata</small></div></div>
+  <div class="sw"><div class="top" style="background:var(--tier-bronze)"></div><div class="cap">Bronze<small>--tier-bronze</small></div></div>
+  <div class="sw"><div class="top" style="background:var(--grad-emergency)"></div><div class="cap">Gradiente<small>--grad-emergency</small></div></div>
+</div>
+</body></html>

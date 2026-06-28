@@ -1,0 +1,2024 @@
+{
+    "common": {
+        "welcome": "Bem-vindo",
+        "cancel": "Cancelar",
+        "save": "Salvar",
+        "saving": "Salvando...",
+        "back": "Voltar",
+        "backToHome": "Voltar ao Início",
+        "refresh": "Atualizar",
+        "loading": "Carregando...",
+        "checking": "Verificando...",
+        "error": "Erro",
+        "success": "Sucesso",
+        "copy": "Copiar",
+        "close": "Fechar"
+    },
+    "sidebar": {
+        "events": "Eventos",
+        "scheduling": "Agendamento",
+        "calendar": "Calendários",
+        "chat": "Chat",
+        "scheduleProfiles": "Perfil de Horários",
+        "reports": "Relatórios",
+        "appointments": "Agendamentos",
+        "messages": "Mensagens",
+        "sellerArea": "Área do Vendedor",
+        "sales": "Vendas",
+        "createCoupons": "Criação de cupom",
+        "payments": "Pagamentos",
+        "catalog": "Catálogo",
+        "catalogOverview": "Visão geral",
+        "catalogView": "Visualização do catálogo",
+        "categories": "Categorias",
+        "products": "Produtos",
+        "combos": "Combos",
+        "offerings": "Ofertas de serviços",
+        "offeringsOverview": "Visão geral",
+        "offeringsServices": "Serviços",
+        "offeringsCategories": "Categorias",
+        "offeringsProfessionals": "Profissionais",
+        "artificialIntelligence": "Inteligência Artificial",
+        "assistants": "Assistentes",
+        "tools": "Habilidades",
+        "ralphs": "Checklists",
+        "usage": "Uso",
+        "enterprise": "Empresa",
+        "tenant": "Tenant",
+        "switchTenant": "Trocar tenant",
+        "switchEnterprise": "Trocar empresa",
+        "settings": "Configurações",
+        "emails": "E-mails",
+        "flows": "Flows",
+        "socialMedias": "Redes sociais",
+        "myPayments": "Meus pagamentos",
+        "myPlan": "Meu plano",
+        "administrative": "Administrativo",
+        "logs": "Logs",
+        "dashboard": "Dashboard",
+        "paymentsMonitoring": "Monitor. Pagamentos",
+        "plansManagement": "Gestão de Planos",
+        "credits": "Créditos",
+        "configurationEnterprises": "Minhas empresas",
+        "pipelines": "Pipelines",
+        "pipelinesList": "Meus Pipelines",
+        "pipelinesBoards": "Quadros",
+        "close": "Fechar",
+        "open": "Abrir",
+        "customers": "Clientes",
+        "customersList": "Lista de clientes",
+        "campaigns": "Campanhas",
+        "campaignsList": "Lista de campanhas",
+        "adminSaas": "Admin SaaS",
+        "adminSaasSection": "Administração SaaS",
+        "adminSaasTenants": "Tenants e pagamentos",
+        "adminSaasUsers": "Usuários",
+        "adminSaasPlans": "Planos",
+        "adminSaasAnalytics": "Analytics"
+    },
+    "adminSaas": {
+        "tenants": {
+            "title": "Tenants e pagamentos",
+            "description": "Visão global de todos os workspaces, assinaturas e pagamentos da plataforma.",
+            "tableTitle": "Todos os tenants",
+            "owner": "Proprietário",
+            "tenantId": "Tenant ID",
+            "billing": "Assinatura",
+            "pending": "Pendentes",
+            "lastPayment": "Último pagamento",
+            "active": "Ativo",
+            "inactive": "Sem acesso",
+            "manage": "Gerenciar",
+            "billingFor": "Billing — {name}",
+            "billingHint": "Simule pagamentos pendentes ou conceda acesso gratuito (plano custom R$0) para testes.",
+            "grantAccess": "Conceder acesso gratuito",
+            "subscriptions": "Assinaturas",
+            "payments": "Pagamentos",
+            "simulatePaid": "Simular como pago"
+        }
+    },
+    "customersPage": {
+        "title": "Clientes",
+        "subtitle": "Pessoas vinculadas à empresa selecionada (dados do tenant).",
+        "add": "Novo cliente",
+        "selectEnterprise": "Selecione uma empresa na barra lateral para listar clientes.",
+        "searchPlaceholder": "Buscar por nome, telefone ou e-mail",
+        "search": "Buscar",
+        "colName": "Nome",
+        "colPhone": "Telefone",
+        "colEmail": "E-mail",
+        "colSocialMedias": "Redes sociais",
+        "colCreated": "Criado em",
+        "colActions": "Ações",
+        "empty": "Nenhum cliente encontrado.",
+        "showing": "Mostrando {from}–{to} de {total}",
+        "createTitle": "Novo cliente",
+        "editTitle": "Editar cliente",
+        "fieldName": "Nome",
+        "fieldPhone": "Telefone",
+        "fieldEmail": "E-mail",
+        "deleteTitle": "Remover cliente?",
+        "deleteConfirm": "Esta ação marca o cliente como removido (soft delete).",
+        "deleteAction": "Remover"
+    },
+    "campaignPage": {
+        "title": "Campanhas",
+        "subtitle": "Campanhas de follow-up no WhatsApp com importação CSV e acompanhamento de entrega.",
+        "new": "Nova campanha",
+        "selectEnterprise": "Selecione uma empresa na barra lateral para gerenciar campanhas.",
+        "empty": "Nenhuma campanha ainda.",
+        "colName": "Nome",
+        "colStatus": "Status",
+        "colRecipients": "Destinatários",
+        "colCreated": "Criado em",
+        "colActions": "Ações",
+        "viewReport": "Ver relatório",
+        "downloadTemplate": "Baixar modelo CSV",
+        "createTitle": "Nova campanha",
+        "createSubtitle": "Envie um CSV com nomes e números de WhatsApp dos clientes.",
+        "fieldName": "Nome da campanha",
+        "fieldDescription": "Descrição",
+        "fieldMessage": "Mensagem inicial",
+        "fieldFollowUp": "Prompt de follow-up da IA (quando o cliente responder)",
+        "fieldSocialMidia": "Canal WhatsApp",
+        "fieldAssistant": "Assistente (opcional)",
+        "fieldCsv": "CSV de destinatários",
+        "csvHint": "A primeira linha é ignorada (cabeçalho do modelo). Colunas: name, phone.",
+        "submit": "Criar campanha",
+        "reportTitle": "Relatório da campanha",
+        "statSent": "Enviadas",
+        "statDelivered": "Entregues",
+        "statRead": "Lidas",
+        "statResponded": "Respondidas",
+        "recipientsTitle": "Destinatários",
+        "colCustomer": "Cliente",
+        "colPhone": "Telefone",
+        "colRecipientStatus": "Status",
+        "statusImporting": "Importando",
+        "statusReady": "Pronta",
+        "statusRunning": "Em execução",
+        "statusCompleted": "Concluída",
+        "statusFailed": "Falhou"
+    },
+    "socialMediasPage": {
+        "title": "Redes sociais",
+        "subtitle": "Cadastre e gerencie canais para a empresa selecionada.",
+        "add": "Adicionar canal",
+        "name": "Nome",
+        "namePlaceholder": "ex.: WhatsApp principal",
+        "type": "Tipo",
+        "connected": "Conectado",
+        "active": "Ativo",
+        "yes": "Sim",
+        "no": "Não",
+        "delete": "Remover canal",
+        "selectEnterpriseFirst": "Selecione uma empresa na barra lateral primeiro.",
+        "empty": "Nenhum canal cadastrado ainda.",
+        "deleteConfirm": "Remover este canal?",
+        "dialogTitle": "Novo canal",
+        "previousPage": "Anterior",
+        "nextPage": "Próxima",
+        "typeLabels": {
+            "WHATSAPP_realvidas": "Whatsapp web"
+        },
+        "connect": "Conectar",
+        "connectQrTitle": "Vincular WhatsApp",
+        "connectQrDescription": "Escaneie o QR Code com o WhatsApp no celular para vincular este canal.",
+        "connectSuccessTitle": "Conectado",
+        "connectSuccessMessage": "WhatsApp vinculado com sucesso. Você pode fechar esta janela.",
+        "connectedAlready": "Este canal já está vinculado. Você pode fechar esta janela.",
+        "qrImageAlt": "QR Code do WhatsApp",
+        "qrTimeout": "O QR Code demorou demais para aparecer. Tente novamente.",
+        "retryQr": "Tentar novamente",
+        "qrLoadError": "Não foi possível carregar o QR Code.",
+        "aiAssistant": "Assistente IA",
+        "aiAssistantNone": "Somente humano",
+        "aiAssistantNotConfigured": "Não configurado",
+        "configureAi": "Configurar IA",
+        "aiConfigTitle": "Como a IA atende este canal",
+        "aiConfigDescription": "Escolha qual assistente responde automaticamente às mensagens recebidas neste canal. O fluxo é: webhook → lifecycle → assistente IA → envio da resposta.",
+        "aiConfigHint": "Novas conversas entram em modo IA quando um assistente está vinculado. Conversas já abertas mantêm o modo atual.",
+        "aiConfigToolsHint": "Habilidades como calendário e CRM continuam disponíveis nas ferramentas do assistente. A resposta em texto é enviada automaticamente ao cliente.",
+        "aiAssistantPlaceholder": "Selecione um assistente",
+        "linkAssistantTools": "Configurar ferramentas do assistente",
+        "fieldAiAssistant": "Assistente IA (opcional)",
+        "fieldAiAssistantHint": "Se definido, novas conversas neste canal usarão este assistente."
+    },
+    "auth": {
+        "register": {
+            "title": "Criar Conta",
+            "subtitle": "Preencha os dados abaixo para criar sua conta",
+            "name": "Nome Completo",
+            "namePlaceholder": "Seu nome completo",
+            "email": "E-mail",
+            "emailPlaceholder": "seuemail@exemplo.com",
+            "cpf": "CPF",
+            "cpfOptional": "CPF (Opcional)",
+            "cpfPlaceholder": "000.000.000-00",
+            "age": "Idade (Opcional)",
+            "agePlaceholder": "Sua idade",
+            "role": "Tipo de Usuário",
+            "rolePlaceholder": "Selecione o tipo",
+            "roleUser": "Usuário",
+            "roleAdmin": "Administrador",
+            "password": "Senha",
+            "passwordPlaceholder": "Mínimo 6 caracteres",
+            "confirmPassword": "Confirmar Senha",
+            "confirmPasswordPlaceholder": "Digite a senha novamente",
+            "submit": "Criar Conta",
+            "submitting": "Criando conta...",
+            "haveAccount": "Já tem uma conta?",
+            "loginHere": "Faça login aqui",
+            "orContinueWith": "Ou continue com",
+            "validation": {
+                "nameMin": "O nome deve ter pelo menos 2 caracteres.",
+                "emailInvalid": "Por favor, insira um e-mail válido.",
+                "passwordMin": "A senha deve ter pelo menos 6 caracteres.",
+                "passwordMatch": "As senhas não coincidem.",
+                "roleRequired": "Por favor, selecione um tipo de usuário.",
+                "cpfInvalid": "CPF inválido."
+            },
+            "success": "Conta criada com sucesso! Você pode fazer login agora.",
+            "codeSent": "Enviamos um código de 6 dígitos para seu e-mail.",
+            "error": "Erro ao criar conta. Tente novamente.",
+            "verify": {
+                "title": "Verifique seu e-mail",
+                "subtitle": "Digite o código de 6 números que enviamos para {email}.",
+                "codeLabel": "Código",
+                "codeInvalid": "Informe exatamente 6 números.",
+                "submit": "Confirmar e entrar",
+                "submitting": "Enviando...",
+                "invalid": "Código inválido ou expirado.",
+                "missingSession": "Sessão de cadastro inválida. Cadastre-se novamente.",
+                "hint": "Você também pode confirmar pelo botão no e-mail que enviamos (válido por 5 minutos).",
+                "resendNewCode": "Enviar novo código",
+                "resending": "Enviando novo código...",
+                "resendSuccess": "Novo código enviado para seu e-mail.",
+                "resendError": "Não foi possível enviar um novo código."
+            }
+        },
+        "verifyEmailPage": {
+            "title": "Confirme seu e-mail",
+            "subtitle": "Digite o código de 6 números enviado para {email} para continuar usando o aplicativo.",
+            "footerHint": "Precisa de um novo código? Use o botão abaixo.",
+            "success": "E-mail confirmado!",
+            "backToHomeLogout": "Sair e voltar ao início"
+        },
+        "welcomePage": {
+            "title": "Bem-vindo",
+            "subtitle": "Confirme seu e-mail para continuar no realvidas.",
+            "loading": "Confirmando seu e-mail...",
+            "expiredTitle": "Este link expirou",
+            "expiredDetail": "A confirmação por este link não é mais permitida. Solicite um novo código por e-mail ou digite o código de 6 dígitos que enviamos.",
+            "expiredHint": "Se você já tem um código, digite abaixo. Caso contrário, solicite um novo e-mail.",
+            "invalidLink": "Este link é inválido. Cadastre-se novamente ou abra o e-mail mais recente que enviamos.",
+            "noToken": "Abra o link enviado por e-mail para confirmar sua conta.",
+            "goHome": "Ir para o início",
+            "goRegister": "Voltar ao cadastro",
+            "newCodeSent": "Enviamos um novo código para seu e-mail.",
+            "newCodeSentDetail": "Verifique sua caixa de entrada: novo código de 6 dígitos e link de confirmação (válido por 5 minutos).",
+            "sendNewCode": "Enviar novo código por e-mail",
+            "sendingNewCode": "Enviando novo código por e-mail...",
+            "redirecting": "Tudo certo! Redirecionando...",
+            "confirmed": "E-mail confirmado!",
+            "resendFailed": "Não foi possível enviar um novo código. Tente novamente ou refaça o cadastro.",
+            "verifyCodeLabel": "Código de verificação",
+            "verifySubmit": "Confirmar com código",
+            "verifySubmitting": "Confirmando..."
+        },
+        "login": {
+            "title": "Entrar",
+            "subtitle": "Digite seu e-mail abaixo para acessar sua conta",
+            "emailPlaceholder": "seuemail@exemplo.com",
+            "passwordPlaceholder": "Sua senha",
+            "validation": {
+                "emailInvalid": "Por favor, insira um e-mail válido.",
+                "passwordMin": "A senha deve ter pelo menos 3 caracteres."
+            },
+            "submit": "Entrar",
+            "submitting": "Entrando...",
+            "orContinueWith": "Ou continue com",
+            "noAccount": "Não tem uma conta?",
+            "createAccount": "Criar conta aqui",
+            "errorFallback": "Não foi possível entrar. Tente novamente."
+        },
+        "google": {
+            "successToast": "Login realizado com sucesso!",
+            "errorServerFallback": "Erro ao autenticar com o servidor.",
+            "errorGooglePopup": "Erro ao fazer login com Google.",
+            "continueWithGoogle": "Continuar com Google",
+            "submitting": "Entrando..."
+        }
+    },
+    "layout": {
+        "footerCopyright": "© 2026 realvidas. Todos os direitos reservados."
+    },
+    "pages": {
+        "inicio": {
+            "title": "Início",
+            "placeholder": "Bem-vindo ao seu painel.",
+            "loadError": "Não foi possível carregar seu perfil. Atualize a página ou tente novamente em instantes.",
+            "readyBadge": "Conta com tenant configurado",
+            "setup": {
+                "title": "Como você quer começar?",
+                "subtitle": "Você ainda não possui um tenant configurado. Escolha um caminho para seguir — isso define como sua conta será configurada no sistema.",
+                "flexibilityTitle": "Pode mudar de ideia depois",
+                "flexibilityBody": "Escolher uma opção agora não impede de se cadastrar como a outra em outro momento. Você pode complementar seu perfil quando quiser.",
+                "seller": {
+                    "title": "Sou vendedor(a)",
+                    "description": "Indique clientes com seu cupom e acompanhe seus resultados.",
+                    "point1": "Comissões recorrentes enquanto seus clientes indicados pagarem o sistema com o seu cupom.",
+                    "point2": "Treinamento gratuito e muitos créditos de demonstração para mostrar o produto com segurança.",
+                    "point3": "Ideal para quem quer ganhar com indicação sem montar uma empresa.",
+                    "cta": "Continuar como vendedor(a)"
+                },
+                "company": {
+                    "title": "Quero criar minha empresa",
+                    "description": "Configure sua operação e use a plataforma como dono(a) de negócio.",
+                    "point1": "Configuração da empresa, equipe e ambientes no seu ritmo.",
+                    "point2": "Guia para estruturar processos e criar sistemas com IA alinhados ao seu negócio.",
+                    "point3": "Foco em dono(a) de empresa que quer operar e escalar com a plataforma.",
+                    "cta": "Configurar minha empresa"
+                }
+            }
+        },
+        "seller": {
+            "title": "Área do vendedor",
+            "description": "Use o menu lateral para cupons, vendas e pagamentos. Em breve mais passos de onboarding aqui."
+        },
+        "startup": {
+            "title": "Crie seu espaço de trabalho",
+            "subtitle": "Preencha os dados da sua empresa para começar",
+            "description": "Em poucos passos você configura sua empresa, convida a equipe e coloca o agendamento e a IA para trabalhar a seu favor.",
+            "ctaCreateCompany": "Criar minha empresa",
+            "backToHome": "Voltar ao início",
+            "tenantReady": "Seu espaço de trabalho está pronto!",
+            "createError": "Falha ao iniciar a criação do espaço de trabalho",
+            "readyTitle": "Espaço de trabalho pronto!",
+            "readyDescription": "Seu espaço de trabalho foi criado com sucesso.",
+            "goToDashboard": "Ir para o painel",
+            "provisioningTitle": "Configurando seu espaço de trabalho...",
+            "provisioningDescription": "Estamos preparando tudo para você. Isso pode levar alguns instantes.",
+            "provisioningHint": "Por favor, não feche esta página",
+            "form": {
+                "enterpriseName": "Nome da empresa",
+                "enterpriseNamePlaceholder": "Minha Empresa",
+                "email": "E-mail comercial",
+                "submit": "Criar espaço de trabalho"
+            }
+        },
+        "admDashboard": {
+            "title": "Administração",
+            "placeholder": "Painel administrativo."
+        }
+    },
+    "emailsPreview": {
+        "title": "Pré-visualização de e-mails",
+        "loginCode": "Código de login",
+        "resetPassword": "Redefinir senha",
+        "theme": "Tema",
+        "language": "Idioma",
+        "themeLight": "claro",
+        "themeDark": "escuro",
+        "lightMode": "Modo claro",
+        "darkMode": "Modo escuro",
+        "switchToEnglish": "Switch to English",
+        "switchToPortuguese": "Mudar para Português"
+    },
+    "assistants": {
+        "index": {
+            "title": "Assistentes de IA",
+            "subtitle": "Gerencie seus assistentes de IA e fluxos",
+            "newAssistant": "Novo assistente",
+            "loading": "Carregando assistentes...",
+            "deleteConfirm": "Tem certeza que deseja excluir este assistente?",
+            "emptyTitle": "Nenhum assistente encontrado",
+            "emptyDescription": "Crie seu primeiro assistente de IA para começar",
+            "createAssistant": "Criar assistente",
+            "loadMore": "Carregar mais",
+            "active": "Ativo",
+            "inactive": "Inativo",
+            "selectEnterpriseFirst": "Selecione uma empresa no menu para ver e gerenciar os assistentes deste tenant.",
+            "linkTools": "Vincular habilidades"
+        },
+        "tools": {
+            "title": "Vincular habilidades",
+            "subtitle": "Escolha quais habilidades {name} pode usar nas conversas.",
+            "subtitleLoading": "Escolha quais habilidades este assistente pode usar.",
+            "cardTitle": "Habilidades disponíveis",
+            "cardDescription": "Ative templates ou habilidades customizadas. A IA só chama habilidades vinculadas aqui.",
+            "loading": "Carregando habilidades...",
+            "empty": "Nenhuma habilidade disponível ainda.",
+            "mockedBadge": "Template",
+            "customBadge": "Customizada",
+            "enabled": "Ativa",
+            "disabled": "Inativa",
+            "backToList": "Voltar aos assistentes",
+            "missingAssistant": "Selecione um assistente na lista para vincular habilidades.",
+            "sectionToolsCount": "{count} habilidades",
+            "sectionEnabledCount": "{enabled} ativas",
+            "expandAll": "Expandir tudo",
+            "collapseAll": "Recolher tudo",
+            "selectAll": "Selecionar todos",
+            "selectingAll": "Selecionando...",
+            "allSelectedInSection": "Todas as habilidades desta seção estão ativas",
+            "saveChanges": "Salvar alterações",
+            "savingChanges": "Salvando...",
+            "discardChanges": "Descartar",
+            "unsavedChanges": "Alterações não salvas"
+        },
+        "breadcrumb": {
+            "home": "Início",
+            "assistants": "Assistentes",
+            "create": "Criar",
+            "edit": "Editar",
+            "tools": "Habilidades"
+        },
+        "aiService": {
+            "CHAT_GPT": "ChatGPT",
+            "GEMINI": "Gemini",
+            "CLAUDE": "Claude",
+            "DEEPSEEK": "DeepSeek",
+            "OTHER_ENTERPRISE": "Outro enterprise"
+        },
+        "form": {
+            "back": "Voltar",
+            "createTitle": "Criar novo assistente",
+            "createSubtitle": "Configure um novo assistente de IA para seus fluxos",
+            "editTitle": "Editar assistente",
+            "editSubtitle": "Atualize as informações do assistente de IA",
+            "cardTitle": "Informações do assistente",
+            "cardDescCreate": "Preencha os dados do assistente de IA",
+            "cardDescEdit": "Atualize os dados do assistente de IA",
+            "nameLabel": "Nome *",
+            "namePlaceholder": "Nome do assistente",
+            "descriptionLabel": "Descrição",
+            "descriptionPlaceholder": "Descreva o propósito do assistente",
+            "aiServiceLabel": "Serviço de IA *",
+            "modelLabel": "Modelo *",
+            "selectService": "Selecione o serviço",
+            "selectModel": "Selecione o modelo",
+            "modelAvailableFor": "Modelo disponível para {service}",
+            "imageLabel": "Imagem do assistente",
+            "imageHintCreate": "Faça upload de uma imagem para o assistente (máximo 5MB)",
+            "imageHintEdit": "Faça upload de uma nova imagem ou mantenha a atual (máximo 5MB)",
+            "cancel": "Cancelar",
+            "create": "Criar assistente",
+            "creating": "Criando...",
+            "save": "Salvar alterações",
+            "saving": "Salvando...",
+            "validation": {
+                "nameRequired": "Nome é obrigatório",
+                "modelRequired": "Modelo é obrigatório"
+            },
+            "loadingAssistant": "Carregando assistente...",
+            "notFound": "Assistente não encontrado",
+            "activeLabel": "Ativo",
+            "activeDescription": "Se o assistente está ativo e pode ser usado",
+            "linkTools": "Vincular habilidades"
+        }
+    },
+    "catalogPage": {
+        "breadcrumb": {
+            "products": "Produtos",
+            "new": "Novo produto",
+            "edit": "Editar"
+        },
+        "common": {
+            "selectEnterpriseFirst": "Selecione uma empresa primeiro.",
+            "loading": "Carregando...",
+            "cancel": "Cancelar",
+            "save": "Salvar",
+            "name": "Nome",
+            "description": "Descrição",
+            "slug": "Slug",
+            "order": "Ordem",
+            "activeFemale": "ativa",
+            "inactiveFemale": "inativa",
+            "activeMale": "ativo",
+            "inactiveMale": "inativo",
+            "featured": "destaque",
+            "iconUrl": "URL do ícone",
+            "iconEmoji": "Ícone",
+            "selectEmoji": "Selecionar emoji",
+            "searchEmoji": "Buscar emoji...",
+            "clearEmoji": "Remover ícone",
+            "noEmojisFound": "Nenhum emoji encontrado",
+            "imageUrl": "URL da imagem",
+            "imageUpload": "Upload de imagem",
+            "priceCents": "Preço (centavos)",
+            "price": "Preço (R$)",
+            "originalPriceCents": "Preço original (centavos)",
+            "originalPrice": "Preço original (R$)",
+            "discountPercent": "Desconto %",
+            "category": "Categoria",
+            "selectPlaceholder": "Selecione",
+            "tagsComma": "Tags (separadas por vírgula)",
+            "emDash": "—",
+            "confirmDeleteCategory": "Remover esta categoria?",
+            "confirmDeleteProduct": "Remover este produto?",
+            "confirmDeleteCombo": "Remover este combo?",
+            "activeSwitch": "Ativa"
+        },
+        "table": {
+            "actions": "Ações",
+            "image": "Imagem",
+            "status": "Status",
+            "addons": "Adicionais"
+        },
+        "index": {
+            "title": "Catálogo",
+            "subtitle": "Gerencie categorias, produtos e combos do seu negócio.",
+            "howItWorksTitle": "Como o catálogo funciona",
+            "howItWorksIntro": "Monte seu cardápio em ordem: cada etapa depende da anterior. Comece pelas categorias, depois cadastre produtos, monte combos e visualize o resultado.",
+            "stepCategoriesTitle": "1. Categorias",
+            "stepCategoriesDesc": "Crie grupos para organizar o cardápio (ex.: Pizzas, Bebidas). Todo produto precisa pertencer a uma categoria.",
+            "stepProductsTitle": "2. Produtos",
+            "stepProductsDesc": "Cadastre itens com preço, imagem e adicionais opcionais. Os produtos são vinculados a uma categoria.",
+            "stepCombosTitle": "3. Combos",
+            "stepCombosDesc": "Combine dois ou mais produtos com preço especial. É necessário ter ao menos um produto antes de criar combos.",
+            "stepViewTitle": "4. Visualização",
+            "stepViewDesc": "Veja como os clientes navegarão pelas categorias, produtos e combos no catálogo público.",
+            "stepLink": "Abrir",
+            "categoriesTitle": "Categorias",
+            "categoriesDesc": "Organize seus produtos em categorias.",
+            "productsTitle": "Produtos",
+            "productsDesc": "Cadastre produtos com adicionais e variações.",
+            "combosTitle": "Combos",
+            "combosDesc": "Monte combinações com desconto.",
+            "viewTitle": "Visualizar catálogo",
+            "viewDesc": "Veja como os clientes verão o cardápio."
+        },
+        "view": {
+            "title": "Visualização do catálogo",
+            "subtitle": "Esta é a prévia do cardápio que seus clientes verão.",
+            "previewBadge": "Prévia ao vivo",
+            "openPublicCatalog": "Visualizar catálogo público",
+            "setupPublicLink": "Configurar link público",
+            "copyPublicLink": "Copiar link público",
+            "linkCopied": "Link público copiado",
+            "linkCopyFailed": "Não foi possível copiar o link",
+            "all": "Todos",
+            "empty": "Nenhum produto ativo ainda.",
+            "emptyHint": "Cadastre categorias e produtos no catálogo para vê-los aqui.",
+            "statsCategories": "{count} categorias",
+            "statsProducts": "{count} produtos",
+            "statsCombos": "{count} combos",
+            "itemSingular": "item",
+            "itemPlural": "itens",
+            "productsSection": "Produtos",
+            "combosSection": "Combos"
+        },
+        "public": {
+            "menuTitle": "Cardápio",
+            "services": "Serviços",
+            "myOrders": "Meus pedidos",
+            "cart": "Carrinho",
+            "emptyProducts": "Nenhum produto disponível no momento.",
+            "storeNotFound": "Loja não encontrada",
+            "storeNotFoundHint": "Este link pode ser inválido ou a loja não está mais disponível."
+        },
+        "categories": {
+            "title": "Categorias",
+            "subtitle": "Organize seus produtos em categorias.",
+            "newCategory": "Nova categoria",
+            "emptyTitle": "Nenhuma categoria",
+            "createCategory": "Criar categoria",
+            "editCategory": "Editar categoria",
+            "newCategoryDialog": "Nova categoria",
+            "statusActive": "ativa",
+            "statusInactive": "inativa"
+        },
+        "products": {
+            "title": "Produtos",
+            "subtitle": "Cadastre produtos com adicionais e variações.",
+            "newProduct": "Novo produto",
+            "needCategoryFirst": "Crie uma categoria antes de cadastrar produtos.",
+            "needCategoryFirstDescription": "Todo produto precisa estar em uma categoria. Crie ao menos uma categoria para começar a cadastrar produtos no catálogo.",
+            "goToCategories": "Ir para categorias",
+            "emptyTitle": "Nenhum produto",
+            "createProduct": "Criar produto",
+            "editProduct": "Editar produto",
+            "newProductDialog": "Novo produto",
+            "formSubtitle": "Preencha os dados abaixo para cadastrar um produto no catálogo.",
+            "basicSection": "Informações básicas",
+            "pricingSection": "Preços",
+            "mediaSection": "Imagem",
+            "optionsSection": "Opções",
+            "promotionSection": "Promoção",
+            "backToProducts": "Voltar para produtos",
+            "notFound": "Produto não encontrado.",
+            "incrementGroupsTitle": "Grupos de adicionais",
+            "addGroup": "Adicionar grupo",
+            "labelField": "Rótulo",
+            "minSelections": "Min seleções",
+            "maxSelections": "Max seleções",
+            "increment": "adicional",
+            "placeholderIncrementName": "Nome",
+            "placeholderPriceCent": "Preço (cent)",
+            "incrementPrice": "Preço (R$)",
+            "placeholderMax": "Máx.",
+            "permitPromotion": "Ativar promoção",
+            "promotionType": "Tipo de promoção",
+            "selectPromotionType": "Selecione o tipo",
+            "percentage": "Percentual",
+            "fixedValue": "Valor fixo",
+            "promotionPercent": "Promoção (%)",
+            "promotionValueCents": "Valor da promoção (centavos)",
+            "promotionValue": "Valor da promoção (R$)",
+            "reqShort": "req.",
+            "activeShort": "ativo",
+            "incrementGroupsBadge": "{count} grupo(s) de adicionais"
+        },
+        "combos": {
+            "title": "Combos",
+            "subtitle": "Monte combinações de produtos com desconto.",
+            "newCombo": "Novo combo",
+            "needProductsFirst": "Cadastre produtos antes de criar combos.",
+            "needProductsFirstDescription": "Combos são pacotes de produtos já cadastrados. Registre ao menos um produto antes de montar ofertas em combo.",
+            "goToProducts": "Ir para produtos",
+            "emptyTitle": "Nenhum combo",
+            "createCombo": "Criar combo",
+            "editCombo": "Editar combo",
+            "newComboDialog": "Novo combo",
+            "comboItemsTitle": "Itens do combo",
+            "addItem": "Adicionar item",
+            "removedProduct": "produto removido",
+            "alertMinOneProduct": "Adicione ao menos um produto ao combo.",
+            "deleteCombo": "Remover este combo?"
+        }
+    },
+    "aiToolsPage": {
+        "title": "Habilidades",
+        "subtitle": "Ações que a IA pode executar usando suas APIs",
+        "examples": "Exemplos",
+        "newTool": "Nova habilidade",
+        "selectEnterpriseFirst": "Selecione uma empresa primeiro.",
+        "emptyTitle": "Nenhuma habilidade ainda",
+        "emptyHint": "Crie habilidades para que a IA possa interagir com suas APIs.",
+        "emptyExamplesHint": "Clique em \"+ Exemplos\" para demos rápidos.",
+        "editTool": "Editar habilidade",
+        "newToolDialog": "Nova habilidade",
+        "methodName": "Nome do método",
+        "abilityName": "Nome da habilidade",
+        "abilityNamePlaceholder": "Ex: Gerar pagamento para o cliente",
+        "functionName": "Nome da função (chamada da IA)",
+        "functionNameHint": "Gerado automaticamente em camelCase a partir do nome de exibição.",
+        "isHttpRequest": "Chama uma API externa (HTTP)",
+        "httpMethod": "Método HTTP",
+        "handlerKey": "Chave do handler",
+        "url": "URL",
+        "description": "Descrição",
+        "linkedRalph": "Checklist vinculado",
+        "noRalphRequired": "— Sem checklist obrigatório —",
+        "bodyFields": "Campos do corpo",
+        "fieldName": "Nome",
+        "fieldValueSource": "Origem do valor",
+        "fieldSourceManual": "Manual",
+        "fieldSourceChecklist": "Checklist",
+        "fieldSourceToolInput": "Entrada de ferramenta",
+        "fieldSourceToolResponse": "Resposta JSON da ferramenta",
+        "fieldChecklistName": "Nome do checklist",
+        "fieldType": "Tipo",
+        "fieldStepKey": "Chave do passo",
+        "selectChecklistStep": "Selecione um passo do checklist",
+        "fieldNamePlaceholder": "nomeDoCampo",
+        "required": "OBR",
+        "optional": "OPC",
+        "stepPrefix": "passo:",
+        "manualValue": "— valor manual —",
+        "linkedStepHint": "Checklist: ralphName[stepName]",
+        "installChecklistFirst": "Salve o checklist modelo na sua biblioteca antes de vinculá-lo à ferramenta.",
+        "addField": "Adicionar campo",
+        "responseSchema": "Esquema da resposta",
+        "responseSchemaHint": "Escolha Montador (tipos de campo) ou JSON de exemplo (cole uma resposta real para a IA saber o que esta ferramenta retorna).",
+        "responseSchemaReadOnlyHint": "O schema é herdado da origem selecionada.",
+        "httpRequestBodySchema": "Corpo da requisição HTTP (JSON)",
+        "httpRequestBodySchemaHint": "Cole o JSON enviado no POST/PUT. Use importar para criar campos do corpo a partir das chaves.",
+        "syncFromBodyFields": "Carregar dos campos do corpo",
+        "importKeysAsBodyFields": "Adicionar chaves como campos",
+        "importResponseKeysAsBodyFields": "Adicionar chaves da resposta como campos",
+        "jsonEditor": {
+            "builder": "Montador",
+            "example": "JSON de exemplo",
+            "builderHint": "Defina cada campo da resposta e seu tipo. Atualiza o exemplo à direita.",
+            "splitHint": "Montador e exemplo ficam sincronizados — edite qualquer lado.",
+            "exampleHint": "Cole ou edite um exemplo real de resposta. Atualiza o montador à esquerda.",
+            "exampleEditorHint": "Validação JSON, autocomplete e formatação ao colar estão ativos.",
+            "formatJson": "Formatar JSON",
+            "loadExample": "Carregar exemplo",
+            "sampleHelp": "O exemplo usa número (14), booleano (true), texto (\"aoba\") e um objeto aninhado com string e número — mesma estrutura em qualquer idioma.",
+            "addField": "Adicionar campo",
+            "fieldKey": "Campo",
+            "exampleValue": "Valor de exemplo",
+            "noFieldsYet": "Nenhum campo ainda — edite o JSON ou clique em Adicionar campo."
+        },
+        "responseSchemaSource": "Origem do schema",
+        "responseSchemaManual": "JSON manual",
+        "responseSchemaFromTool": "De outra ferramenta",
+        "responseSchemaFromChecklist": "De checklist",
+        "sourceTool": "Ferramenta de origem",
+        "selectSourceTool": "Selecione uma ferramenta",
+        "sourceToolBodyField": "Campo de entrada da ferramenta",
+        "selectSourceToolBodyField": "Selecione um campo de entrada",
+        "sourceToolResponseKey": "Chave JSON da resposta",
+        "selectSourceToolResponseKey": "Selecione uma chave da resposta",
+        "sourceChecklist": "Checklist de origem",
+        "selectSourceChecklist": "Selecione um checklist",
+        "deleteConfirm": "Excluir habilidade \"{name}\"?",
+        "deleteConfirmDescription": "Esta ação não pode ser desfeita.",
+        "confirmDelete": "Excluir",
+        "moduleLabel": "Módulo",
+        "modulePlaceholder": "Selecione um módulo",
+        "modules": {
+            "general": "Geral",
+            "generalDescription": "Habilidades customizadas que não se encaixam em um módulo específico"
+        },
+        "catalog": {
+            "title": "Modelos prontos",
+            "subtitle": "Exemplos públicos disponíveis para todos — sem precisar salvar no banco.",
+            "allCategories": "Todos",
+            "mockedBadge": "Modelo",
+            "myItemsTitle": "Minhas habilidades",
+            "myItemsSubtitle": "Habilidades personalizadas da sua empresa.",
+            "myItemsEmpty": "Nenhuma habilidade personalizada ainda",
+            "viewExample": "Ver modelo",
+            "exampleNotFound": "Modelo não encontrado.",
+            "categories": {
+                "calendar": "Calendário",
+                "calendarDescription": "Consulta de disponibilidade",
+                "scheduling": "Agendamento",
+                "schedulingDescription": "Registro de horários",
+                "payments": "Pagamentos",
+                "paymentsDescription": "Cobrança e checkout",
+                "crm": "CRM",
+                "crmDescription": "Kanban e funil de vendas",
+                "messaging": "Mensagens",
+                "messagingDescription": "Enviar respostas ao cliente"
+            }
+        },
+        "examplesData": {
+            "checkCalendarDaysFree": {
+                "name": "Verificar disponibilidade no calendário",
+                "description": "Verifica os dias da semana disponíveis para agendamento. Use quando o cliente perguntar sobre horários."
+            },
+            "registerScheduling": {
+                "name": "Registrar agendamento",
+                "description": "Registra um agendamento para o cliente. Use quando o cliente confirmar o horário desejado."
+            },
+            "generatePayment": {
+                "name": "Gerar pagamento para o cliente",
+                "description": "Gera um pagamento para o cliente. Requer dados pessoais coletados pelo checklist customer_info."
+            },
+            "getKanbanCustomerColumn": {
+                "name": "Obter coluna do kanban do cliente",
+                "description": "Retorna em qual coluna do kanban o cliente se encontra."
+            },
+            "createCustomerNotation": {
+                "name": "Criar anotação do cliente",
+                "description": "Cria uma anotação sobre o cliente (positiva, negativa ou neutra). Use para registrar observações, preferências ou contexto para conversas futuras. Opcionalmente vincule a um card do pipeline."
+            },
+            "getCustomerNotations": {
+                "name": "Listar anotações do cliente",
+                "description": "Lista anotações escritas sobre o cliente. Use antes de atualizar o contexto ou quando precisar de notas anteriores sobre este cliente."
+            },
+            "updateCustomerNotation": {
+                "name": "Atualizar anotação do cliente",
+                "description": "Atualiza uma anotação existente do cliente (detalhes, status ou card do pipeline vinculado)."
+            },
+            "deleteCustomerNotation": {
+                "name": "Excluir anotação do cliente",
+                "description": "Remove uma anotação do cliente pelo id quando não for mais precisa ou relevante."
+            },
+            "sendMessage": {
+                "name": "Enviar mensagem ao cliente",
+                "description": "Envia uma resposta em texto ao cliente. Use quando tiver a resposta final para o usuário."
+            }
+        }
+    },
+    "aiRalphsPage": {
+        "title": "Checklists",
+        "subtitle": "Fluxos de coleta de dados que a IA executa nas conversas",
+        "examples": "Exemplos",
+        "newRalph": "Novo checklist",
+        "selectEnterpriseFirst": "Selecione uma empresa primeiro.",
+        "emptyTitle": "Nenhum checklist ainda",
+        "emptyHint": "Checklists são formulários inteligentes que a IA preenche durante a conversa.",
+        "emptyExamplesHint": "Clique em \"+ Exemplos\" para ver como funciona.",
+        "stepsCount": "{count} passos",
+        "reuseBadge": "reutilizar",
+        "editRalph": "Editar checklist",
+        "newVersionHint": "Alterações criam uma nova versão — versões anteriores são mantidas e desativadas.",
+        "saveNewVersion": "Salvar nova versão",
+        "version": "Versão {version}",
+        "newRalphDialog": "Novo checklist",
+        "name": "Nome",
+        "checklistName": "Nome do checklist",
+        "checklistNamePlaceholder": "Ex: chamar meu cliente",
+        "handlerKey": "Chave do handler",
+        "description": "Em que situação deve-se usar esse checklist",
+        "reusable": "Reutilizável",
+        "steps": "Passos",
+        "stepPlaceholder": "O que a IA deve perguntar...",
+        "required": "OBR",
+        "optional": "OPC",
+        "obrigatory": "Obrigatório",
+        "stepDescriptionCampus": "O que a IA deve coletar",
+        "stepFieldName": "Nome do campo",
+        "stepType": "Tipo",
+        "stepChecks": "Validações",
+        "addCheck": "Adicionar validação",
+        "checkValuePlaceholder": "Valor da validação",
+        "addStep": "Adicionar passo",
+        "deleteConfirm": "Excluir checklist \"{name}\"?",
+        "deleteConfirmDescription": "Esta ação não pode ser desfeita.",
+        "confirmDelete": "Excluir",
+        "catalog": {
+            "title": "Modelos prontos",
+            "subtitle": "Exemplos públicos disponíveis para todos — sem precisar salvar no banco.",
+            "allCategories": "Todos",
+            "mockedBadge": "Modelo",
+            "myItemsTitle": "Meus checklists",
+            "myItemsSubtitle": "Checklists personalizados da sua empresa.",
+            "myItemsEmpty": "Nenhum checklist personalizado ainda",
+            "viewExample": "Ver modelo",
+            "exampleNotFound": "Modelo não encontrado.",
+            "categories": {
+                "customer": "Cliente",
+                "customerDescription": "Coleta de dados do cliente",
+                "scheduling": "Agendamento",
+                "schedulingDescription": "Fluxos para marcar horários"
+            }
+        },
+        "seedExamples": {
+            "customerInfo": {
+                "description": "Coleta informações básicas do cliente para pagamentos",
+                "step0": "Pegar nome completo do cliente",
+                "step1": "Pegar CPF do cliente"
+            },
+            "schedulingInfo": {
+                "description": "Coleta dados para criar um agendamento",
+                "step0": "Perguntar qual serviço o cliente deseja",
+                "step1": "Confirmar data e horário de início",
+                "step2": "Observações adicionais do cliente"
+            }
+        }
+    },
+    "navbar": {
+        "accountSettings": "Configurações da Conta",
+        "notifications": "Notificações",
+        "billing": "Faturamento",
+        "upgradeToPro": "Atualizar para Pro",
+        "lightMode": "Modo Claro",
+        "darkMode": "Modo Escuro",
+        "logout": "Sair"
+    },
+    "calendar": {
+        "addEvent": "Novo Evento",
+        "mainCalendarAdvertisement": "Não pode ser excluído",
+        "views": {
+            "agenda": "Agenda",
+            "day": "Dia",
+            "week": "Semana",
+            "month": "Mês",
+            "year": "Ano"
+        },
+        "filter": {
+            "clearFilter": "Limpar Filtro",
+            "colors": "Cores"
+        },
+        "colors": {
+            "blue": "Azul",
+            "green": "Verde",
+            "red": "Vermelho",
+            "yellow": "Amarelo",
+            "purple": "Roxo",
+            "orange": "Laranja"
+        },
+        "userSelect": {
+            "selectUser": "Selecionar um usuário",
+            "all": "Todos",
+            "selected": "{count} selecionados",
+            "clear": "Limpar seleção"
+        },
+        "calendarSelect": {
+            "selectCalendar": "Selecionar um calendário",
+            "all": "Todos os Calendários"
+        },
+        "settings": {
+            "title": "Configurações do Calendário",
+            "useDarkMode": "Usar modo escuro",
+            "showConfirmationDialog": "Mostrar diálogo de confirmação ao soltar evento",
+            "useDotBadge": "Usar badge de ponto",
+            "use24HourFormat": "Usar formato de 24 horas",
+            "agendaViewGroupBy": "Agrupar visualização de agenda por",
+            "date": "Data",
+            "color": "Cor"
+        },
+        "dialog": {
+            "addEvent": {
+                "title": "Adicionar Novo Evento",
+                "description": "Crie um novo evento para seu calendário."
+            },
+            "editEvent": {
+                "title": "Editar Evento",
+                "description": "Modifique seu evento existente."
+            },
+            "deleteEvent": {
+                "title": "Você tem certeza absoluta?",
+                "description": "Esta ação não pode ser desfeita. Isso excluirá permanentemente seu evento e removerá os dados do evento de nossos servidores.",
+                "button": "Excluir"
+            },
+            "eventDetails": {
+                "responsible": "Responsável",
+                "startDate": "Data de Início",
+                "endDate": "Data de Término",
+                "description": "Descrição",
+                "at": "às",
+                "edit": "Editar",
+                "delete": "Excluir"
+            },
+            "form": {
+                "title": "Título",
+                "titlePlaceholder": "Digite um título",
+                "variant": "Variante",
+                "variantPlaceholder": "Selecione uma variante",
+                "description": "Descrição",
+                "descriptionPlaceholder": "Digite uma descrição",
+                "cancel": "Cancelar",
+                "saveChanges": "Salvar Alterações",
+                "createEvent": "Criar Evento",
+                "continue": "Continuar"
+            }
+        },
+        "toast": {
+            "eventCreated": "Evento criado com sucesso",
+            "eventUpdated": "Evento atualizado com sucesso",
+            "eventDeleted": "Evento excluído com sucesso",
+            "eventDeleteError": "Erro ao excluir evento",
+            "eventAddError": "Falha ao adicionar evento",
+            "eventEditError": "Falha ao editar evento"
+        },
+        "eventsList": {
+            "eventsOn": "Eventos em",
+            "more": "mais...",
+            "noEvents": "Nenhum evento para esta data.",
+            "events": "eventos"
+        },
+        "eventMove": {
+            "title": "Confirmar Movimentação de Evento",
+            "description": "Tem certeza de que deseja mover",
+            "from": "de",
+            "to": "para",
+            "moveEvent": "Mover Evento"
+        },
+        "agenda": {
+            "searchPlaceholder": "Digite um comando ou pesquise...",
+            "noResults": "Nenhum resultado encontrado."
+        },
+        "dayView": {
+            "happeningNow": "Acontecendo agora",
+            "noCurrentEvents": "Nenhum compromisso ou consulta no momento"
+        }
+    },
+    "configurationEnterprise": {
+        "select": {
+            "placeholder": "Selecionar empresa",
+            "noEnterprises": "Nenhuma empresa disponível."
+        },
+        "edit": {
+            "title": "Editar empresa",
+            "subtitle": "Atualize as informações da empresa e as configurações do catálogo público.",
+            "selectLabel": "Empresa em edição",
+            "selectCardTitle": "Trocar empresa",
+            "selectCardDescription": "Escolha qual empresa deseja editar."
+        },
+        "breadcrumb": {
+            "enterprises": "Empresas",
+            "edit": "Editar"
+        },
+        "list": {
+            "title": "Empresas",
+            "subtitle": "Veja e gerencie as empresas das quais você participa.",
+            "empty": "Você ainda não tem empresas. Crie uma para começar.",
+            "loadError": "Não foi possível carregar as empresas.",
+            "edit": "Editar",
+            "delete": "Excluir",
+            "columns": {
+                "name": "Nome",
+                "email": "E-mail",
+                "plan": "Plano",
+                "members": "Membros",
+                "actions": "Ações"
+            }
+        },
+        "deleteDialog": {
+            "title": "Excluir empresa?",
+            "description": "Isso removerá \"{name}\" e os dados relacionados conforme seu plano. Esta ação pode ser irreversível.",
+            "confirm": "Excluir"
+        }
+    },
+    "enterprise": {
+        "title": "Minhas Empresas",
+        "subtitle": "Gerencie suas organizações e equipes",
+        "loading": "Carregando suas empresas...",
+        "error": "Erro ao carregar empresas. Por favor, tente novamente.",
+        "status": {
+            "active": "Ativa",
+            "inactive": "Inativa"
+        },
+        "createButton": "Criar Empresa",
+        "editButton": "Editar",
+        "manageButton": "Gerenciar Empresa",
+        "members": "membros",
+        "calendars": "calendários",
+        "createdAt": "Criada em",
+        "index": {
+            "documentSection": "CPF / CNPJ"
+        },
+        "pagination": {
+            "previous": "Anterior",
+            "next": "Próximo",
+            "page": "Página",
+            "of": "de"
+        },
+        "onboarding": {
+            "hero": {
+                "title": "Bem-vindo ao Gerenciamento de Empresas",
+                "subtitle": "Crie sua primeira empresa para desbloquear poderoso gerenciamento de calendários, colaboração em equipe e integração perfeita com o Google."
+            },
+            "features": {
+                "teamCollaboration": {
+                    "title": "Colaboração em Equipe",
+                    "description": "Convide membros da equipe, atribua funções e colabore perfeitamente em toda a sua organização."
+                },
+                "calendarManagement": {
+                    "title": "Gerenciamento de Calendários",
+                    "description": "Crie, gerencie e compartilhe calendários com sua equipe. Sincronize com o Google Calendar sem esforço."
+                },
+                "googleIntegration": {
+                    "title": "Integração com Google",
+                    "description": "Conecte-se perfeitamente com o Google Workspace. Importe e sincronize calendários automaticamente."
+                },
+                "enterpriseSecurity": {
+                    "title": "Segurança Empresarial",
+                    "description": "Controle de acesso baseado em funções, autenticação segura e proteção de dados para sua organização."
+                },
+                "lightningFast": {
+                    "title": "Extremamente Rápido",
+                    "description": "Atualizações em tempo real, sincronização instantânea e desempenho ultrarrápido para todas as suas necessidades."
+                },
+                "scaleWithEase": {
+                    "title": "Escale com Facilidade",
+                    "description": "De pequenas equipes a grandes organizações. Nossa plataforma cresce com as necessidades do seu negócio."
+                }
+            },
+            "benefits": {
+                "title": "Por que Criar uma Empresa?",
+                "saveTime": {
+                    "title": "Economize Tempo",
+                    "description": "Automatize o gerenciamento de calendários e reduza conflitos de agendamento em até 80%."
+                },
+                "betterCollaboration": {
+                    "title": "Melhor Colaboração",
+                    "description": "Mantenha todos na mesma página com calendários compartilhados e atualizações em tempo real."
+                },
+                "enterpriseSecurity": {
+                    "title": "Segurança de Nível Empresarial",
+                    "description": "Seus dados estão protegidos com medidas de segurança padrão do setor e criptografia."
+                },
+                "workFromAnywhere": {
+                    "title": "Trabalhe de Qualquer Lugar",
+                    "description": "Acesse seus calendários e equipe de qualquer dispositivo, em qualquer lugar do mundo."
+                }
+            }
+        },
+        "dialog": {
+            "create": {
+                "title": "Criar Nova Empresa",
+                "description": "Configure sua organização para começar a gerenciar calendários e equipes.",
+                "imageLabel": "Imagem da Empresa",
+                "nameLabel": "Nome da Empresa",
+                "namePlaceholder": "Acme Corporation",
+                "slugLabel": "Slug (URL)",
+                "slugPlaceholder": "acme-corp",
+                "slugHelp": "Isso será usado na URL da sua empresa",
+                "emailLabel": "E-mail",
+                "emailPlaceholder": "contato@acme.com",
+                "phoneLabel": "Telefone",
+                "phonePlaceholder": "+55 (11) 0000-0000",
+                "documentTypeLabel": "Tipo de Documento",
+                "cpfOption": "CPF (Pessoa Física)",
+                "cnpjOption": "CNPJ (Pessoa Jurídica)",
+                "cpfLabel": "CPF",
+                "cpfPlaceholder": "000.000.000-00",
+                "cnpjLabel": "CNPJ",
+                "cnpjPlaceholder": "00.000.000/0000-00",
+                "timezoneLabel": "Fuso Horário",
+                "timezonePlaceholder": "Selecione o fuso horário",
+                "cancelButton": "Cancelar",
+                "createButton": "Criar Empresa",
+                "creatingButton": "Criando..."
+            },
+            "edit": {
+                "title": "Editar empresa",
+                "description": "Atualize as informações da sua empresa."
+            }
+        },
+        "details": {
+            "createTitle": "Detalhes da Empresa",
+            "createDescription": "Preencha as informações da sua empresa abaixo",
+            "editTitle": "Informações da Empresa",
+            "editDescription": "Atualize as informações da sua empresa abaixo",
+            "descriptionLabel": "Descrição da empresa",
+            "descriptionPlaceholder": "Descreva sua empresa: segmento, forma de trabalho, cultura, serviços e o que mais for relevante.",
+            "descriptionHint": "No máximo {max} caracteres.",
+            "descriptionCounter": "{current} / {max}",
+            "shortPathLabel": "URL pública",
+            "shortPathHint": "Somente letras, números e hífens. Entre 5 e 40 caracteres. Usada no link do catálogo público.",
+            "shortPathNormalizedPreview": "Será salvo como: {value}",
+            "shortPathAvailable": "Disponível",
+            "shortPathReserved": "Esta palavra é reservada e não pode ser usada",
+            "shortPathInvalid": "Formato inválido",
+            "shortPathTaken": "Já está em uso por outra loja",
+            "publicCatalogLink": "Link do catálogo público",
+            "publicCatalogLinkHint": "Compartilhe este link com clientes para que possam ver produtos e fazer pedidos."
+        },
+        "toast": {
+            "createSuccess": "Empresa criada com sucesso!",
+            "createSuccessDescription": "{name} foi criada.",
+            "createError": "Erro ao criar empresa",
+            "createErrorDescription": "Ocorreu um erro ao criar a empresa.",
+            "updateSuccess": "Empresa atualizada com sucesso!",
+            "updateSuccessDescription": "{name} foi atualizada.",
+            "updateError": "Erro ao atualizar empresa",
+            "updateErrorDescription": "Ocorreu um erro ao atualizar a empresa.",
+            "deleteSuccess": "Empresa excluída com sucesso!",
+            "deleteSuccessDescription": "A empresa foi excluída.",
+            "deleteError": "Erro ao excluir empresa",
+            "deleteErrorDescription": "Ocorreu um erro ao excluir a empresa.",
+            "transferSuccess": "Propriedade transferida com sucesso!",
+            "transferSuccessDescription": "A propriedade da empresa foi transferida.",
+            "transferError": "Erro ao transferir propriedade",
+            "transferErrorDescription": "Ocorreu um erro ao transferir a propriedade.",
+            "tokensSuccess": "Tokens do Google atualizados com sucesso!",
+            "tokensSuccessDescription": "Os tokens do Google foram atualizados.",
+            "tokensError": "Erro ao atualizar tokens do Google",
+            "tokensErrorDescription": "Ocorreu um erro ao atualizar os tokens do Google."
+        },
+        "noEnterprise": {
+            "title": "Nenhuma Empresa Encontrada",
+            "description": "Você precisa criar ou entrar em uma empresa para acessar este conteúdo.",
+            "createButton": "Criar Empresa",
+            "benefits": {
+                "title": "Por que Criar uma Empresa?",
+                "benefit1": "Gerencie sua equipe e calendários",
+                "benefit2": "Acesse recursos avançados",
+                "benefit3": "Colabore com sua equipe",
+                "benefit4": "Acompanhe o desempenho do seu negócio"
+            }
+        },
+        "trial": {
+            "title": "Informações do Trial",
+            "subtitle": "Gerencie seu período de teste",
+            "viewTrial": "Ver Trial",
+            "startTrial": "Iniciar Trial",
+            "activeTrial": "Trial Ativo",
+            "expiredTrial": "Trial Expirado",
+            "startTrialTitle": "Iniciar Trial",
+            "activeDescription": "Você está aproveitando seu período de teste gratuito.",
+            "expiredDescription": "Seu período de teste expirou. Faça upgrade para continuar usando.",
+            "canStartDescription": "Você pode iniciar um trial gratuito",
+            "startedAt": "Iniciado em",
+            "expiresAt": "Expira em",
+            "timeRemaining": "Tempo restante",
+            "expired": "Expirado",
+            "days": "dias",
+            "day": "dia",
+            "hours": "horas",
+            "hour": "hora",
+            "minutes": "minutos",
+            "minute": "minuto",
+            "seconds": "segundos",
+            "second": "segundo",
+            "remaining": "restantes",
+            "trialStatus": "Status do Trial",
+            "tokensUsed": "Tokens Usados",
+            "tokensAvailable": "Tokens Disponíveis",
+            "totalScheduling": "Agendamentos Totais",
+            "status": "Status",
+            "understood": "Entendi",
+            "later": "Mais Tarde",
+            "upgrade": "Fazer Upgrade",
+            "starting": "Iniciando...",
+            "startFreeTrial": "Iniciar Trial Grátis",
+            "trialExpiredOn": "Seu trial expirou em",
+            "toContinue": "Para continuar usando todas as funcionalidades, faça upgrade do seu plano.",
+            "trialFeatures": {
+                "title": "Experimente todas as funcionalidades por",
+                "daysFree": "3 dias grátis",
+                "noCommitment": "Sem compromisso, cancele a qualquer momento.",
+                "fullAccess": "Acesso completo a todas as funcionalidades",
+                "support": "Suporte durante o período de teste",
+                "noCard": "Sem cartão de crédito necessário",
+                "cancelAnytime": "Cancele quando quiser"
+            },
+            "blocked": {
+                "title": "Conteúdo Bloqueado",
+                "noTrialDescription": "Você precisa de um trial ativo para acessar esta página. Inicie seu trial gratuito de 3 dias ou faça upgrade do seu plano.",
+                "expiredDescription": "Seu período de teste expirou. Para continuar usando esta funcionalidade, inicie um trial ou faça upgrade do seu plano.",
+                "expiredMessage": "Seu trial expirou. Para continuar usando todas as funcionalidades, escolha um dos planos abaixo.",
+                "trialCardDescription": "Experimente todas as funcionalidades por 3 dias grátis.",
+                "upgradeTitle": "Fazer Upgrade",
+                "upgradeDescription": "Escolha um plano e tenha acesso completo a todas as funcionalidades.",
+                "viewPlans": "Ver Planos",
+                "learnMore": "Saiba mais sobre trials e planos"
+            },
+            "blockPanel": {
+                "title": "Acesso Restrito",
+                "description": "Você precisa de um trial ativo ou um plano pago para acessar este conteúdo.",
+                "expiredMessage": "Seu trial expirou. Inicie um novo trial ou contrate um plano para continuar.",
+                "canStartTitle": "Inicie seu Trial Gratuito",
+                "canStartMessage": "Experimente todas as funcionalidades por 3 dias grátis.",
+                "trialOption": {
+                    "title": "Trial Gratuito",
+                    "description": "3 dias grátis para experimentar"
+                },
+                "planOption": {
+                    "title": "Contratar Plano",
+                    "description": "Acesso completo permanente",
+                    "benefit1": "Acesso ilimitado",
+                    "benefit2": "Todos os recursos",
+                    "benefit3": "Suporte prioritário",
+                    "button": "Ver Planos"
+                },
+                "viewTrialDetails": "Ver detalhes do meu trial"
+            },
+            "trialBlocked": {
+                "title": "Trial Necessário",
+                "description": "Esta funcionalidade requer um trial ativo ou plano pago.",
+                "viewPlans": "Ver Planos Disponíveis",
+                "features": {
+                    "fullAccess": "Acesse todas as funcionalidades durante o período de teste.",
+                    "support": "Suporte completo durante o período de teste.",
+                    "noCard": "Não é necessário cartão de crédito para iniciar.",
+                    "cancelAnytime": "Cancele quando quiser, sem compromisso."
+                }
+            }
+        }
+    },
+    "landing": {
+        "brand": {
+            "name": "realvidas",
+            "tagline": "Agendamento Inteligente para Profissionais Modernos"
+        },
+        "nav": {
+            "features": "Recursos",
+            "about": "Sobre",
+            "demos": "Demonstrações",
+            "pricing": "Preços",
+            "login": "Entrar",
+            "getStarted": "Começar Agora"
+        },
+        "hero": {
+            "title": "realvidas",
+            "subtitle": "Comunicação Unificada para Empresas",
+            "description": "Conecte WhatsApp, Instagram, Telegram e muito mais em uma única plataforma poderosa. Automatize, gerencie e escale suas mensagens empresariais.",
+            "cta": "Comece Gratuitamente",
+            "secondaryCta": "Ver Demonstração",
+            "trustBadge": "Todas suas redes sociais em um só lugar"
+        },
+        "features": {
+            "title": "Tudo que Você Precisa para Ter Sucesso",
+            "subtitle": "Ferramentas poderosas projetadas especificamente para profissionais de serviços",
+            "smartScheduling": {
+                "title": "Agendamento Inteligente",
+                "description": "Agendamento com IA que previne reservas duplicadas, otimiza sua agenda e sugere os melhores horários para compromissos."
+            },
+            "clientManagement": {
+                "title": "Gestão de Clientes",
+                "description": "Mantenha registros detalhados de todos os seus clientes, suas preferências, histórico de agendamentos e envie lembretes automáticos."
+            },
+            "multiCalendar": {
+                "title": "Múltiplos Calendários",
+                "description": "Gerencie múltiplos prestadores de serviços, locais e tipos de agendamento em uma plataforma unificada."
+            },
+            "aiAssistants": {
+                "title": "Assistentes de IA",
+                "description": "Deixe a IA lidar com consultas de clientes, confirmações de reservas e acompanhamentos automaticamente via chat e WhatsApp."
+            },
+            "socialIntegration": {
+                "title": "Integração com Redes Sociais",
+                "description": "Conecte-se com Instagram, Facebook, WhatsApp e mais. Permita que clientes agendem diretamente de seus perfis nas redes sociais."
+            },
+            "analytics": {
+                "title": "Análise de Negócios",
+                "description": "Acompanhe receita, serviços populares, horários de pico e retenção de clientes com relatórios e insights detalhados."
+            },
+            "payments": {
+                "title": "Processamento de Pagamentos",
+                "description": "Aceite pagamentos online, crie faturas e gerencie suas finanças tudo em um só lugar."
+            },
+            "notifications": {
+                "title": "Notificações Inteligentes",
+                "description": "Lembretes automáticos por SMS e e-mail reduzem faltas em até 80% e mantêm sua agenda cheia."
+            }
+        },
+        "about": {
+            "title": "Feito para Profissionais de Serviços",
+            "subtitle": "Entendemos os desafios únicos de gerenciar um negócio baseado em serviços",
+            "story": {
+                "title": "Nossa História",
+                "content": "realvidas foi criado por profissionais de serviços que estavam frustrados com softwares de agendamento complicados e caros. Construímos uma plataforma que é poderosa mas simples, acessível mas rica em recursos, e projetada especificamente para barbeiros, esteticistas e prestadores de serviços pessoais."
+            },
+            "mission": {
+                "title": "Nossa Missão",
+                "content": "Capacitar cada profissional de serviços com tecnologia que os ajuda a focar no que fazem de melhor - fornecer serviço excepcional aos seus clientes."
+            },
+            "values": {
+                "title": "Nossos Valores",
+                "simplicity": "Simplicidade - Fácil de usar, difícil de errar",
+                "affordability": "Acessibilidade - Ferramentas profissionais a preços justos",
+                "support": "Suporte - Pessoas reais, ajuda real, bem rápido",
+                "innovation": "Inovação - Sempre melhorando, sempre ouvindo"
+            }
+        },
+        "demos": {
+            "title": "Veja realvidas em Ação",
+            "subtitle": "Descubra como é fácil gerenciar seu negócio",
+            "calendar": {
+                "title": "Visualização Intuitiva de Calendário",
+                "description": "Arraste e solte compromissos, veja toda sua semana de relance e nunca perca uma reserva."
+            },
+            "booking": {
+                "title": "Portal de Reservas Online",
+                "description": "Clientes podem agendar compromissos 24/7 através de sua página de reservas personalizada."
+            },
+            "mobile": {
+                "title": "Design Mobile-First",
+                "description": "Gerencie seu negócio em movimento com nossa interface mobile responsiva."
+            },
+            "ai": {
+                "title": "Assistente de Chat com IA",
+                "description": "Sua recepcionista virtual que lida com reservas e perguntas automaticamente."
+            }
+        },
+        "stats": {
+            "users": "Usuários Ativos",
+            "appointments": "Agendamentos Realizados",
+            "satisfaction": "Satisfação do Cliente",
+            "saved": "Horas Economizadas por Mês"
+        },
+        "testimonials": {
+            "title": "O Que Profissionais Dizem",
+            "subtitle": "Junte-se a milhares de clientes satisfeitos",
+            "testimonial1": {
+                "name": "Maria Silva",
+                "role": "Proprietária de Salão de Beleza",
+                "content": "realvidas transformou meu negócio. Passei de gerenciar agendamentos no papel para ter um sistema totalmente automatizado. As faltas diminuíram 70%!"
+            },
+            "testimonial2": {
+                "name": "João Santos",
+                "role": "Barbearia",
+                "content": "O assistente de IA é incrível. Ele cuida das reservas enquanto eu foco nos meus clientes. Minha receita aumentou 40% em apenas 3 meses."
+            },
+            "testimonial3": {
+                "name": "Ana Costa",
+                "role": "Manicure",
+                "content": "Simples, acessível e poderoso. Tudo que preciso em um só lugar. Só o recurso de gestão de clientes já vale a pena."
+            }
+        },
+        "cta": {
+            "title": "Pronto para Transformar Seu Negócio?",
+            "subtitle": "Junte-se a milhares de profissionais que já usam realvidas",
+            "button": "Iniciar Seu Teste Grátis",
+            "noCard": "Não é necessário cartão de crédito",
+            "cancel": "Cancele quando quiser"
+        },
+        "footer": {
+            "product": "Produto",
+            "features": "Recursos",
+            "pricing": "Preços",
+            "demos": "Demonstrações",
+            "company": "Empresa",
+            "about": "Sobre Nós",
+            "contact": "Contato",
+            "support": "Suporte",
+            "legal": "Legal",
+            "privacy": "Política de Privacidade",
+            "terms": "Termos de Serviço",
+            "rights": "Todos os direitos reservados."
+        }
+    },
+    "plans": {
+        "hero": {
+            "title": "Escolha o Plano Perfeito para Seu Negócio",
+            "subtitle": "Gerencie agendas, clientes e expanda seu negócio com nossa poderosa plataforma de agendamento",
+            "description": "De profissionais autônomos a grandes empresas, temos um plano que se adapta às suas necessidades"
+        },
+        "billing": {
+            "monthly": "Mensal",
+            "yearly": "Anual",
+            "save": "Economize 20%"
+        },
+        "features": {
+            "calendars": "Calendário",
+            "calendars_plural": "Calendários",
+            "users": "Usuário",
+            "users_plural": "Usuários",
+            "aiAgents": "Agente de IA",
+            "aiAgents_plural": "Agentes de IA",
+            "socialNetworks": "Rede Social",
+            "socialNetworks_plural": "Redes Sociais",
+            "credits": "Créditos",
+            "storage": "Armazenamento",
+            "unlimited": "Ilimitado"
+        },
+        "cta": {
+            "getStarted": "Começar Agora",
+            "contactSales": "Falar com Vendas",
+            "currentPlan": "Plano Atual",
+            "popular": "Mais Popular",
+            "enterprise": "Empresarial"
+        },
+        "tiers": {
+            "starter": {
+                "name": "Inicial",
+                "description": "Perfeito para profissionais autônomos começando",
+                "price": "227",
+                "period": "/mês"
+            },
+            "professional": {
+                "name": "Profissional",
+                "description": "Ideal para pequenas equipes e negócios em crescimento",
+                "price": "487",
+                "period": "/mês"
+            },
+            "business": {
+                "name": "Empresarial",
+                "description": "Melhor para empresas estabelecidas com múltiplos usuários",
+                "price": "997",
+                "period": "/mês"
+            },
+            "custom": {
+                "name": "Personalizado",
+                "description": "Soluções sob medida para grandes empresas",
+                "price": "Preço",
+                "period": "personalizado"
+            }
+        },
+        "public": {
+            "unlimitedValue": "∞",
+            "customPrice": "Sob consulta",
+            "customPeriod": "Preço personalizado",
+            "monthlyPeriod": "/mês"
+        },
+        "benefits": {
+            "title": "Tudo que Você Precisa para Ter Sucesso",
+            "subtitle": "Recursos poderosos para ajudá-lo a gerenciar seu negócio com eficiência",
+            "feature1": {
+                "title": "Agendamento Inteligente",
+                "description": "Agendamento com IA que previne conflitos e otimiza seu tempo"
+            },
+            "feature2": {
+                "title": "Gestão de Clientes",
+                "description": "Acompanhe todos os seus clientes e suas preferências em um só lugar"
+            },
+            "feature3": {
+                "title": "Integração Social",
+                "description": "Conecte-se com clientes através de múltiplas plataformas de mídia social"
+            },
+            "feature4": {
+                "title": "Análises e Relatórios",
+                "description": "Obtenha insights sobre seu negócio com análises e relatórios detalhados"
+            },
+            "feature5": {
+                "title": "Seguro e Confiável",
+                "description": "Segurança empresarial para proteger seus dados e seus clientes"
+            },
+            "feature6": {
+                "title": "Suporte 24/7",
+                "description": "Obtenha ajuda sempre que precisar com nossa equipe de suporte dedicada"
+            }
+        },
+        "faq": {
+            "title": "Perguntas Frequentes",
+            "q1": "Posso mudar de plano depois?",
+            "a1": "Sim, você pode fazer upgrade ou downgrade do seu plano a qualquer momento. As mudanças entram em vigor imediatamente.",
+            "q2": "Para que servem os créditos?",
+            "a2": "Os créditos são usados para recursos de IA, mensagens automatizadas e integrações avançadas.",
+            "q3": "Existe período de teste gratuito?",
+            "a3": "Sim! Todos os planos vêm com um período de teste gratuito de 14 dias. Não é necessário cartão de crédito.",
+            "q4": "O que acontece com meus dados se eu cancelar?",
+            "a4": "Seus dados são armazenados com segurança por 30 dias após o cancelamento, dando tempo para exportá-los."
+        },
+        "testimonials": {
+            "title": "Amado por Profissionais em Todo o Mundo",
+            "subtitle": "Junte-se a milhares de empresas que já usam nossa plataforma"
+        }
+    },
+    "payment": {
+        "title": "Gestão de Pagamentos",
+        "subtitle": "Gerencie seus pagamentos e assinaturas",
+        "createPayment": "Criar Pagamento",
+        "viewPayments": "Ver Pagamentos",
+        "paymentHistory": "Histórico de Pagamentos",
+        "noPayments": "Nenhum pagamento encontrado",
+        "loading": "Carregando pagamentos...",
+        "error": "Erro ao carregar pagamentos",
+        "status": {
+            "PENDING": "Pendente",
+            "PROCESSING": "Processando",
+            "PAID": "Pago",
+            "FAILED": "Falhou",
+            "REFUNDED": "Reembolsado",
+            "CANCELED": "Cancelado",
+            "EXPIRED": "Expirado"
+        },
+        "method": {
+            "PIX": "PIX",
+            "PIX_RECORRENTE": "PIX Recorrente",
+            "CREDIT_CARD": "Cartão de Crédito",
+            "BANK_SLIP": "Boleto Bancário",
+            "DEBIT_CARD": "Cartão de Débito"
+        },
+        "fields": {
+            "amount": "Valor",
+            "amountInCents": "Valor (em centavos)",
+            "currency": "Moeda",
+            "paymentMethod": "Método de Pagamento",
+            "status": "Status",
+            "createdAt": "Criado Em",
+            "paidAt": "Pago Em",
+            "expiresAt": "Expira Em",
+            "abacatePayId": "ID AbacatePay",
+            "qrCode": "QR Code",
+            "qrCodeText": "PIX Copia e Cola",
+            "paymentUrl": "Link de Pagamento"
+        },
+        "actions": {
+            "checkStatus": "Verificar Status",
+            "copyQrCode": "Copiar QR Code",
+            "openPaymentUrl": "Abrir Pagamento",
+            "viewDetails": "Ver Detalhes",
+            "refund": "Reembolsar",
+            "cancel": "Cancelar Pagamento"
+        },
+        "messages": {
+            "paymentCreated": "Pagamento criado com sucesso",
+            "paymentUpdated": "Pagamento atualizado com sucesso",
+            "paymentCanceled": "Pagamento cancelado com sucesso",
+            "statusChecked": "Status do pagamento atualizado",
+            "qrCodeCopied": "QR Code copiado para a área de transferência",
+            "errorCreating": "Erro ao criar pagamento",
+            "errorUpdating": "Erro ao atualizar pagamento",
+            "errorChecking": "Erro ao verificar status do pagamento",
+            "errorMissingData": "Dados necessários para criar pagamento estão faltando",
+            "noPlansAvailable": "Nenhum plano de pagamento disponível no momento",
+            "subscriptionCreated": "Assinatura criada com sucesso",
+            "redirectingToPayment": "Redirecionando para página de pagamento..."
+        },
+        "create": {
+            "title": "Criar Pagamento",
+            "subtitle": "Selecione um plano e gere um pagamento",
+            "steps": {
+                "paymentType": "Tipo de pagamento",
+                "selectPlan": "Selecionar plano",
+                "paymentMethod": "Método de pagamento"
+            },
+            "mode": {
+                "oneTime": {
+                    "title": "Pagamento único",
+                    "description": "Pague uma única vez pelo plano selecionado.",
+                    "pixFull": "PIX à vista",
+                    "creditUpTo12x": "Cartão de crédito em até 12x",
+                    "debitFull": "Cartão de débito à vista",
+                    "once": "único",
+                    "select": "Selecionar pagamento único"
+                },
+                "subscription": {
+                    "title": "Assinatura",
+                    "description": "Pagamento recorrente conforme o ciclo de cobrança.",
+                    "pixRecorrente": "PIX recorrente",
+                    "creditRecurring": "Cartão de crédito recorrente",
+                    "monthlyOrYearly": "Cobrança mensal ou anual",
+                    "select": "Selecionar assinatura"
+                }
+            },
+            "billingCycleTitle": "Ciclo de cobrança",
+            "billingCycleDescription": "Escolha com que frequência você deseja ser cobrado.",
+            "saveWithYearly": "economize no anual",
+            "savingsVsMonthly": "Economize {amount} em comparação ao mensal",
+            "selectPlan": "Selecione um Plano",
+            "selected": "Selecionado",
+            "noPlans": "Nenhum plano disponível no momento",
+            "orderSummary": "Resumo do pedido",
+            "billingDocumentTitle": "Documento para cobrança",
+            "billingDocumentDescription": "Escolha qual documento da empresa será usado no pagamento (Asaas / PIX).",
+            "billingEnterpriseLabel": "Empresa",
+            "billingDocumentTypeLabel": "Documento",
+            "billingDocumentCpf": "CPF (Pessoa Física)",
+            "billingDocumentCnpj": "CNPJ (Pessoa Jurídica)",
+            "billingDocumentMissing": "Esta empresa não possui CPF nem CNPJ cadastrado.",
+            "billingDocumentUpdateEnterprise": "Atualizar cadastro da empresa",
+            "paymentMethodTitle": "Método de pagamento",
+            "paymentMethodDescription": "Escolha como deseja pagar.",
+            "pixRecorrenteHint": "Cobrança recorrente via PIX.",
+            "pixFullHint": "Pagamento à vista e instantâneo via PIX.",
+            "creditUpTo12xHint": "Parcele em até 12 vezes.",
+            "creditRecurringHint": "Cobrança recorrente no cartão de crédito.",
+            "debitFullHint": "Pagamento único com cartão de débito.",
+            "installments": "Parcelas",
+            "noInterest": "sem juros",
+            "totalWithInstallments": "Total com parcelamento",
+            "pixRecorrenteLabel": "PIX recorrente ativo",
+            "creditRecurringLabel": "Cartão recorrente ativo",
+            "totalAmount": "Valor Total",
+            "confirmButton": "Confirmar pagamento",
+            "generatePayment": "Gerar Pagamento",
+            "generating": "Gerando...",
+            "processing": "Processando...",
+            "creatingSubscription": "Criando assinatura...",
+            "creatingPayment": "Criando pagamento...",
+            "success": "Pagamento gerado com sucesso!",
+            "paymentGenerated": "Pagamento Gerado",
+            "paymentInstructions": "Por favor, complete o pagamento usando um dos métodos abaixo",
+            "scanQRCode": "Escaneie o QR Code com o aplicativo do seu banco",
+            "copyPixCode": "Ou copie o código PIX abaixo",
+            "orCopyPaste": "ou copie e cole",
+            "pixCopyPaste": "PIX copia e cola",
+            "pixCopyPasteHint": "Copie este código e cole no aplicativo do seu banco.",
+            "copied": "Copiado para a área de transferência!",
+            "copiedButton": "Copiado",
+            "copyButton": "Copiar",
+            "paymentLink": "Link de Pagamento",
+            "openPaymentPage": "Abrir Página de Pagamento",
+            "expiresAt": "Expira em",
+            "viewDetails": "Ver Detalhes do Pagamento",
+            "goToPayments": "Ir para pagamentos",
+            "goToSubscription": "Ir para assinatura",
+            "billingCycle": {
+                "title": "Ciclo de Cobrança",
+                "description": "Escolha com que frequência deseja ser cobrado"
+            },
+            "error": {
+                "selectPlan": "Por favor, selecione um plano primeiro",
+                "generic": "Erro ao gerar pagamento. Por favor, tente novamente."
+            }
+        },
+        "successPage": {
+            "fallbackName": "realvidas",
+            "verifying": "Confirmando pagamento com o servidor…",
+            "invalidSessionTitle": "Link inválido",
+            "invalidSessionDescription": "Falta o identificador da sessão de pagamento (session_id). Abra o link enviado pelo Stripe após o checkout.",
+            "errorForbiddenTitle": "Acesso negado",
+            "errorForbiddenDescription": "Esta sessão não pertence à sua conta ou empresa.",
+            "errorNotFoundTitle": "Sessão não encontrada",
+            "errorNotFoundDescription": "Não encontramos este pagamento no sistema. Verifique se você usou a conta correta.",
+            "errorGenericTitle": "Não foi possível confirmar",
+            "errorGenericDescription": "Tente novamente em instantes ou abra a página de pagamentos.",
+            "goToPayments": "Ir para pagamentos",
+            "pendingTitle": "Pagamento ainda não confirmado",
+            "pendingDescription": "O Stripe ainda não marcou esta sessão como paga, ou o processamento está em andamento.",
+            "stripeStatus": "Status da sessão: {session} · Pagamento: {payment}",
+            "refresh": "Atualizar",
+            "welcomeTitle": "Bem-vindo(a), {name}!",
+            "paidSubtitle": "Seu pagamento foi confirmado. Sua assinatura ou plano está ativo.",
+            "subscriptionLabel": "Assinatura",
+            "oneTimeLabel": "Pagamento único",
+            "subscriptionStatus": "Assinatura: {status}",
+            "nextSteps": "Você já pode usar o app normalmente.",
+            "goToApp": "Ir para o início",
+            "goToSubscription": "Ir para assinatura"
+        },
+        "stats": {
+            "title": "Estatísticas de Pagamento",
+            "totalRevenue": "Receita Total",
+            "totalPaid": "Total Pago",
+            "totalPending": "Total Pendente",
+            "totalFailed": "Total Falhado",
+            "totalRefunded": "Total Reembolsado",
+            "paidCount": "Pagamentos Pagos",
+            "pendingCount": "Pagamentos Pendentes",
+            "failedCount": "Pagamentos Falhados",
+            "refundedCount": "Pagamentos Reembolsados"
+        }
+    },
+    "subscription": {
+        "title": "Gestão de Assinaturas",
+        "subtitle": "Gerencie seus planos e assinaturas",
+        "mySubscription": "Minha Assinatura",
+        "activeSubscription": "Assinatura Ativa",
+        "noSubscription": "Nenhuma assinatura ativa",
+        "subscribe": "Assinar",
+        "loading": "Carregando assinaturas...",
+        "error": "Erro ao carregar assinaturas",
+        "status": {
+            "PENDING": "Pendente",
+            "ACTIVE": "Ativa",
+            "PAST_DUE": "Atrasada",
+            "CANCELED": "Cancelada",
+            "EXPIRED": "Expirada",
+            "PAUSED": "Pausada"
+        },
+        "billingCycle": {
+            "MONTHLY": "Mensal",
+            "YEARLY": "Anual",
+            "monthly": "por mês",
+            "yearly": "por ano"
+        },
+        "fields": {
+            "plan": "Plano",
+            "status": "Status",
+            "billingCycle": "Ciclo de Cobrança",
+            "price": "Preço",
+            "startDate": "Data de Início",
+            "endDate": "Data de Término",
+            "nextBillingDate": "Próxima Cobrança",
+            "canceledAt": "Cancelada Em"
+        },
+        "actions": {
+            "subscribe": "Assinar",
+            "changePlan": "Mudar Plano",
+            "cancel": "Cancelar Assinatura",
+            "reactivate": "Reativar",
+            "viewDetails": "Ver Detalhes",
+            "manageSubscription": "Gerenciar Assinatura"
+        },
+        "messages": {
+            "subscriptionCreated": "Assinatura criada com sucesso",
+            "subscriptionUpdated": "Assinatura atualizada com sucesso",
+            "subscriptionCanceled": "Assinatura cancelada com sucesso",
+            "subscriptionReactivated": "Assinatura reativada com sucesso",
+            "errorCreating": "Erro ao criar assinatura",
+            "errorUpdating": "Erro ao atualizar assinatura",
+            "errorCanceling": "Erro ao cancelar assinatura"
+        },
+        "cancel": {
+            "title": "Cancelar Assinatura",
+            "message": "Tem certeza que deseja cancelar sua assinatura?",
+            "reason": "Motivo do cancelamento (opcional)",
+            "confirm": "Sim, Cancelar",
+            "keepSubscription": "Manter Assinatura"
+        },
+        "customRequest": {
+            "button": "Solicitar plano personalizado",
+            "title": "Solicitar plano personalizado",
+            "description": "Envie uma solicitação de personalização do plano {plan} para o admin.",
+            "selectedPlanFallback": "plano selecionado",
+            "notesLabel": "Observações para o admin",
+            "notesPlaceholder": "Descreva suas necessidades personalizadas (recursos, usuários, cobrança, etc.)",
+            "submit": "Enviar solicitação",
+            "success": "Solicitação de plano personalizado enviada ao admin.",
+            "error": "Não foi possível enviar a solicitação de plano personalizado."
+        },
+        "page": {
+            "title": "Minha assinatura",
+            "subtitle": "Detalhes do plano e cobrança do seu workspace",
+            "emptyTitle": "Nenhuma assinatura ainda",
+            "emptyDescription": "Assine um plano para liberar o acesso completo à plataforma no seu workspace.",
+            "subscribeCta": "Escolher um plano",
+            "planSection": "Seu plano",
+            "billingSection": "Cobrança",
+            "nextPayment": "Próximo pagamento",
+            "nextPaymentAmount": "Valor",
+            "billingDay": "Dia de cobrança (todo mês)",
+            "memberSince": "Assinante desde",
+            "pendingPaymentNote": "Sua assinatura aguarda confirmação de pagamento. Conclua o checkout para ativar o acesso.",
+            "pastDueNote": "Seu último pagamento falhou. O acesso pode estar limitado até regularizar o pagamento.",
+            "retry": "Tentar novamente"
+        }
+    },
+    "plan": {
+        "title": "Planos",
+        "subtitle": "Escolha o plano perfeito para seu negócio",
+        "currentPlan": "Plano Atual",
+        "selectPlan": "Selecionar Plano",
+        "loading": "Carregando planos...",
+        "error": "Erro ao carregar planos",
+        "features": {
+            "calendars": "calendário(s)",
+            "calendarsUnlimited": "Calendários ilimitados",
+            "users": "usuário(s)",
+            "usersUnlimited": "Usuários ilimitados",
+            "aiAgents": "agente(s) de IA",
+            "aiAgentsUnlimited": "Agentes de IA ilimitados",
+            "socialNetworks": "rede(s) social(is)",
+            "socialNetworksUnlimited": "Redes sociais ilimitadas",
+            "credits": "créditos/mês",
+            "creditsUnlimited": "Créditos ilimitados",
+            "storage": "GB de armazenamento",
+            "storageUnlimited": "Armazenamento ilimitado"
+        },
+        "names": {
+            "starter": "Inicial",
+            "professional": "Profissional",
+            "business": "Empresarial",
+            "custom": "Personalizado"
+        },
+        "badges": {
+            "popular": "Popular",
+            "recommended": "Recomendado",
+            "custom": "Fale com Vendas"
+        },
+        "actions": {
+            "choosePlan": "Escolher Plano",
+            "upgrade": "Fazer Upgrade",
+            "downgrade": "Fazer Downgrade",
+            "contactSales": "Contatar Vendas",
+            "currentPlan": "Plano Atual"
+        },
+        "currency": {
+            "BRL": "R$",
+            "USD": "$",
+            "EUR": "€"
+        },
+        "messages": {
+            "planSelected": "Plano selecionado com sucesso",
+            "errorSelecting": "Erro ao selecionar plano"
+        }
+    },
+    "cart": {
+        "title": "Carrinho",
+        "planNotFound": "Plano não encontrado",
+        "checkout": "Finalizar Compra",
+        "billingCycle": {
+            "title": "Ciclo de Cobrança",
+            "monthly": "Mensal",
+            "yearly": "Anual",
+            "perMonth": "por mês",
+            "perYear": "por ano",
+            "save": "Economize"
+        },
+        "paymentMethod": {
+            "title": "Método de Pagamento",
+            "creditCard": "Cartão de Crédito",
+            "debitCard": "Cartão de Débito",
+            "bankSlip": "Boleto Bancário"
+        },
+        "installments": {
+            "title": "Parcelas",
+            "of": "de"
+        },
+        "summary": {
+            "title": "Resumo do Pedido",
+            "plan": "Plano",
+            "billing": "Cobrança",
+            "method": "Método",
+            "enterprise": "Empresa",
+            "total": "Total"
+        },
+        "success": {
+            "title": "Pagamento criado com sucesso!",
+            "description": "Seu pagamento foi gerado. Siga as instruções para completar."
+        },
+        "error": {
+            "noEnterprise": "Nenhuma empresa encontrada",
+            "noEnterpriseDescription": "Você precisa ter uma empresa cadastrada para realizar a compra. Crie uma empresa primeiro.",
+            "noEnterpriseHint": "Você precisa de uma empresa cadastrada para continuar.",
+            "checkoutFailed": "Erro ao finalizar compra",
+            "checkoutFailedDescription": "Não foi possível processar o pagamento. Tente novamente."
+        }
+    },
+    "admin": {
+        "plans": {
+            "title": "Gestão de Planos",
+            "subtitle": "Gerencie planos de preços e funcionalidades",
+            "noPlans": "Nenhum plano encontrado",
+            "badges": {
+                "unlimited": "Ilimitado",
+                "custom": "Personalizado",
+                "active": "Ativo",
+                "inactive": "Inativo"
+            },
+            "actions": {
+                "createPlan": "Criar Plano",
+                "editPlan": "Editar Plano",
+                "deletePlan": "Excluir",
+                "confirmDelete": "Excluir plano"
+            },
+            "deleteDialog": {
+                "title": "Excluir plano?",
+                "description": "Tem certeza que deseja excluir o plano \"{name}\"? Esta ação não pode ser desfeita."
+            },
+            "createDialog": {
+                "title": "Criar Novo Plano",
+                "description": "Preencha os detalhes abaixo para criar um novo plano de preços"
+            },
+            "editDialog": {
+                "title": "Editar Plano",
+                "description": "Atualize os detalhes do plano abaixo"
+            },
+            "form": {
+                "name": "Nome do Plano (ID)",
+                "namePlaceholder": "ex: inicial, profissional",
+                "displayName": "Nome de Exibição",
+                "displayNamePlaceholder": "ex: Plano Inicial",
+                "description": "Descrição",
+                "descriptionPlaceholder": "Breve descrição do plano",
+                "priceMonthly": "Preço Mensal (centavos)",
+                "priceYearly": "Preço Anual (centavos)",
+                "currency": "Moeda",
+                "priceInCents": "Digite o valor em centavos (ex: 22700 para R$ 227,00)",
+                "optional": "Opcional",
+                "featuresTitle": "Funcionalidades do Plano",
+                "maxCalendars": "Máx. Calendários",
+                "maxUsers": "Máx. Usuários",
+                "maxAiAgents": "Máx. Agentes IA",
+                "maxSocialNetworks": "Máx. Redes Sociais",
+                "creditsPerMonth": "Créditos por Mês",
+                "storageGb": "Armazenamento (GB)",
+                "optionsTitle": "Opções do Plano",
+                "isUnlimited": "Plano Ilimitado",
+                "isUnlimitedDescription": "Todas as funcionalidades são ilimitadas para este plano",
+                "isActive": "Ativo",
+                "isActiveDescription": "Plano está visível e disponível para compra",
+                "isCustom": "Plano Personalizado",
+                "isCustomDescription": "Requer negociação personalizada e contato com vendas"
+            },
+            "messages": {
+                "planCreated": "Plano criado com sucesso",
+                "planUpdated": "Plano atualizado com sucesso",
+                "planDeleted": "Plano excluído com sucesso",
+                "errorCreating": "Erro ao criar plano",
+                "errorUpdating": "Erro ao atualizar plano",
+                "errorDeleting": "Erro ao excluir plano"
+            }
+        },
+        "payments": {
+            "title": "Monitoramento de Pagamentos",
+            "subtitle": "Monitore todos os pagamentos do sistema"
+        },
+        "customPlans": {
+            "title": "Planos Negociados",
+            "subtitle": "Gerencie planos personalizados criados por negociação com empresas",
+            "noPlans": "Nenhum plano negociado encontrado",
+            "noPlansDescription": "Crie planos personalizados para empresas que negociaram condições especiais.",
+            "actions": {
+                "create": "Criar Plano Negociado"
+            },
+            "createDialog": {
+                "title": "Criar Plano Negociado",
+                "description": "Crie um plano personalizado para uma empresa com condições especiais de preço e funcionalidades"
+            },
+            "editDialog": {
+                "title": "Editar Plano Negociado",
+                "description": "Atualize os detalhes do plano negociado"
+            },
+            "deleteDialog": {
+                "title": "Excluir plano negociado?",
+                "description": "Tem certeza que deseja excluir o plano \"{name}\"? Esta ação não pode ser desfeita."
+            },
+            "form": {
+                "enterpriseId": "ID da Empresa",
+                "basePlanId": "Plano Base (opcional)",
+                "descriptionPlaceholder": "Descreva os termos da negociação e condições especiais..."
+            },
+            "messages": {
+                "created": "Plano negociado criado com sucesso",
+                "updated": "Plano negociado atualizado com sucesso",
+                "deleted": "Plano negociado excluído com sucesso",
+                "errorCreating": "Erro ao criar plano negociado",
+                "errorUpdating": "Erro ao atualizar plano negociado",
+                "errorDeleting": "Erro ao excluir plano negociado"
+            }
+        }
+    },
+    "pipelinePage": {
+        "title": "Pipelines",
+        "subtitle": "Gerencie seus quadros kanban e fluxos de trabalho.",
+        "create": "Novo Pipeline",
+        "createNew": "Criar novo pipeline",
+        "name": "Nome",
+        "namePlaceholder": "ex.: Pipeline de Vendas",
+        "description": "Descrição",
+        "descriptionPlaceholder": "Descreva o propósito deste pipeline...",
+        "module": "Módulo",
+        "empty": "Nenhum pipeline ainda. Crie o primeiro!",
+        "openBoard": "Abrir quadro",
+        "selectEnterprise": "Selecione uma empresa na barra lateral primeiro.",
+        "modules": {
+            "CRM": "CRM",
+            "SUPPORT": "Suporte",
+            "SALES": "Vendas",
+            "RECRUITMENT": "Recrutamento",
+            "PROJECT": "Projeto",
+            "CUSTOM": "Personalizado"
+        },
+        "board": {
+            "title": "Quadro",
+            "addColumn": "Adicionar coluna",
+            "addCard": "Adicionar cartão",
+            "add": "Adicionar",
+            "columnNamePlaceholder": "Nome da coluna...",
+            "cardTitlePlaceholder": "Título do cartão...",
+            "columnDescriptionPlaceholder": "Descreva quando os cartões devem ficar ou ir para esta coluna (usado pela IA)...",
+            "columnDescriptionHint": "Clique para editar. A IA usa isso para decidir quando mover cartões.",
+            "columnDescriptionMissing": "Adicione uma descrição para a IA saber quando mover cartões para cá",
+            "start": "Início",
+            "finish": "Fim",
+            "mandatoryStartColumn": "Coluna de início obrigatória — os cartões começam aqui e a posição é fixa",
+            "mandatoryFinishColumn": "Coluna de finalização obrigatória — as vendas são concluídas aqui e a posição é fixa"
+        }
+    }
+}

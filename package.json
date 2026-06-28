@@ -1,0 +1,59 @@
+{
+    "name": "@realvidas/system",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "postinstall": "node scripts/patch-tanstack-cjs-exports.cjs",
+        "build": "node scripts/build-production.cjs",
+        "build:all": "nx run-many -t build",
+        "build:packages": "nx run-many -t build --projects=@realvidas/types,@realvidas/email-templates",
+        "build:apps": "nx run-many -t build --projects=@realvidas/backend,@realvidas/frontend",
+        "build:backend": "nx run @realvidas/backend:build",
+        "build:frontend": "nx run @realvidas/frontend:build",
+        "build:meow": "nx run meow:docker:build",
+        "build:types": "nx run @realvidas/types:build",
+        "packages": "nx run-many -t dev --projects=@realvidas/types,@realvidas/email-templates --parallel=2",
+        "dev": "nx run-many -t dev --projects=@realvidas/types,@realvidas/email-templates,@realvidas/backend,@realvidas/frontend --parallel=5",
+        "dev:backend": "nx run @realvidas/backend:dev",
+        "dev:frontend": "nx run @realvidas/frontend:dev",
+        "meow": "nx run meow:dev",
+        "start:prod": "nx run @realvidas/backend:start:prod",
+        "lint": "nx run-many -t lint",
+        "test": "nx run-many -t test",
+        "db:run:main": "nx run @realvidas/backend:db:run:main",
+        "db:run:tenant": "nx run @realvidas/backend:db:run:tenant",
+        "db:generate:main": "nx run @realvidas/backend:db:generate:main",
+        "db:generate:tenant:all": "nx run @realvidas/backend:db:generate:tenant:all",
+        "seed": "nx run @realvidas/backend:seed",
+        "build:affected": "nx affected -t build",
+        "lint:affected": "nx affected -t lint",
+        "test:affected": "nx affected -t test",
+        "graph": "nx graph"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "overrides": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "@nx/js": "^21.3.2",
+        "@swc/core-linux-x64-gnu": "^1.15.41",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "nx": "^21.3.2",
+        "prettier": "^3.4.2"
+    },
+    "dependencies": {
+        "@dnd-kit/core": "^6.3.1",
+        "@dnd-kit/sortable": "^10.0.0",
+        "@dnd-kit/utilities": "^3.2.2",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    }
+}

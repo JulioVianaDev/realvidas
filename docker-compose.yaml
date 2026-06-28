@@ -1,0 +1,72 @@
+version: "3.8"
+
+networks:
+    backend-network:
+        driver: bridge
+
+services:
+    db:
+        image: postgres:15
+        container_name: realvidas_db
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            POSTGRES_DB: ${POSTGRES_DB}
+        ports:
+            - "${POSTGRES_PORT:-5432}:5432"
+        volumes:
+            # App + WhatsApp bridge data (incl. per-instance DBs whatsapp_<key>).
+            - realvidas_data:/var/lib/postgresql/data
+        networks:
+            - backend-network
+        healthcheck:
+            test: ["CMD-SHELL", 'pg_isready -U "$$POSTGRES_USER" -d postgres']
+            interval: 5s
+            timeout: 5s
+            retries: 10
+            start_period: 10s
+        restart: unless-stopped
+
+    rabbitmq:
+        image: rabbitmq:3-management
+        container_name: rabbitmq_realvidas
+        environment:
+            RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+            RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        volumes:
+            - rabbitmq_data:/var/lib/rabbitmq
+        networks:
+            - backend-network
+        healthcheck:
+            test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+            interval: 5s
+            timeout: 10s
+            retries: 12
+            start_period: 20s
+        restart: unless-stopped
+
+    redis:
+        image: redis:alpine
+        container_name: redis_realvidas
+        ports:
+            - "${REDIS_PORT:-6379}:6379"
+        volumes:
+            - redis_data:/data
+        networks:
+            - backend-network
+        healthcheck:
+            test: ["CMD", "redis-cli", "ping"]
+            interval: 30s
+            retries: 3
+            start_period: 30s
+            timeout: 5s
+        restart: unless-stopped
+
+volumes:
+    realvidas_data:
+    rabbitmq_data:
+    elasticsearch_data:
+    redis_data:

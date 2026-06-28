@@ -1,0 +1,14 @@
+{
+    "files": [],
+    "references": [{ "path": "./tsconfig.app.json" }],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@global-types/*": ["../../packages/types/dist/*"],
+            "@email-templates": ["../../packages/email-templates/dist/index.d.ts"],
+            "@email-templates/*": ["../../packages/email-templates/dist/*"]
+        },
+        "strictNullChecks": true
+    }
+}

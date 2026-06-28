@@ -1,0 +1,15 @@
+/* ============================================================
+   Real Vidas Design System — global entry point
+   Consumers link THIS file only. Import order matters:
+   fonts → raw palette → semantic theme → type → spacing →
+   elevation/motion → base element defaults.
+   ============================================================ */
+
+@import "tokens/fonts.css";
+@import "tokens/colors.css";
+@import "tokens/semantic.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/elevation.css";
+@import "tokens/keyframes.css";
+@import "tokens/base.css";

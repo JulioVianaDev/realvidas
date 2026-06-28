@@ -1,0 +1,64 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Cards, Badges, Stats" subtitle="Card, Badge, Tag, Avatar, Stat" -->
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-canvas); padding: 22px; font-family: var(--font-body); }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Card, Badge, Tag, Avatar, Stat, Icon } = window.RealVidasDesignSystem_066fed;
+  function Demo() {
+    return (
+      <div>
+        <div className="row">
+          <Badge tone="brand" dot pulse>24 HORAS</Badge>
+          <Badge tone="success" dot>Disponível</Badge>
+          <Badge tone="secondary">UTI Móvel</Badge>
+          <Badge tone="warning">Em rota</Badge>
+          <Badge tone="solid">Plano Ouro</Badge>
+          <Badge tone="neutral">Pindamonhangaba</Badge>
+        </div>
+        <div className="row">
+          <Tag tone="brand" icon={<Icon name="truck" size={14} />}>Remoção terrestre</Tag>
+          <Tag tone="secondary" icon={<Icon name="plane" size={14} />}>Transporte aéreo</Tag>
+          <Tag tone="success" icon={<Icon name="shield-check" size={14} />}>Certificado</Tag>
+          <Tag onRemove={()=>{}}>Cobertura de eventos</Tag>
+        </div>
+        <div className="row" style={{ alignItems:"stretch" }}>
+          <Card variant="elevated" interactive accentBar style={{ flex:"1 1 200px" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:10, color:"var(--brand)" }}>
+              <Icon name="heart-pulse" size={26} />
+              <Badge tone="brand" dot pulse>Resgate</Badge>
+            </div>
+            <h3 className="rv-h4" style={{ margin:0 }}>Resgate 24 Horas</h3>
+            <p className="rv-small" style={{ marginTop:6 }}>Emergência médica, todos os dias.</p>
+          </Card>
+          <Card variant="outlined" style={{ flex:"1 1 200px", display:"flex", gap:24 }}>
+            <Stat value="24h" label="Cobertura" icon={<Icon name="clock" size={24} />} />
+            <Stat value="+10" label="Anos salvando vidas" accent="secondary" icon={<Icon name="shield" size={24} />} />
+          </Card>
+          <Card variant="soft" style={{ flex:"0 0 auto", display:"flex", alignItems:"center", gap:12 }}>
+            <Avatar name="João Mota" status="online" size="lg" />
+            <div>
+              <div className="rv-label">Equipe de plantão</div>
+              <div className="rv-caption">Médico + enfermagem</div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body>
+</html>

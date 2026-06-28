@@ -1,0 +1,52 @@
+<!-- @dsCard group="Components" viewport="700x440" name="Brand Patterns" subtitle="Logo, ServiceCard, PlanCard, EmergencyCTA" -->
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-canvas); padding: 22px; font-family: var(--font-body); }
+  .stack { display:flex; flex-direction:column; gap:18px; }
+  .logos { display:flex; flex-wrap:wrap; gap:24px; align-items:center; padding:16px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); }
+  .ondark { background:var(--secondary); border-radius:var(--radius-lg); padding:16px 20px; display:flex; gap:24px; align-items:center; color:#fff; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+  const { Logo, ServiceCard, PlanCard, EmergencyCTA, Icon } = window.RealVidasDesignSystem_066fed;
+  function Demo() {
+    return (
+      <div className="stack">
+        <div className="logos">
+          <Logo variant="full" size={44} />
+          <Logo variant="wordmark" size={36} showTagline={false} />
+          <Logo variant="mark" size={44} />
+          <div className="ondark">
+            <Logo variant="full" tone="mono" size={36} />
+          </div>
+        </div>
+        <div className="grid3">
+          <ServiceCard icon={<Icon name="truck" size={26} />} title="Transporte terrestre" description="Remoção segura em ambulâncias totalmente equipadas." href="#" />
+          <ServiceCard icon={<Icon name="plane" size={26} />} title="Transporte aéreo em UTI" description="Aeronaves com suporte avançado de vida." href="#" />
+          <ServiceCard icon={<Icon name="heart-pulse" size={26} />} title="Resgate 24 horas" description="Emergência médica, todos os dias da semana." href="#" />
+        </div>
+        <div className="grid3">
+          <PlanCard tier="bronze" name="Plano Bronze" coverage="08 horas de cobertura" features={["Remoções simples","Enfermagem a bordo"]} cta="Conhecer" />
+          <PlanCard tier="ouro" name="Plano Ouro" coverage="24 horas de cobertura" featured features={["Atendimento 24h","UTI móvel","Cobertura de eventos"]} cta="Conhecer" />
+          <PlanCard tier="prata" name="Plano Prata" coverage="12 horas de cobertura" features={["Remoção emergencial","Equipe de plantão"]} cta="Conhecer" />
+        </div>
+        <EmergencyCTA />
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body>
+</html>

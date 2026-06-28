@@ -1,0 +1,38 @@
+services:
+  mailserver:
+    image: ghcr.io/docker-mailserver/docker-mailserver:latest
+    container_name: mailserver
+    hostname: mail
+    domainname: realvidas.io
+    env_file: mailserver.env
+    ports:
+      - "25:25"
+      - "587:587"
+      - "993:993"
+    volumes:
+      - mail-data:/var/mail
+      - mail-state:/var/mail-state
+      - mail-logs:/var/log/mail
+      - mail-config:/tmp/docker-mailserver
+      - certbot_certs:/etc/letsencrypt:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    stop_grace_period: 1m
+    cap_add:
+      - NET_ADMIN
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    healthcheck:
+      test: "ss --listening --tcp | grep -P 'LISTEN.+:smtp' || exit 1"
+      timeout: 3s
+      retries: 5
+
+volumes:
+  mail-data:
+  mail-state:
+  mail-logs:
+  mail-config:
+  certbot_certs:
+    external: true
+    name: nginx_certbot_certs

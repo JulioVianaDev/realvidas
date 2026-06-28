@@ -1,0 +1,9 @@
+POST http://localhost:8080/v1/answers/X8YOGJYBdYEjCfUlHdsm HTTP/1.1
+Content-Type: application/json
+
+{
+  "responses": {
+    "912458cc-fde1-4a69-8856-0037e8118fde": "Júlio Viana",
+    "a89e5b0a-7de1-4b23-a30e-ee79a384e387": "option_2"
+  }
+}

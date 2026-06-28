@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist", // Diretório de saída dos arquivos compilados
+        "rootDir": "./src", // Diretório raiz dos arquivos de entrada
+        "module": "CommonJS", // Módulo de sistema a ser usado
+        "target": "ES2020", // Versão do ECMAScript a ser usada (ES2020 para BigInt)
+        "declaration": true, // Gerar arquivos .d.ts
+        "declarationMap": true, // Gerar mapas de declaração .d.ts.map
+        "sourceMap": true, // Gerar arquivos .js.map
+        "strict": true, // Ativar verificações de tipo estritas
+        "esModuleInterop": true, // Habilitar interoperabilidade de módulos ES
+        "skipLibCheck": true, // Pular checagem de tipos de bibliotecas
+        "forceConsistentCasingInFileNames": true // Garantir consistência de capitalização em nomes de arquivos
+    },
+    "include": ["src/**/*"], // Incluir todos os arquivos .ts em src
+    "exclude": ["node_modules"] // Excluir o diretório node_modules
+}

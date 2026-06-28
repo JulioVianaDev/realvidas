@@ -1,0 +1,70 @@
+### AbacatePay Webhook - Billing Paid Event
+### 
+### IMPORTANT NOTES:
+### 1. Query Parameter: webhookSecret=tomate-header (for basic auth)
+### 2. Header: x-webhook-signature (HMAC-SHA256 signature - REQUIRED by controller)
+### 3. Header: x-webhook-secret (optional - you mentioned this in your request)
+###
+### To generate the HMAC signature:
+### Option 1 (Recommended): Use the helper script
+###   cd backend/https/payment
+###   node generate-webhook-signature.js
+###   Copy the generated signature and replace REPLACE_WITH_HMAC_SIGNATURE below
+###
+### Option 2: Manual calculation
+###   - Use the AbacatePay public key (defined in webhook.service.ts)
+###   - Calculate: HMAC-SHA256(body, publicKey) in base64
+###   - Example in Node.js:
+###     const crypto = require('crypto');
+###     const signature = crypto.createHmac('sha256', PUBLIC_KEY).update(JSON.stringify(body)).digest('base64');
+###
+### Note: For local testing, you may want to temporarily disable signature verification 
+###       in webhook.controller.ts by commenting out the HMAC verification check
+
+POST http://localhost:8080/v1/webhooks/abacatepay?webhookSecret=tomate-header
+Content-Type: application/json
+x-webhook-signature: +vJ/oS+hfLRVc9PgZHRj890bFYpvUlXED+Nxmf8YIkY=
+x-webhook-secret: tomate-header
+
+{
+  "id": "evt_ZCmJaAwctpDRRqhhZgwD5ejN",
+  "event": "billing.paid",
+  "data": {
+    "billing": {
+      "id": "bill_QwuytxYdpW1GdetydjEuYpRD",
+      "amount": 22700,
+      "customer": {
+        "id": "cust_J1UAcCe2gMMGRm012GKpgKf5",
+        "metadata": {
+          "name": "Júlio Viana Sene de Carvalho",
+          "cellphone": "12988053918",
+          "taxId": "53226352890",
+          "email": "juliovianadev@gmail.com",
+          "zipCode": ""
+        }
+      },
+      "frequency": "ONE_TIME",
+      "kind": [
+        "PIX"
+      ],
+      "status": "PAID",
+      "products": [
+        {
+          "id": "prod_CUU1WAJMy1SECkEdyYn5yPsW",
+          "externalId": "8fdc2eb0-9d03-42d9-aeb9-22f407ee787e",
+          "quantity": 1,
+          "price": 22700,
+          "name": "Assinatura do Plano"
+        }
+      ],
+      "paidAmount": 22700,
+      "couponsUsed": []
+    },
+    "payment": {
+      "amount": 22700,
+      "fee": 80,
+      "method": "PIX"
+    }
+  },
+  "devMode": true
+}

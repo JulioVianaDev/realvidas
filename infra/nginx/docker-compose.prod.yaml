@@ -1,0 +1,39 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Nginx config
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+      # Frontend dist folders — live volume mounts
+      # rsync new build → files served instantly, no restart needed
+      - /app/portfolio/dist:/app/portfolio/dist:ro
+      - /app/realvidas/apps/frontend/build:/app/realvidas/apps/frontend/build:ro
+
+      # SSL certificates managed by certbot
+      - certbot_certs:/etc/letsencrypt:ro
+      - certbot_www:/var/www/certbot:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    container_name: certbot
+    restart: unless-stopped
+    volumes:
+      - certbot_certs:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
+    # Checks every 12h, renews only when cert has <30 days left
+    entrypoint: >
+      sh -c "trap exit TERM;
+             while :; do
+               certbot renew --webroot -w /var/www/certbot --quiet;
+               sleep 12h & wait $${!};
+             done"
+
+volumes:
+  certbot_certs:
+  certbot_www:

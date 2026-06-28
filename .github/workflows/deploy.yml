@@ -1,0 +1,195 @@
+name: Deploy
+
+on:
+    push:
+        branches: [main]
+
+concurrency:
+    group: deploy-main
+    cancel-in-progress: false
+
+env:
+    NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+    NODE_VERSION: "22"
+    GO_VERSION: "1.25"
+    DOCKER_REGISTRY: ghcr.io
+    DOCKER_IMAGE_PREFIX: ${{ github.repository_owner }}
+
+permissions:
+    contents: write
+    packages: write
+
+jobs:
+    # ─── Version Bump ────────────────────────────────────────────
+    version:
+        runs-on: ubuntu-latest
+        outputs:
+            version: ${{ steps.bump.outputs.version }}
+            sha_short: ${{ steps.bump.outputs.sha_short }}
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Bump version
+              id: bump
+              run: |
+                  SHA_SHORT=$(git rev-parse --short HEAD)
+                  CURRENT=$(jq -r '.version' version.json)
+
+                  # Split version into parts
+                  IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT"
+                  PATCH=$((PATCH + 1))
+                  NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}"
+
+                  # Update version.json
+                  jq --arg v "$NEW_VERSION" --arg d "$(date -u +%Y-%m-%dT%H:%M:%S.000Z)" \
+                    '.version = $v | .updatedAt = $d' version.json > version.tmp && mv version.tmp version.json
+
+                  echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+                  echo "sha_short=$SHA_SHORT" >> "$GITHUB_OUTPUT"
+                  echo "New version: $NEW_VERSION (sha: $SHA_SHORT)"
+
+            - name: Commit version bump
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git add version.json
+                  git commit -m "chore: bump version to ${{ steps.bump.outputs.version }} [skip ci]"
+                  git push
+
+    # # ─── Detect affected ─────────────────────────────────────────
+    # affected:
+    #   runs-on: ubuntu-latest
+    #   needs: version
+    #   outputs:
+    #     frontend: ${{ steps.check.outputs.frontend }}
+    #     backend: ${{ steps.check.outputs.backend }}
+    #     meow: ${{ steps.check.outputs.meow }}
+    #   steps:
+    #     - uses: actions/checkout@v4
+    #       with:
+    #         fetch-depth: 0
+
+    #     - uses: actions/setup-node@v4
+    #       with:
+    #         node-version: ${{ env.NODE_VERSION }}
+    #         cache: npm
+
+    #     - run: npm ci
+
+    #     - name: Check affected projects
+    #       id: check
+    #       run: |
+    #         # Compare current HEAD vs previous commit (the merge commit)
+    #         AFFECTED=$(npx nx show projects --affected --base=HEAD~1 --head=HEAD)
+    #         echo "Affected projects: $AFFECTED"
+    #         echo "frontend=$( echo "$AFFECTED" | grep -q '@realvidas/frontend' && echo true || echo false )" >> "$GITHUB_OUTPUT"
+    #         echo "backend=$( echo "$AFFECTED" | grep -q '@realvidas/backend' && echo true || echo false )" >> "$GITHUB_OUTPUT"
+    #         echo "meow=$( echo "$AFFECTED" | grep -q 'meow' && echo true || echo false )" >> "$GITHUB_OUTPUT"
+
+    # # ─── Build & Deploy Frontend ─────────────────────────────────
+    # deploy-frontend:
+    #   runs-on: ubuntu-latest
+    #   needs: [version, affected]
+    #   if: needs.affected.outputs.frontend == 'true'
+    #   steps:
+    #     - uses: actions/checkout@v4
+
+    #     - uses: actions/setup-node@v4
+    #       with:
+    #         node-version: ${{ env.NODE_VERSION }}
+    #         cache: npm
+
+    #     - run: npm ci
+
+    #     - name: Inject version into frontend build
+    #       run: |
+    #         echo "VITE_APP_VERSION=${{ needs.version.outputs.version }}" >> .env
+    #         echo "VITE_APP_SHA=${{ needs.version.outputs.sha_short }}" >> .env
+
+    #     - name: Build shared packages
+    #       run: npm run build:packages
+
+    #     - name: Build frontend
+    #       run: npx nx run @realvidas/frontend:build
+
+    #     - name: Deploy frontend to server
+    #       uses: appleboy/scp-action@v0.1.7
+    #       with:
+    #         host: ${{ secrets.SERVER_HOST }}
+    #         username: ${{ secrets.SERVER_USER }}
+    #         key: ${{ secrets.SERVER_SSH_KEY }}
+    #         source: "apps/frontend/build/*"
+    #         target: ${{ secrets.FRONTEND_DEPLOY_PATH }}
+    #         strip_components: 3
+
+    # # ─── Build & Push Backend Docker ─────────────────────────────
+    # deploy-backend:
+    #   runs-on: ubuntu-latest
+    #   needs: [version, affected]
+    #   if: needs.affected.outputs.backend == 'true'
+    #   steps:
+    #     - uses: actions/checkout@v4
+
+    #     - uses: actions/setup-node@v4
+    #       with:
+    #         node-version: ${{ env.NODE_VERSION }}
+    #         cache: npm
+
+    #     - run: npm ci
+
+    #     - name: Build backend
+    #       run: npx nx run @realvidas/backend:build
+
+    #     - name: Login to GitHub Container Registry
+    #       uses: docker/login-action@v3
+    #       with:
+    #         registry: ${{ env.DOCKER_REGISTRY }}
+    #         username: ${{ github.actor }}
+    #         password: ${{ secrets.GITHUB_TOKEN }}
+
+    #     - name: Build & push backend Docker image
+    #       uses: docker/build-push-action@v6
+    #       with:
+    #         context: .
+    #         file: ./apps/backend/Dockerfile
+    #         push: true
+    #         tags: |
+    #           ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_PREFIX }}/realvidas-backend:latest
+    #           ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_PREFIX }}/realvidas-backend:${{ needs.version.outputs.version }}
+    #           ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE_PREFIX }}/realvidas-backend:${{ needs.version.outputs.sha_short }}
+
+    #     - name: Deploy backend on server
+    #       uses: appleboy/ssh-action@v1.0.3
+    #       with:
+    #         host: ${{ secrets.SERVER_HOST }}
+    #         username: ${{ secrets.SERVER_USER }}
+    #         key: ${{ secrets.SERVER_SSH_KEY }}
+    #         script: |
+    #           cd ${{ secrets.PROJECT_PATH }}
+    #           git pull origin main
+    #           npm install
+    #           npm run build:backend
+    #           npm run db:run:main
+    #           npm run db:run:tenant
+    #           pm2 restart ecosystem.config.cjs --update-env
+
+    # # ─── Build Whatsmeow on VPS (no GHCR image push) ─────────────
+    # deploy-meow:
+    #   runs-on: ubuntu-latest
+    #   needs: [version, affected]
+    #   if: needs.affected.outputs.meow == 'true'
+    #   steps:
+    #     - name: Build & restart whatsmeow on server
+    #       uses: appleboy/ssh-action@v1.0.3
+    #       with:
+    #         host: ${{ secrets.SERVER_HOST }}
+    #         username: ${{ secrets.SERVER_USER }}
+    #         key: ${{ secrets.SERVER_SSH_KEY }}
+    #         script: |
+    #           cd ${{ secrets.PROJECT_PATH }}
+    #           git pull origin main
+    #           docker compose -f docker-compose.prod.yaml build whatsmeow
+    #           docker compose -f docker-compose.prod.yaml up -d --no-deps whatsmeow

@@ -1,0 +1,220 @@
+---
+alwaysApply: true
+---
+## Type Validation Rule
+
+### Rule Name: repositories-rules
+
+### Description:
+Before implementing any new endpoint or modifying existing ones, ensure proper type validation by following these steps:
+
+
+1. Check if the entity type exists in `/packages/types/src/entities/`
+   - If yes, ensure it follows the naming convention `IEntityNameEntity`
+   - If no, create the appropriate type definition first
+
+2. Verify corresponding body request type in `/packages/types/src/@types/body-requests/`
+   - Body request types should follow the naming pattern:
+     - For POST: `IPostEntityNameBodyRequest`
+     - For PUT: `IPutEntityNameBodyRequest`
+
+3. Ensure payload consistency:
+   - Body request types should extend or reference the main entity type when appropriate
+   - Use `Omit<>` or `Pick<>` to derive from the main entity type
+   - Example:
+     ```typescript
+     import { IEntityNameEntity } from "../entities/entity-name.entity";
+     
+     export interface IPostEntityNameBodyRequest {
+         // Only include fields needed for creation
+         field1: string;
+         field2: number;
+         // Omit auto-generated fields like id, createdAt, etc.
+     }
+     ```
+
+4. Verify corresponding params to get query type in `/packages/types/src/params/`
+   - Params types should follow the naming pattern using EntityName and METHOD:
+     - For GET All: `IGetAllEntityNameParams`
+     - For GET Specific: `IGetByIdEntityNameParams`
+     - For GET Specific: `IGetByIdEntityNameParams`
+
+
+5. Verify if endpoint is correct inside in `/frontend/src/api.ts`
+
+6. create one action for each HTTP request inside `frontend/src/hooks/action/entity-name/entity-name.action.ts` 
+   - Each Method Http has this structure by default: 
+   ```typescript
+        import { IPostEntityNameBodyRequest } from "@global-types/body-requests/entity-name.body-request";
+        import { DeleteEntityNameParams ,IGetEntityNameParams} from "@global-types/params/entity-name.params";
+        import { API_ROUTES } from "@/api";
+        import api from "@/axios/axios.v1";
+        import { IGetAllEntityNameResponse } from "@global-types/responses/entity-name.response";
+        export const taggableCustomerService = async (
+            payload: IEntityNameBodyRequest,
+        ) => {
+            const data: IPostEntityNameBodyRequest = await apiV1.post(
+                API_ROUTES.ENTITY_NAME.METHOD,
+                payload,
+            );
+            return data;
+        };
+
+        export const deleteTag = async (params: DeleteTagParams) => {
+            const data: ITagEntity = await apiV1.delete( API_ROUTES.ENTITY_NAME.METHOD, {
+                params,
+            });
+            return data;
+        };
+
+        export const getAllEntityName = async (
+            params: IGetEntityNameParams,
+            config?: AxiosRequestConfig,
+        ): Promise<IGetAllEntityNameResponse> => {
+            const response = await apiV1.get<IGetAllEntityNameResponse>( API_ROUTES.ENTITY_NAME.METHOD, {
+                params: {
+                    ...params,
+                    page: params.page ? Number(params.page) : 1,
+                },
+                ...(config || {}),
+            });
+            return response;
+        };
+
+   ```
+
+7- Actions of type Get need have one query using useQuery inside `frontend/src/hooks/query/entity-name/entity-name.query.ts`
+   - Always will have refetchOnMount, refetchInterval, refetchOnWindowFocus like false
+   - **MUST use `queryKeys` from `@/hooks/query/query-keys.ts`** for all query keys — NEVER use `API_ROUTES` directly as query keys
+   - **MUST add key factory methods** in `query-keys.ts` for any new entity before creating queries
+   - Example to how generate one query:
+   ```typescript
+    // 1. First, add keys to query-keys.ts:
+    // entityName: {
+    //     all: () => [API_ROUTES.ENTITY_NAME.GET_ALL] as const,
+    //     list: (p: IGetAllEntityNameParams) => [API_ROUTES.ENTITY_NAME.GET_ALL, "list", p] as const,
+    //     detail: (id: string) => [API_ROUTES.ENTITY_NAME.GET_ALL, "detail", id] as const,
+    // },
+
+    // 2. Then create the query hook:
+    import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+    import { IGetAllEntityNameParams } from "@global-types/params/entity-name.params";
+    import { getAllEntityNameAction } from "@/hooks/action/entity-name/entity-name.action";
+    import { queryKeys } from "../query-keys";
+
+    export const useGetAllEntityNameQuery = (
+        params: IGetAllEntityNameParams,
+    ) => {
+        return useQuery({
+            queryKey: queryKeys.entityName.list(params),
+            queryFn: async () => await getAllEntityNameAction(params),
+            refetchOnMount: false,
+            refetchInterval: false,
+            refetchOnWindowFocus: false,
+        });
+    };
+
+    // 3. Mutations must use queryKeys for invalidation:
+    export const useCreateEntityNameMutation = () => {
+        const queryClient = useQueryClient();
+        return useMutation({
+            mutationFn: async (payload: IPostCreateEntityNameBodyRequest) =>
+                await createEntityNameAction(payload),
+            onSuccess: () => {
+                queryClient.invalidateQueries({
+                    queryKey: queryKeys.entityName.all(),
+                });
+            },
+        });
+    };
+   ```
+8. When need upload files to server, need get the object in frontend and map to formData with function convertObjectToFormData and send to backend using api
+
+```typescript 
+    import { 
+        ICreateEntityNameBodyRequest,
+    } from "@global-types/body-requests/entity-name.body-request";
+    import { convertObjectToFormData } from "../convertObjectToFormData";
+
+    export const createEntityNameAction = async (
+        payload: ICreateEntityNameBodyRequest,
+    ): Promise<ICreateEntityNameResponse> => {
+        const { file, ...restPayload } = payload;
+
+        const formData = convertObjectToFormData(
+            restPayload,
+            file ? [file] : undefined,
+        );
+
+        const response = await api.post<ICreateEntityNameResponse>(
+            API_ROUTES.ENTERPRISE.CREATE,
+            formData,
+            {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            },
+        );
+        return response;
+    };
+
+```
+
+and in backend to receive this file you need in controller:
+
+```typescript
+    export class EntityNameController {
+        @Post()
+        @UseInterceptors(FileInterceptor('file'))
+        async createEnterprise(
+            @UploadedFile() file: File | undefined,
+            @Body() createEntityNameDto: CreateEntityNameDto,
+        ) {
+            return this.entityNameService.createEntityName(
+            user.id,
+            createEntityNameDto,
+            file,
+            );
+        }
+    }
+```
+
+and in service please use the fileService to store the image:
+
+```typescript
+ export class entityService{
+  async createEntityName(
+    ownerId: string,
+    data: CreateEntityNameDto,
+    file?: File,
+  ): Promise<ICreateEntityNameResponse> {
+
+    if (file) {
+      const fileResponse = await this.fileService.saveFile({
+        file,
+        module: 'ENTITY_MODULE',
+        userId: Number(ownerId),
+      });
+      data.imageUrl = fileResponse.url;
+    }
+
+    return this.EntityNameRepository.createEntityName(
+      ownerId,
+      data,
+    );
+  }
+  }
+
+```
+
+
+
+8. Validation checklist:
+   - All required fields are properly typed
+   - No unnecessary fields are included in body requests
+   - Proper use of optional fields with `?` notation
+   - Consistent use of enums and custom types
+   - Proper nesting of related types
+   - In module and service need have same name of entitie
+
+This rule helps maintain consistency between entity definitions and API payloads, reducing runtime errors and improving type safety
